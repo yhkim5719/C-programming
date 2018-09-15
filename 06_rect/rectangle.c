@@ -36,18 +36,18 @@ rectangle canonicalize(rectangle r) {
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
-  if ((r2.x + r2.width <= r1.x)||
-      (r1.y + r1.height <= r2.y)||
-      (r1.x + r1.width <= r2.x)||
-      (r2.y + r2.height <= r1.y)||
-      ((r1.x + r1.width < r2.x + r2.width) && (r2.x <= r1.x) && (r1.y >= r2.y) && (r1.y + r1.height <= r2.y + r2.height))){
-    printf("no intersection");
-  }else {
+  /*  if ((r2.x + r2.width < r1.x)||
+      (r1.y + r1.height < r2.y)||
+      (r1.x + r1.width < r2.x)||
+      (r2.y + r2.height < r1.y)||
+      ((r1.x + r1.width < r2.x + r2.width) && (r2.x < r1.x) && (r1.y > r2.y) && (r1.y + r1.height < r2.y + r2.height))){
+    printf("<empth>");
+    }else { */
     r1.x = max(r1.x, r2.x);
     r1.y = max(r1.y, r2.y);
-    r1.width = min(r1.x + r1.width, r2.x + r2.width);
-    r1.height = min(r1.y + r1.height, r2.y + r2.height);
-  }
+    r1.width = min(r1.x + r1.width, r2.x + r2.width) - r1.x;
+    r1.height = min(r1.y + r1.height, r2.y + r2.height) - r1.y;
+  
     
     //WRITE THIS FUNCTION
   return r1;
