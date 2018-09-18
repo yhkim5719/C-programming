@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct retire_info{
+struct _retire_info{
   int months;
   double contribution;
   double rate_of_return;
 };
 
-typedef struct retire_info balance;
+typedef struct _retire_info retire_info;
 
 int getYears(int age){
   return age / 12;
@@ -19,8 +19,8 @@ int getMonths(int age){
 
 void retirement(int startAge, //in months
 		double initial, //initial savings in dollars
-		balance working, //info about working
-		balance retired){
+		retire_info working, //info about working
+		retire_info retired){
   double bal = initial;
   printf("Age %3d month %2d you have $%.2f\n", getYears(startAge), getMonths(startAge), bal);
 
@@ -36,10 +36,10 @@ void retirement(int startAge, //in months
   }
 }
 
-int main(){
-  balance w, r;
-  w = (balance){489, 1000, 0.045/12};
-  r = (balance){384, -4000, 0.01/12};
+int main(void){
+  retire_info w, r;
+  w = (retire_info){489, 1000, 0.045/12};
+  r = (retire_info){384, -4000, 0.01/12};
   retirement(327, 21345, w, r);
   return 0;
 }
