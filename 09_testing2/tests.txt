@@ -1,14 +1,12 @@
-11123 32111
- aaabbbb cccc
-aaaaa bbbbb ccccc
-aaAAa BbBcc
+11111 !!!!!
+11223 33445
+11211 33344
+11122 21121
+a a a
 a a
-??aaa !!!??
-????- +____
-1+++1 5
-11&&
-a A
-aaaaa AAAAA
-11111 !!!!!!
-aaAaA BbBb
-1111   1111
+a
+aaaaa bbbb
+aaaaa bbbbbb
+aaaaaa bbbbb
+AAAaa aaAaa
+54321 54321
