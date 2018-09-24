@@ -124,7 +124,7 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.value = 12;
   } else if (value_let == 'K') {
       temp.value = 13;
-  } else if (value_let == 'A')
+  } else if (value_let == 'A') {
     temp.value = 14;
   }
   if (suit_let == 's') {
