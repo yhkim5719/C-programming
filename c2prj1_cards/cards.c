@@ -35,29 +35,29 @@ const char * ranking_to_string(hand_ranking_t r) {
 } //not sure
 
 char value_letter(card_t c) {
-  if (c.value == 0) {
+  if ((c.value == 1 || c.value == 14)) {
       return 'A';
-  } else if (c.value == 1) {
-    return '2';
   } else if (c.value == 2) {
-    return '3';
+    return '2';
   } else if (c.value == 3) {
-    return '4';
+    return '3';
   } else if (c.value == 4) {
-    return '5';
+    return '4';
   } else if (c.value == 5) {
-    return '6';
+    return '5';
   } else if (c.value == 6) {
-    return '7';
+    return '6';
   } else if (c.value == 7) {
-    return '8';
+    return '7';
   } else if (c.value == 8) {
+    return '8';
+  } else if (c.value == 9) {
     return '9';
-  } else if(c.value == 9) {
+  } else if(c.value == 10) {
     return '0';
-  } else if (c.value == 10) {
-    return 'J';
   } else if (c.value == 11) {
+    return 'J';
+  } else if (c.value == 12) {
     return 'Q';
   } else
     return 'K';
@@ -101,8 +101,8 @@ card_t card_from_letters(char value_let, char suit_let) {
 	   (suit_let != 'c'))) {
     printf("You input wrong number.\n");
     exit(EXIT_FAILURE);
-  } else if (value_let == '1') {
-      temp.value = 14;
+  } else if (value_let == 'A') {
+      temp.value = 1;
   } else if (value_let == '2') {
       temp.value = 2;
   } else if (value_let == '3') {
@@ -127,8 +127,6 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.value = 12;
   } else if (value_let == 'K') {
       temp.value = 13;
-  } else if (value_let == 'A') {
-      temp.value = 14;
   }
   if (suit_let == 's') {
       temp.suit = 0;
@@ -145,15 +143,15 @@ card_t card_from_letters(char value_let, char suit_let) {
 card_t card_from_num(unsigned c) {
   card_t temp;
   assert ((0 <= c) && (c < 52));
-  temp.value = c % 13;
+  temp.value = 1 + c % 13;
   if (c/13 == 3) {
-    temp.suit = 0;
-  } else if (c/13 == 2) {
-    temp.suit = 1;
-  } else if (c/13 == 1) {
-    temp.suit = 2;
-  } else if (c/13 == 0) {
     temp.suit = 3;
+  } else if (c/13 == 2) {
+    temp.suit = 2;
+  } else if (c/13 == 1) {
+    temp.suit = 1;
+  } else if (c/13 == 0) {
+    temp.suit = 0;
   }
   return temp;
 }
