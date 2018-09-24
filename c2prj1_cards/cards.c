@@ -81,8 +81,7 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  if (((value_let != '1') &&
-       (value_let != '2') &&
+  if ((    (value_let != '2') &&
 	   (value_let != '3') &&
 	   (value_let != '4') &&
 	   (value_let != '5') &&
@@ -101,8 +100,6 @@ card_t card_from_letters(char value_let, char suit_let) {
 	   (suit_let != 'c'))) {
     printf("You input wrong number.\n");
     exit(EXIT_FAILURE);
-  } else if (value_let == 'A') {
-      temp.value = 1;
   } else if (value_let == '2') {
       temp.value = 2;
   } else if (value_let == '3') {
@@ -127,6 +124,8 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.value = 12;
   } else if (value_let == 'K') {
       temp.value = 13;
+  } else if (value_let == 'A')
+    temp.value = 14;
   }
   if (suit_let == 's') {
       temp.suit = 0;
