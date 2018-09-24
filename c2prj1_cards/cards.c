@@ -8,7 +8,7 @@ void assert_card_valid(card_t c) {
   assert((2 <= c.value) &&
 	 (c.value <= VALUE_ACE) &&
 	 (0 <= c.suit) &&
-	 (c.suit <= 4)
+	 (c.suit < 4)
 	 );
 }
 
