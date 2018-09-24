@@ -35,9 +35,7 @@ const char * ranking_to_string(hand_ranking_t r) {
 } //not sure
 
 char value_letter(card_t c) {
-  if (c.value == 1) {
-      return 'A';
-  } else if (c.value == 2) {
+  if (c.value == 2) {
     return '2';
   } else if (c.value == 3) {
     return '3';
@@ -59,8 +57,10 @@ char value_letter(card_t c) {
     return 'J';
   } else if (c.value == 12) {
     return 'Q';
-  } else
+  } else if (c.value == 13) {
     return 'K';
+  } else
+    return 'A';
 }
 
 char suit_letter(card_t c) {
