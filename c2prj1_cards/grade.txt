@@ -1,4 +1,4 @@
-Grading at Mon Sep 24 01:40:59 UTC 2018
+Grading at Mon Sep 24 01:45:08 UTC 2018
 Compiling cards.c
 Testing card_from_letters
 Passed
@@ -9,57 +9,57 @@ Passed
 Testing card_from_num
 When I use card_from_num on numbers 0<= i < 52
 I expect to see each card exactly once, but I see:
-0?
-1?
-2?
-3?
-4?
-5?
-6?
-7?
-8?
-9?
-0?
-J?
-Q?
-0?
-1?
-2?
-3?
-4?
-5?
-6?
-7?
-8?
-9?
-0?
-J?
-Q?
-0?
-1?
-2?
-3?
-4?
-5?
-6?
-7?
-8?
-9?
-0?
-J?
-Q?
-0?
-1?
-2?
-3?
-4?
-5?
-6?
-7?
-8?
-9?
-0?
-J?
-Q?
+0c
+1c
+2c
+3c
+4c
+5c
+6c
+7c
+8c
+9c
+0c
+Jc
+Qc
+0c
+1c
+2c
+3c
+4c
+5c
+6c
+7c
+8c
+9c
+0c
+Jc
+Qc
+0c
+1c
+2c
+3c
+4c
+5c
+6c
+7c
+8c
+9c
+0c
+Jc
+Qc
+0c
+1c
+2c
+3c
+4c
+5c
+6c
+7c
+8c
+9c
+0c
+Jc
+Qc
 
 Overall Grade: FAILED
