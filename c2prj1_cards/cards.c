@@ -35,8 +35,22 @@ const char * ranking_to_string(hand_ranking_t r) {
 } //not sure
 
 char value_letter(card_t c) {
-  if ((2 <= c.value) && (c.value <= 9)){
-    return c.value;
+  if (c.value == 2) {
+      return '2';
+  } else if (c.value == 3) {
+    return '3';
+  } else if (c.value == 4) {
+    return '4';
+  } else if (c.value == 5) {
+    return '5';
+  } else if (c.value == 6) {
+    return '6';
+  } else if (c.value == 7) {
+    return '7';
+  } else if (c.value == 8) {
+    return '8';
+  } else if (c.value == 9) {
+    return '9';
   } else if(c.value == 10) {
     return '0';
   } else if (c.value == 11) {
