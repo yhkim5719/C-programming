@@ -8,7 +8,7 @@ void assert_card_valid(card_t c) {
   assert((2 <= c.value) &&
 	 (c.value <= VALUE_ACE) &&
 	 (0 <= c.suit) &&
-	 (c.suit <= 3)
+	 (c.suit <= 4)
 	 );
 }
 
@@ -101,6 +101,24 @@ card_t card_from_letters(char value_let, char suit_let) {
 	   (suit_let != 'c'))) {
     printf("You input wrong number.\n");
     exit(EXIT_FAILURE);
+  } else if (value_let == '2') {
+      temp.value = 2;
+  } else if (value_let == '3') {
+      temp.value = 3;
+  } else if (value_let == '4') {
+      temp.value = 4;
+  } else if (value_let == '5') {
+      temp.value = 5;
+  } else if (value_let == '6') {
+      temp.value = 6;
+  } else if (value_let == '7') {
+      temp.value = 7;
+  } else if (value_let == '8') {
+      temp.value = 8;
+  } else if (value_let == '9') {
+      temp.value = 9;
+  } else if (value_let == '0') {
+      temp.value = 10;
   } else if (value_let == 'J') {
       temp.value = 11;
   } else if (value_let == 'Q') {
