@@ -59,7 +59,7 @@ char value_letter(card_t c) {
     return 'Q';
   } else if (c.value == 13) {
     return 'K';
-  } else
+  } else 
     return 'A';
 }
 
