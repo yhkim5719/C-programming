@@ -144,14 +144,13 @@ card_t card_from_num(unsigned c) {
   card_t temp;
   assert ((0 <= c) && (c < 52));
   temp.value = c % 13;
-  switch (c/13) {
-  case 0:
+  if (c/13 == 3) {
     temp.suit = 0;
-  case 1:
+  } else if (c/13 == 2) {
     temp.suit = 1;
-  case 2:
+  } else if (c/13 == 1) {
     temp.suit = 2;
-  case 3:
+  } else if (c/13 == 0) {
     temp.suit = 3;
   }
   return temp;
