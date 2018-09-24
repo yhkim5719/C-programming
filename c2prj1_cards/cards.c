@@ -143,16 +143,16 @@ card_t card_from_letters(char value_let, char suit_let) {
 card_t card_from_num(unsigned c) {
   card_t temp;
   assert ((0 <= c) && (c < 52));
-  temp.value = c % 4;
+  temp.value = c % 13;
   switch (c/13) {
   case 0:
-    temp.suit = 0;
+    temp.suit = 's';
   case 1:
-    temp.suit = 1;
+    temp.suit = 'h';
   case 2:
-    temp.suit = 2;
+    temp.suit = 'd';
   case 3:
-    temp.suit = 3;
+    temp.suit = 'c';
   }
   return temp;
 }
