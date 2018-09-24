@@ -1,65 +1,56 @@
-Grading at Mon Sep 24 02:49:45 UTC 2018
+Grading at Mon Sep 24 02:54:36 UTC 2018
 Compiling cards.c
 Testing card_from_letters
 Passed
 Testing value_letter and suit_letter
-Passed
-Testing print_card
-Passed
-Testing card_from_num
-When I use card_from_num on numbers 0<= i < 52
-I expect to see each card exactly once, but I see:
-1c
-2c
-3c
-4c
-5c
-6c
-7c
-8c
-9c
-0c
-Jc
-Qc
-Kc
-1d
-2d
-3d
-4d
-5d
-6d
-7d
-8d
-9d
-0d
-Jd
-Qd
-Kd
-1h
-2h
-3h
-4h
-5h
-6h
-7h
-8h
-9h
-0h
-Jh
-Qh
-Kh
-1s
-2s
-3s
-4s
-5s
-6s
-7s
-8s
-9s
-0s
-Js
-Qs
-Ks
+For As, you gave value = K, suit = s
+For Ah, you gave value = K, suit = h
+For Ad, you gave value = K, suit = d
+For Ac, you gave value = K, suit = c
+For 2s, you gave value = 3, suit = s
+For 2h, you gave value = 3, suit = h
+For 2d, you gave value = 3, suit = d
+For 2c, you gave value = 3, suit = c
+For 3s, you gave value = 4, suit = s
+For 3h, you gave value = 4, suit = h
+For 3d, you gave value = 4, suit = d
+For 3c, you gave value = 4, suit = c
+For 4s, you gave value = 5, suit = s
+For 4h, you gave value = 5, suit = h
+For 4d, you gave value = 5, suit = d
+For 4c, you gave value = 5, suit = c
+For 5s, you gave value = 6, suit = s
+For 5h, you gave value = 6, suit = h
+For 5d, you gave value = 6, suit = d
+For 5c, you gave value = 6, suit = c
+For 6s, you gave value = 7, suit = s
+For 6h, you gave value = 7, suit = h
+For 6d, you gave value = 7, suit = d
+For 6c, you gave value = 7, suit = c
+For 7s, you gave value = 8, suit = s
+For 7h, you gave value = 8, suit = h
+For 7d, you gave value = 8, suit = d
+For 7c, you gave value = 8, suit = c
+For 8s, you gave value = 9, suit = s
+For 8h, you gave value = 9, suit = h
+For 8d, you gave value = 9, suit = d
+For 8c, you gave value = 9, suit = c
+For 9s, you gave value = 0, suit = s
+For 9h, you gave value = 0, suit = h
+For 9d, you gave value = 0, suit = d
+For 9c, you gave value = 0, suit = c
+For 0s, you gave value = J, suit = s
+For 0h, you gave value = J, suit = h
+For 0d, you gave value = J, suit = d
+For 0c, you gave value = J, suit = c
+For Js, you gave value = Q, suit = s
+For Jh, you gave value = Q, suit = h
+For Jd, you gave value = Q, suit = d
+For Jc, you gave value = Q, suit = c
+For Qs, you gave value = K, suit = s
+For Qh, you gave value = K, suit = h
+For Qd, you gave value = K, suit = d
+For Qc, you gave value = K, suit = c
+Failed
 
 Overall Grade: FAILED
