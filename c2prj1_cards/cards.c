@@ -35,8 +35,10 @@ const char * ranking_to_string(hand_ranking_t r) {
 } //not sure
 
 char value_letter(card_t c) {
-  if (c.value == 2) {
-      return '2';
+  if (c.value == 1) {
+      return 'A';
+  } else if (c.value == 2) {
+    return '2';
   } else if (c.value == 3) {
     return '3';
   } else if (c.value == 4) {
