@@ -1,10 +1,33 @@
-Grading at Mon Sep 24 02:59:07 UTC 2018
+Grading at Mon Sep 24 03:02:24 UTC 2018
 Compiling cards.c
-Testing card_from_letters
-For card_from_letters('A','c'), I expected Ac but got 1c
-For card_from_letters('A','d'), I expected Ad but got 1d
-For card_from_letters('A','h'), I expected Ah but got 1h
-For card_from_letters('A','s'), I expected As but got 1s
-Failed
+cards.c: In function ‘card_from_letters’:
+cards.c:83:10: error: variable ‘temp’ set but not used [-Werror=unused-but-set-variable]
+   card_t temp;
+          ^
+cards.c: At top level:
+cards.c:130:3: error: expected identifier or ‘(’ before ‘if’
+   if (suit_let == 's') {
+   ^
+cards.c:132:5: error: expected identifier or ‘(’ before ‘else’
+   } else if (suit_let == 'h') {
+     ^
+cards.c:134:5: error: expected identifier or ‘(’ before ‘else’
+   } else if (suit_let == 'd') {
+     ^
+cards.c:136:5: error: expected identifier or ‘(’ before ‘else’
+   } else if (suit_let == 'c') {
+     ^
+cards.c:139:3: error: expected identifier or ‘(’ before ‘return’
+   return temp;
+   ^
+cards.c:140:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+cards.c: In function ‘card_from_letters’:
+cards.c:129:3: error: control reaches end of non-void function [-Werror=return-type]
+   }
+   ^
+cc1: all warnings being treated as errors
+Could not compile your card.c!
 
 Overall Grade: FAILED
