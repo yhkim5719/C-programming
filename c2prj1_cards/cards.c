@@ -146,13 +146,13 @@ card_t card_from_num(unsigned c) {
   temp.value = c % 13;
   switch (c/13) {
   case 0:
-    temp.suit = 's';
+    temp.suit = 0;
   case 1:
-    temp.suit = 'h';
+    temp.suit = 1;
   case 2:
-    temp.suit = 'd';
+    temp.suit = 2;
   case 3:
-    temp.suit = 'c';
+    temp.suit = 3;
   }
   return temp;
 }
