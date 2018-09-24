@@ -1,0 +1,16 @@
+Grading at Mon Sep 24 01:14:58 UTC 2018
+Compiling cards.c
+Testing card_from_letters
+For card_from_letters('0','c'), I expected 0c but got 5c
+For card_from_letters('0','d'), I expected 0d but got 0d
+For card_from_letters('2','c'), I expected 2c but got 0c
+For card_from_letters('3','c'), I expected 3c but got 2c
+For card_from_letters('4','c'), I expected 4c but got 3c
+For card_from_letters('5','c'), I expected 5c but got 4c
+For card_from_letters('6','c'), I expected 6c but got 5c
+For card_from_letters('7','c'), I expected 7c but got 6c
+For card_from_letters('8','c'), I expected 8c but got 7c
+For card_from_letters('9','c'), I expected 9c but got 8c
+Failed
+
+Overall Grade: FAILED
