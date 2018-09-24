@@ -59,9 +59,8 @@ char value_letter(card_t c) {
     return 'Q';
   } else if (c.value == 13) {
     return 'K';
-  } else {
-      return 'A';
-    }
+  } else
+    return 'A';
 }
 
 char suit_letter(card_t c) {
@@ -143,14 +142,14 @@ card_t card_from_letters(char value_let, char suit_let) {
 card_t card_from_num(unsigned c) {
   card_t temp;
   assert ((0 <= c) && (c < 52));
-  temp.value = c % 13;
-  if (c/13 == 3) {
+  temp.value = (c+2) % 13;
+  if ((c+2)/13 == 3) {
     temp.suit = 0;
-  } else if (c/13 == 2) {
+  } else if ((c+2)/13 == 2) {
     temp.suit = 1;
-  } else if (c/13 == 1) {
+  } else if ((c+2)/13 == 1) {
     temp.suit = 2;
-  } else if (c/13 == 0) {
+  } else if ((c+2)/13 == 0) {
     temp.suit = 3;
   }
   return temp;
