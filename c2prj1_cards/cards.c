@@ -100,8 +100,6 @@ card_t card_from_letters(char value_let, char suit_let) {
 	   (suit_let != 'c'))) {
     printf("You input wrong number.\n");
     exit(EXIT_FAILURE);
-  } else if (value_let == '1') {
-    temp.value = 'A';
   } else if (value_let == '2') {
       temp.value = 2;
   } else if (value_let == '3') {
