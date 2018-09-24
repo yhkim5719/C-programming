@@ -1,16 +1,62 @@
-Grading at Mon Sep 24 01:30:18 UTC 2018
+Grading at Mon Sep 24 01:35:50 UTC 2018
 Compiling cards.c
 Testing card_from_letters
-For card_from_letters('0','c'), I expected 0c but got 9c
-For card_from_letters('0','d'), I expected 0d but got 0d
-For card_from_letters('2','c'), I expected 2c but got 0c
-For card_from_letters('3','c'), I expected 3c but got 2c
-For card_from_letters('4','c'), I expected 4c but got 3c
-For card_from_letters('5','c'), I expected 5c but got 4c
-For card_from_letters('6','c'), I expected 6c but got 5c
-For card_from_letters('7','c'), I expected 7c but got 6c
-For card_from_letters('8','c'), I expected 8c but got 7c
-For card_from_letters('9','c'), I expected 9c but got 8c
-Failed
+Passed
+Testing value_letter and suit_letter
+Passed
+Testing print_card
+Your print_card does not work the way I expect:
+K, s
+K, h
+K, d
+K, c
+A, s
+A, h
+A, d
+A, c
+2, s
+2, h
+2, d
+2, c
+3, s
+3, h
+3, d
+3, c
+4, s
+4, h
+4, d
+4, c
+5, s
+5, h
+5, d
+5, c
+6, s
+6, h
+6, d
+6, c
+7, s
+7, h
+7, d
+7, c
+8, s
+8, h
+8, d
+8, c
+9, s
+9, h
+9, d
+9, c
+0, s
+0, h
+0, d
+0, c
+J, s
+J, h
+J, d
+J, c
+Q, s
+Q, h
+Q, d
+Q, c
 
 Overall Grade: FAILED
