@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "maxSeq.h"
+// #include "maxSeq.h"
 
 size_t maxSeq(int* array, size_t n);
   

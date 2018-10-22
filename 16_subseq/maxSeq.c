@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 size_t maxSeq(int* array, size_t n) {
   int myIt;
   int numSeq = 0;
