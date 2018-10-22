@@ -12,13 +12,12 @@ size_t maxSeq(int* array, size_t n) {
     myIt = array[i - 1];
     if (myIt < array[i]) {
       tmpSeq++;
-    } else {
-      if (numSeq < tmpSeq) {
+    }
+    if (numSeq < tmpSeq) {
       numSeq = tmpSeq;
       tmpSeq = 1;
-      }
     }
-  }
+    }
   }
   return numSeq;
 }
