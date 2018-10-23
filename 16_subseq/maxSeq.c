@@ -2,12 +2,12 @@
 
 size_t maxSeq(int* array, size_t n) {
   int myIt;
-  int numSeq = 1;
+  int numSeq = 0;
   int tmpSeq;
   if (array == NULL) {
     return 0;
   }
-  tmpSeq = 1;
+  tmpSeq = 0;
   for (size_t i = 0; i < n; i++) {
   myIt = array[i];
   if (myIt < array[i + 1]) {
