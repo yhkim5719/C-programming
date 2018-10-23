@@ -6,19 +6,19 @@ size_t maxSeq(int* array, size_t n) {
   int tmpSeq;
   if (array == NULL) {
     return 0;
-  } else {
+  }
   tmpSeq = 1;
   for (size_t i = 1; i < n; i++) {
   myIt = array[i - 1];
   if (myIt < array[i]) {
     tmpSeq++;
-    if (numSeq < tmpSeq) {
-      numSeq = tmpSeq;
-    }
   } else {
     tmpSeq = 1;
+    if (numSeq < tmpSeq) {
+      numSeq = tmpSeq;
     }
   }
   }
   return numSeq;
 }
+  
