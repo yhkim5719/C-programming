@@ -2,7 +2,7 @@
 
 size_t maxSeq(int* array, size_t n) {
   int myIt;
-  int numSeq = 1;
+  int numSeq = 0;
   int tmpSeq;
   if (array == NULL) {
     return 0;
