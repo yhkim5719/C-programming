@@ -1,9 +1,6 @@
-Grading at Sat Nov 10 23:12:52 UTC 2018
+Grading at Sun Nov 11 00:40:06 UTC 2018
 Attempting to compile  reverse.c
-Line_2_did_not_match
-Line_3_did_not_match
 Line_5_did_not_match
-Line_7_did_not_match
 Your file did not match the expected ouput
 Your output did not match what we expected.
 Removing your main() and replacing it with our own to run more tests...
