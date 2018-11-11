@@ -11,7 +11,7 @@ void reverse(char * str) {
   for (int i = 0; i < len; i++) {
     tmp[i] = str[len - i - 1];
   }
-  //  tmp[len] = ;
+  tmp[len] = '\0';
   strcpy(str, tmp);
   }
 }
