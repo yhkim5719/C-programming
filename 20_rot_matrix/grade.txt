@@ -1,10 +1,13 @@
-Grading at Thu Dec 27 00:16:38 UTC 2018
+Grading at Thu Dec 27 00:23:25 UTC 2018
 Attempting to compile rotate.c
-rotate.c: In function ‘rotate’:
-rotate.c:2:8: error: variable ‘newMat’ set but not used [-Werror=unused-but-set-variable]
-   char newMat[10][10];
-        ^
-cc1: all warnings being treated as errors
-The code did not compile!
+Running testcase 1
+Your file matched the expected output
+testcase1 passed
+Running testcase 1
+Your file matched the expected output
+testcase1 passed
+Running testcase 1
+Your file matched the expected output
+testcase1 passed
 
-Overall Grade: F
+Overall Grade: A
