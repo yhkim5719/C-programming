@@ -32,5 +32,17 @@ void shuffle(deck_t * d){
 }
 
 void assert_full_deck(deck_t * d) {
-
+	assert(d->n_cards == 52);
+	card_t tmp;
+	for (int i = 0; i < 4; ++i) {
+		tmp.suit = i;
+		for (int j = 2; j < 15; ++j) {
+		//	card_t tmp;
+		//	tmp.suit = i;
+			tmp.value = j;
+			int chk = deck_contains(d, tmp);
+			assert(chk == 1);
+		}
+	}			
+	return;
 }
