@@ -1,4 +1,4 @@
-Grading at Tue Jul  2 21:08:20 UTC 2019
+Grading at Tue Jul  2 21:10:46 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -8,8 +8,6 @@ gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o in
 Testcase 1: Trying hands with nothing
  Checking the output 
 Line_39_did_not_match
-Line_59_did_not_match
-Line_99_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
 Hand 1:								Hand 1:
@@ -70,7 +68,7 @@ Kh Jd 6s 5c 4d 2h 						Kh Jd 6s 5c 4d 2h
  - 5 cards used for hand: Kh Jd 6s 5c 4d 			 - 5 cards used for hand: Kh Jd 6s 5c 4d 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!							Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -110,7 +108,7 @@ Ac Kd Qh 3s 2s 							Ac Kd Qh 3s 2s
  - 5 cards used for hand: Ac Kd Qh 3s 2s 			 - 5 cards used for hand: Ac Kd Qh 3s 2s 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!						      |	Hand 1 wins!
+Hand 2 wins!							Hand 2 wins!
 ============================					============================
 Testcase 2: Trying hands with pairs
  Checking the output 
@@ -118,6 +116,7 @@ Line_8_did_not_match
 Line_16_did_not_match
 Line_28_did_not_match
 Line_36_did_not_match
+Line_39_did_not_match
 Line_48_did_not_match
 Line_56_did_not_match
 Line_68_did_not_match
@@ -163,7 +162,7 @@ Ad Ah Qh Js 9c 2h 						Ad Ah Qh Js 9c 2h
  - 5 cards used for hand: Ad Ah Qh Js 9c 		      |	 - 5 cards used for hand: Ad Ah 2h 2h 2h 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -203,13 +202,10 @@ Jd 9h 7c 6h 5h 5s 						Jd 9h 7c 6h 5h 5s
  - 5 cards used for hand: 5h 5s Jd 9h 7c 		      |	 - 5 cards used for hand: 5h 5s 6h 6h 6h 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 2 wins!
+Tie							      |	Hand 1 wins!
 ============================					============================
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
-Line_19_did_not_match
-Line_39_did_not_match
-Line_99_did_not_match
 Line_139_did_not_match
 Line_179_did_not_match
 Your file did not match the expected ouput
@@ -232,7 +228,7 @@ Ad Ah Kd Ks 3h 							Ad Ah Kd Ks 3h
  - 5 cards used for hand: Ad Ah Kd Ks 3h 			 - 5 cards used for hand: Ad Ah Kd Ks 3h 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!							Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -252,7 +248,7 @@ Ad Ah Qd Qs 3h 							Ad Ah Qd Qs 3h
  - 5 cards used for hand: Ad Ah Qd Qs 3h 			 - 5 cards used for hand: Ad Ah Qd Qs 3h 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!							Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -312,7 +308,7 @@ Qs 7d 7s 5c 2d 2h 						Qs 7d 7s 5c 2d 2h
  - 5 cards used for hand: 7d 7s 2d 2h Qs 			 - 5 cards used for hand: 7d 7s 2d 2h Qs 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!							Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -573,6 +569,7 @@ Line_76_did_not_match
 Line_87_did_not_match
 Line_95_did_not_match
 Line_96_did_not_match
+Line_99_did_not_match
 Line_107_did_not_match
 Line_115_did_not_match
 Your file did not match the expected ouput
@@ -686,7 +683,7 @@ Ac 5s 4c 3s 2s 							Ac 5s 4c 3s 2s
  - 5 cards used for hand: 5s 4c 3s 2s Ac 		      |	 - 5 cards used for hand: Ac 5s 4c 3s 2s 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Hand 2 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1503,7 +1500,7 @@ Ac 6c 5c 4c 3c 2c 						Ac 6c 5c 4c 3c 2c
  - 5 cards used for hand: 5c 4c 3c 2c Ac 		      |	 - 5 cards used for hand: Ac 6c 5c 4c 3c 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 1 wins!
+Tie							      |	Hand 2 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
