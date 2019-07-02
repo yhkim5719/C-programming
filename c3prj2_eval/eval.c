@@ -6,10 +6,12 @@
 int card_ptr_comp(const void * vp1, const void * vp2) {
 	const card_t * const * cp1 = vp1;
 	const card_t * const * cp2 = vp2;
-	if ((*cp1)->value == (*cp2)->value) {				
+	if ((*cp1)->value == (*cp2)->value) {
 		return (*cp1)->suit - (*cp2)->suit;
 		}
-	return (*cp2)->value - (*cp1)->value;
+	else {
+		return (*cp2)->value - (*cp1)->value;
+	}
 }
 
 suit_t flush_suit(deck_t * hand) {
@@ -86,31 +88,34 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	}
 }
 
-int is_n_straight_at(deck_t * hand, size_t index, suit_t fs, int n);
-int is_ace_straight_at(deck_t * hand, size_t index, suit_t fs);
-
 hand_eval_t build_hand_from_match(deck_t * hand,
 				  unsigned n,
 				  hand_ranking_t what,
 				  size_t idx) {
 	hand_eval_t ans;
 	ans.ranking = what;
-	for (int i = 0; i < n; ++i) {
-		ans.cards[i] = hand->cards[idx + i];
-	}
-	while (n != 4) {
-		for (int j = 0; j < hand->n_cards; ++j) {
-			if(deck_contains(hand, *(ans.cards[j])) == 0) {
-				ans.cards[n] = hand->cards[j];
+	if (n != 0) {
+		for (int i = 0; i < n; ++i) {
+			ans.cards[i] = hand->cards[idx + i];
+		}
+		for (int i = n; i < 5; ++i) {
+			for (int j = 0; j < hand->n_cards; ++j) {
+				if ( j < idx || j > idx + n - 1) {
+					ans.cards[i] = hand->cards[j];
+				}
 			}
 		}
-		n++;
+	} else {
+		for (int i = 0; i < 5; ++i) {
+			ans.cards[i] = hand->cards[i];
+		}
 	}
 	return ans;
 }
 
+
 void sort_hand(deck_t * hand) {
-	qsort(hand, hand->n_cards, sizeof(deck_t), card_ptr_comp);
+	qsort(hand->cards, hand->n_cards, sizeof(card_t), card_ptr_comp);
 	return;
 }
 
@@ -123,9 +128,11 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 		return eval_hand2.ranking - eval_hand1.ranking;
 	}
 	for (int i = 0; i < 5; ++i) {
-		if (card_ptr_comp(eval_hand1.cards[i], eval_hand2.cards[i]) != 0) {
-			return card_ptr_comp(eval_hand1.cards[i], eval_hand2.cards[i]);
+		int diff = (eval_hand1.cards[i])->value - (eval_hand2.cards[i])->value;
+		if (diff == 0) {
+			diff = (eval_hand2.cards[i])->suit - (eval_hand1.cards[i])->suit; 
 		}
+		return diff;
 	} 
 	return 0;
 }
