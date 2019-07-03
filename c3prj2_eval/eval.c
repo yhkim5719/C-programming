@@ -132,15 +132,16 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 			diff = eval_hand1.cards[i]->value - (eval_hand2.cards[i])->value;
 			if (diff != 0) {
 				return diff;
-			} else {
-				diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
-				if (diff != 0) {
-					return diff;
-				}
-			}	
+			}
 		}
-	} 
-	return diff;
+		for (int i = 0; i < 5; ++i) {
+			diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
+			if (diff != 0) {
+				return diff;
+			}
+		}
+	}
+	return 0;
 }
 
 
