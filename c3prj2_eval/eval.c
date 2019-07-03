@@ -29,9 +29,9 @@ suit_t flush_suit(deck_t * hand) {
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
 	unsigned largest = arr[0];
-	for (size_t i = 1; i < n; ++i) {
-		if (largest < arr[i]) {
-			largest = arr[i];
+	for (size_t i = 0; i < n-1; ++i) {
+		if (largest < arr[i+1]) {
+			largest = arr[i+1];
 		}
 	}
 	return largest;
@@ -132,9 +132,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 			diff = eval_hand1.cards[i]->value - (eval_hand2.cards[i])->value;
 			if (diff == 0) {
 				diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
-				if (diff != 0) {
-					break;
-				}
+				return diff;
 			}
 		}
 	} 
