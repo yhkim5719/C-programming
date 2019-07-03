@@ -1,4 +1,4 @@
-Grading at Wed Jul  3 19:18:18 UTC 2019
+Grading at Wed Jul  3 19:28:38 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -8,6 +8,7 @@ gcc -o test-eval -ggdb3 deck.o deck-c4.o eval-c4.o eval.o test-eval.o cards.o in
 Testcase 1: Trying hands with nothing
  Checking the output 
 Line_19_did_not_match
+Line_39_did_not_match
 Line_59_did_not_match
 Line_99_did_not_match
 Your file did not match the expected ouput
@@ -50,7 +51,7 @@ As Qd 9h 8c 4d 2s 						As Qd 9h 8c 4d 2s
  - 5 cards used for hand: As Qd 9h 8c 4d 			 - 5 cards used for hand: As Qd 9h 8c 4d 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -214,6 +215,7 @@ Line_59_did_not_match
 Line_99_did_not_match
 Line_139_did_not_match
 Line_159_did_not_match
+Line_179_did_not_match
 Line_199_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
@@ -395,7 +397,7 @@ Jc Js 8d 5c 5s 3h 						Jc Js 8d 5c 5s 3h
  - 5 cards used for hand: Jc Js 5c 5s 8d 			 - 5 cards used for hand: Jc Js 5c 5s 8d 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -430,7 +432,6 @@ Line_56_did_not_match
 Line_59_did_not_match
 Line_68_did_not_match
 Line_76_did_not_match
-Line_79_did_not_match
 Line_88_did_not_match
 Line_96_did_not_match
 Line_99_did_not_match
@@ -517,7 +518,7 @@ Qc Qd Qh 7c 5h 3c 						Qc Qd Qh 7c 5h 3c
  - 5 cards used for hand: Qc Qd Qh 7c 5h 		      |	 - 5 cards used for hand: Qc Qd Qh 3c 3c 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 2 wins!
+Tie								Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -570,6 +571,7 @@ Line_47_did_not_match
 Line_48_did_not_match
 Line_55_did_not_match
 Line_56_did_not_match
+Line_59_did_not_match
 Line_67_did_not_match
 Line_68_did_not_match
 Line_75_did_not_match
@@ -646,7 +648,7 @@ Kc Qh Qs Jd Js 0c 0s 9d 					Kc Qh Qs Jd Js 0c 0s 9d
  - 5 cards used for hand: Kc Qh Jd 0c 9d 		      |	 - 5 cards used for hand: Qh Qs Jd Js Kc 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -718,6 +720,8 @@ Tie								Tie
 ============================					============================
 Testcase 6: Trying hands with flushes
  Checking the output 
+Line_19_did_not_match
+Line_59_did_not_match
 Line_99_did_not_match
 Line_119_did_not_match
 Line_139_did_not_match
@@ -725,6 +729,8 @@ Line_159_did_not_match
 Line_179_did_not_match
 Line_199_did_not_match
 Line_219_did_not_match
+Line_239_did_not_match
+Line_259_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
 Hand 1:								Hand 1:
@@ -747,7 +753,7 @@ As Ks Qc Js 0s 3s 						As Ks Qc Js 0s 3s
  - 5 cards used for hand: As Ks Js 0s 3s 			 - 5 cards used for hand: As Ks Js 0s 3s 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -787,7 +793,7 @@ Kc Jc 9c 7h 4c 3h 2c 						Kc Jc 9c 7h 4c 3h 2c
  - 5 cards used for hand: Kc Jc 9c 4c 2c 			 - 5 cards used for hand: Kc Jc 9c 4c 2c 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -967,7 +973,7 @@ Ah Qh 0h 8h 7h 4h 						Ah Qh 0h 8h 7h 4h
  - 5 cards used for hand: Ah Qh 0h 8h 7h 			 - 5 cards used for hand: Ah Qh 0h 8h 7h 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -987,7 +993,7 @@ Ah Qh 0h 8h 5h 4h 						Ah Qh 0h 8h 5h 4h
  - 5 cards used for hand: Ah Qh 0h 8h 5h 			 - 5 cards used for hand: Ah Qh 0h 8h 5h 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1238,20 +1244,21 @@ Jh Js 9d 7c 7h 7s 2c 						Jh Js 9d 7c 7h 7s 2c
  - 5 cards used for hand: 7c 7h 7s Jh Js 			 - 5 cards used for hand: 7c 7h 7s Jh Js 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!						      |	Hand 2 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Testcase 8: Trying hands with 4 of a kind
  Checking the output 
 Line_8_did_not_match
 Line_16_did_not_match
-Line_19_did_not_match
 Line_28_did_not_match
 Line_36_did_not_match
+Line_39_did_not_match
 Line_48_did_not_match
 Line_56_did_not_match
 Line_59_did_not_match
 Line_68_did_not_match
 Line_76_did_not_match
+Line_79_did_not_match
 Line_88_did_not_match
 Line_96_did_not_match
 Line_108_did_not_match
@@ -1276,7 +1283,7 @@ Kc Kd Kh Ks 8c 6d 						Kc Kd Kh Ks 8c 6d
  - 5 cards used for hand: Kc Kd Kh Ks 8c 		      |	 - 5 cards used for hand: Kc Kd Kh Ks 6d 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 1 wins!
+Tie								Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1296,7 +1303,7 @@ Kc Kd Kh Ks 9d 8c 						Kc Kd Kh Ks 9d 8c
  - 5 cards used for hand: Kc Kd Kh Ks 9d 		      |	 - 5 cards used for hand: Kc Kd Kh Ks 8c 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1316,7 +1323,7 @@ As Kc Kd Kh Ks 4d 						As Kc Kd Kh Ks 4d
  - 5 cards used for hand: Kc Kd Kh Ks As 		      |	 - 5 cards used for hand: Kc Kd Kh Ks 4d 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!						      |	Hand 1 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1336,7 +1343,7 @@ Ac As Kc Kd Kh Ks 						Ac As Kc Kd Kh Ks
  - 5 cards used for hand: Kc Kd Kh Ks Ac 		      |	 - 5 cards used for hand: Kc Kd Kh Ks As 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 2 wins!							Hand 2 wins!
+Hand 2 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
@@ -1394,6 +1401,7 @@ Line_79_did_not_match
 Line_87_did_not_match
 Line_95_did_not_match
 Line_96_did_not_match
+Line_99_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
 Hand 1:								Hand 1:
@@ -1511,7 +1519,7 @@ As 5s 4s 3s 2s 							As 5s 4s 3s 2s
  - 5 cards used for hand: 5s 4s 3s 2s As 		      |	 - 5 cards used for hand: As 5s 4s 3s 2s 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Testcase 10: Trying each type of hand ranking
  Checking the output 
@@ -1559,6 +1567,7 @@ Line_768_did_not_match
 Line_776_did_not_match
 Line_788_did_not_match
 Line_807_did_not_match
+Line_819_did_not_match
 Line_827_did_not_match
 Line_836_did_not_match
 Line_839_did_not_match
@@ -2450,7 +2459,7 @@ As Ks Qc Js 0s 3s 						As Ks Qc Js 0s 3s
  - 5 cards used for hand: As Ks Js 0s 3s 			 - 5 cards used for hand: As Ks Js 0s 3s 
 Comparison : 							Comparison : 
 --------------							--------------
-Hand 1 wins!							Hand 1 wins!
+Hand 1 wins!						      |	Tie
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
