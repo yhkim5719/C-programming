@@ -29,9 +29,9 @@ suit_t flush_suit(deck_t * hand) {
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
 	unsigned largest = arr[0];
-	for (size_t i = 0; i < n-1; ++i) {
-		if (largest < arr[i+1]) {
-			largest = arr[i+1];
+	for (size_t i = 0; i < n; ++i) {
+		if (largest < arr[i]) {
+			largest = arr[i];
 		}
 	}
 	return largest;
@@ -59,31 +59,36 @@ ssize_t  find_secondary_pair(deck_t * hand,
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	if (fs == NUM_SUITS) {
-		int n_length = 0;
+		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
 			if (hand->cards[i+1]->value == ref_value-1) {
+				ref_value--;
 				n_length++;
 			}
 		}
 		if (n_length >= 5) {return 1;}
 		if (n_length == 4 && 
 			hand->cards[index]->value == 5 && 		// TODO check the value
-			hand->cards[0]->value == 14) {return -1;}
+			hand->cards[0]->value == VALUE_ACE) {return -1;}
 		return 0;
 	} else {
-		int n_length = 0;
+		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->value == ref_value-1 && hand->cards[i+1]->suit == fs) {
-				n_length++;
+			if (hand->cards[i+1]->value == ref_value-1 && 
+				hand->cards[i]->suit == fs &&
+				hand->cards[i+1]->suit == fs) {
+					ref_value--;
+					n_length++;
 			}
 		}
 		if (n_length >= 5) {return 1;}
 		if (n_length == 4 && 
 			hand->cards[index]->value == 5 && 		// TODO check the value
-			hand->cards[0]->value == 14 &&
-			hand->cards[0]->suit == fs) {return -1;}
+			hand->cards[0]->value == 14  &&
+			hand->cards[0]->suit == fs) 
+			{return -1;}
 		return 0;
 	}
 }
@@ -100,7 +105,8 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		}
 		for (int j = 0; j < hand->n_cards; ++j) {
 			if ( j < idx || j > idx + n - 1) {
-				ans.cards[n++] = hand->cards[j];
+				ans.cards[n] = hand->cards[j];
+				n++;
 				if (n == 5) {
 					break;
 				}
