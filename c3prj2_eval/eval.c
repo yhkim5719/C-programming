@@ -126,14 +126,14 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 	hand_eval_t eval_hand2 = evaluate_hand(hand2);
 	int diff = eval_hand2.ranking - eval_hand1.ranking;
 	if (diff != 0) {
-		return eval_hand2.ranking - eval_hand1.ranking;
+		return diff;
 	} else {
 		for (int i = 0; i < 5; ++i) {
-			diff = (eval_hand2.cards[i])->value - (eval_hand1.cards[i])->value;
+			diff = eval_hand1.cards[i]->value - (eval_hand2.cards[i])->value;
 			if (diff == 0) {
-				diff = (eval_hand1.cards[i])->suit - (eval_hand2.cards[i])->suit; 
+				diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
 				if (diff != 0) {
-					return diff;
+					break;
 				}
 			}
 		}
