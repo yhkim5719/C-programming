@@ -4,9 +4,10 @@
 #include "deck.h"
 void print_hand(deck_t * hand){
 	for (int i = 0; i < hand->n_cards; ++i) {
-//		printf("%c%c ", value_letter(*((*hand).cards[i])), suit_letter(*((*hand).cards[i])));
 		print_card(*(hand->cards[i]));
-		printf(" ");
+		if (i != hand->n_cards) {
+			printf(" ");
+		}
 	}
 }
 
