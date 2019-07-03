@@ -101,8 +101,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 			}
 		}
 		if (n_length == 5 && 
-			hand->cards[index]->value == 14 && 		// TODO check the value
-			hand->cards[index]->suit == fs)
+			hand->cards[index]->value == 14) 		// TODO check the value
+//			hand->cards[index]->suit == fs)
 			{return -1;}
 		return 0;
 	}
