@@ -124,17 +124,21 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 	sort_hand(hand2);
 	hand_eval_t eval_hand1 = evaluate_hand(hand1);
 	hand_eval_t eval_hand2 = evaluate_hand(hand2);
-	if (eval_hand1.ranking != eval_hand2.ranking) {
+	int diff = eval_hand2.ranking - eval_hand1.ranking;
+	if (diff != 0) {
 		return eval_hand2.ranking - eval_hand1.ranking;
-	}
-	for (int i = 0; i < 5; ++i) {
-		int diff = (eval_hand1.cards[i])->value - (eval_hand2.cards[i])->value;
-		if (diff == 0) {
-			diff = (eval_hand1.cards[i])->suit - (eval_hand2.cards[i])->suit; 
+	} else {
+		for (int i = 0; i < 5; ++i) {
+			diff = (eval_hand1.cards[i])->value - (eval_hand2.cards[i])->value;
+			if (diff == 0) {
+				diff = (eval_hand1.cards[i])->suit - (eval_hand2.cards[i])->suit; 
+				if (diff == 0) {
+					continue;
+				}
+			}
 		}
-		return diff;
 	} 
-	return 0;
+	return diff;
 }
 
 
