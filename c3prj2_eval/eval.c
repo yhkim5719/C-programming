@@ -84,9 +84,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->suit != fs) {continue;}
-			if (hand->cards[i+1]->value == ref_value-1 &&
-				hand->cards[i]->suit == fs) {
+			if (hand->cards[i+1]->suit != fs || hand->cards[i]->suit != fs) {continue;}
+			if (hand->cards[i+1]->value == ref_value-1) {
 				ref_value--;
 				n_length++;
 			}
@@ -95,9 +94,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 		n_length = 1;
 		ref_value = 6;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->suit != fs) {continue;}
-			if (hand->cards[i+1]->value == ref_value-1 &&
-				hand->cards[i]->suit ==fs) {
+			if (hand->cards[i+1]->suit != fs || hand->cards[i]->suit != fs) {continue;}
+			if (hand->cards[i+1]->value == ref_value-1) {
 				ref_value--;
 				n_length++;
 			}
