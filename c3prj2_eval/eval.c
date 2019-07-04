@@ -59,7 +59,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	if (fs != NUM_SUITS) {
-		int n_length = 1;
+		int n_length = 0;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
 			if (hand->cards[i]->suit != fs || hand->cards[i+1]->suit != fs) {continue;}
@@ -68,7 +68,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 				n_length++;
 			}
 		}
-		if (n_length >= 5) {return 1;}
+		if (n_length >= 4) {return 1;}
 		n_length = 0;
 		ref_value = 5;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
@@ -79,12 +79,12 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 			}
 		}
 		if (n_length == 4 
-			&& hand->cards[index]->value == 14) 		// TODO check the value
-//			hand->cards[index]->suit == fs)
+			&& hand->cards[index]->value == 14 && 		// TODO check the value
+			hand->cards[index]->suit == fs)
 			{return -1;}
 		return 0;
 	} else {
-		int n_length = 1;
+		int n_length = 0;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
 			if (hand->cards[i+1]->value == ref_value-1) {
@@ -92,7 +92,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 				n_length++;
 			}
 		}
-		if (n_length >= 5) {return 1;}
+		if (n_length >= 4) {return 1;}
 		n_length = 0;
 		ref_value = 5;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
@@ -122,7 +122,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 			if ( j < idx || j > idx + n - 1) {
 				ans.cards[n] = hand->cards[j];
 				n++;
-				if (n > 5) {
+				if (n == 5) {
 					break;
 				}
 			}
