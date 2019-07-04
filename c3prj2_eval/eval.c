@@ -157,7 +157,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 	int diff = eval_hand2.ranking - eval_hand1.ranking;
 	if (diff != 0) {
 		return diff;
-	} else {
+	} else if (eval_hand2.ranking != STRAIGHT_FLUSH) {
 		for (int i = 0; i < 5; ++i) {
 			diff = eval_hand1.cards[i]->value - (eval_hand2.cards[i])->value;
 			if (diff != 0) {
