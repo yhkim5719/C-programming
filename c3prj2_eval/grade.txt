@@ -1,4 +1,4 @@
-Grading at Thu Jul  4 04:33:53 UTC 2019
+Grading at Thu Jul  4 05:07:47 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -11,50 +11,50 @@ Your file matched the expected output
  - Testcase passed
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==656== Memcheck, a memory error detector
-==656== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==656== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==656== Command: ./test-eval inp.2.txt
-==656== Parent PID: 655
-==656== 
-==656== Use of uninitialised value of size 8
-==656==    at 0x400C02: print_hand (deck.c:7)
-==656==    by 0x4028E7: describe_hand (test-eval.c:74)
-==656==    by 0x402AE7: main (test-eval.c:119)
-==656== 
-==656== Invalid read of size 8
-==656==    at 0x400C02: print_hand (deck.c:7)
-==656==    by 0x4028E7: describe_hand (test-eval.c:74)
-==656==    by 0x402AE7: main (test-eval.c:119)
-==656==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==656== 
-==656== 
-==656== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==656==  Access not within mapped region at address 0x0
-==656==    at 0x400C02: print_hand (deck.c:7)
-==656==    by 0x4028E7: describe_hand (test-eval.c:74)
-==656==    by 0x402AE7: main (test-eval.c:119)
-==656==  If you believe this happened as a result of a stack
-==656==  overflow in your program's main thread (unlikely but
-==656==  possible), you can try to increase the size of the
-==656==  main thread stack using the --main-stacksize= flag.
-==656==  The main thread stack size used in this run was 8388608.
-==656== 
-==656== HEAP SUMMARY:
-==656==     in use at exit: 896 bytes in 18 blocks
-==656==   total heap usage: 146 allocs, 128 frees, 11,444 bytes allocated
-==656== 
-==656== LEAK SUMMARY:
-==656==    definitely lost: 0 bytes in 0 blocks
-==656==    indirectly lost: 0 bytes in 0 blocks
-==656==      possibly lost: 0 bytes in 0 blocks
-==656==    still reachable: 896 bytes in 18 blocks
-==656==         suppressed: 0 bytes in 0 blocks
-==656== Rerun with --leak-check=full to see details of leaked memory
-==656== 
-==656== For counts of detected and suppressed errors, rerun with: -v
-==656== Use --track-origins=yes to see where uninitialised values come from
-==656== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==1003== Memcheck, a memory error detector
+==1003== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1003== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1003== Command: ./test-eval inp.2.txt
+==1003== Parent PID: 1002
+==1003== 
+==1003== Use of uninitialised value of size 8
+==1003==    at 0x400C02: print_hand (deck.c:7)
+==1003==    by 0x4028CE: describe_hand (test-eval.c:74)
+==1003==    by 0x402ACE: main (test-eval.c:119)
+==1003== 
+==1003== Invalid read of size 8
+==1003==    at 0x400C02: print_hand (deck.c:7)
+==1003==    by 0x4028CE: describe_hand (test-eval.c:74)
+==1003==    by 0x402ACE: main (test-eval.c:119)
+==1003==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==1003== 
+==1003== 
+==1003== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==1003==  Access not within mapped region at address 0x0
+==1003==    at 0x400C02: print_hand (deck.c:7)
+==1003==    by 0x4028CE: describe_hand (test-eval.c:74)
+==1003==    by 0x402ACE: main (test-eval.c:119)
+==1003==  If you believe this happened as a result of a stack
+==1003==  overflow in your program's main thread (unlikely but
+==1003==  possible), you can try to increase the size of the
+==1003==  main thread stack using the --main-stacksize= flag.
+==1003==  The main thread stack size used in this run was 8388608.
+==1003== 
+==1003== HEAP SUMMARY:
+==1003==     in use at exit: 896 bytes in 18 blocks
+==1003==   total heap usage: 146 allocs, 128 frees, 11,444 bytes allocated
+==1003== 
+==1003== LEAK SUMMARY:
+==1003==    definitely lost: 0 bytes in 0 blocks
+==1003==    indirectly lost: 0 bytes in 0 blocks
+==1003==      possibly lost: 0 bytes in 0 blocks
+==1003==    still reachable: 896 bytes in 18 blocks
+==1003==         suppressed: 0 bytes in 0 blocks
+==1003== Rerun with --leak-check=full to see details of leaked memory
+==1003== 
+==1003== For counts of detected and suppressed errors, rerun with: -v
+==1003== Use --track-origins=yes to see where uninitialised values come from
+==1003== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Your file matched the expected output
@@ -81,13 +81,6 @@ Your file matched the expected output
  - Testcase passed
 Testcase 9: Trying hands with straight flushes
  Checking the output 
-Line_54_did_not_match
-Line_57_did_not_match
-Line_64_did_not_match
-Line_67_did_not_match
-Line_77_did_not_match
-Line_80_did_not_match
-Line_81_did_not_match
 Line_94_did_not_match
 Your file did not match the expected ouput
  - Output did not match, testcase failed
@@ -144,20 +137,20 @@ Hand 1:								Hand 1:
 Ac As Kc Ks Qs Js 0s 						Ac As Kc Ks Qs Js 0s 
  - Flush in suit s						 - Flush in suit s
  - Straight at index 0						 - Straight at index 0
- - Straight flush at index 1				      |	 - Straight at index 1
+ - Straight flush at index 1					 - Straight flush at index 1
  - The most of a kind is 2 of a kind (at index 0 / value A)	 - The most of a kind is 2 of a kind (at index 0 / value A)
  - Secondary pair at index 2 (value K)				 - Secondary pair at index 2 (value K)
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
+ - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
  - 5 cards used for hand: As Ks Qs Js 0s 			 - 5 cards used for hand: As Ks Qs Js 0s 
 Hand 2:								Hand 2:
 --------							--------
 Ad Kh Qh Jh Js 0h 9h 						Ad Kh Qh Jh Js 0h 9h 
  - Flush in suit h						 - Flush in suit h
  - Straight at index 0						 - Straight at index 0
- - Straight flush at index 1				      |	 - Straight at index 1
+ - Straight flush at index 1					 - Straight flush at index 1
  - The most of a kind is 2 of a kind (at index 3 / value J)	 - The most of a kind is 2 of a kind (at index 3 / value J)
  - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
+ - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
  - 5 cards used for hand: Kh Qh Jh 0h 9h 			 - 5 cards used for hand: Kh Qh Jh 0h 9h 
 Comparison : 							Comparison : 
 --------------							--------------
@@ -167,11 +160,11 @@ Hand 1:								Hand 1:
 --------							--------
 Ah Kc 5h 4h 3h 2h 						Ah Kc 5h 4h 3h 2h 
  - Flush in suit h						 - Flush in suit h
- - Straight flush at index 0				      |	 - Straight at index 0
+ - Straight flush at index 0					 - Straight flush at index 0
  - The most of a kind is 1 of a kind (at index 0 / value A)	 - The most of a kind is 1 of a kind (at index 0 / value A)
  - No secondary pair						 - No secondary pair
- - evaluate_hand's ranking: STRAIGHT_FLUSH		      |	 - evaluate_hand's ranking: FLUSH
- - 5 cards used for hand: 5h 4h 3h 2h Ah 		      |	 - 5 cards used for hand: Ah 5h 4h 3h 2h 
+ - evaluate_hand's ranking: STRAIGHT_FLUSH			 - evaluate_hand's ranking: STRAIGHT_FLUSH
+ - 5 cards used for hand: 5h 4h 3h 2h Ah 			 - 5 cards used for hand: 5h 4h 3h 2h Ah 
 Hand 2:								Hand 2:
 --------							--------
 Ac 6c 5c 4c 3c 2c 						Ac 6c 5c 4c 3c 2c 
@@ -184,7 +177,7 @@ Ac 6c 5c 4c 3c 2c 						Ac 6c 5c 4c 3c 2c
  - 5 cards used for hand: 5c 4c 3c 2c Ac 			 - 5 cards used for hand: 5c 4c 3c 2c Ac 
 Comparison : 							Comparison : 
 --------------							--------------
-Tie							      |	Hand 2 wins!
+Tie							      |	Hand 1 wins!
 ============================					============================
 Hand 1:								Hand 1:
 --------							--------
