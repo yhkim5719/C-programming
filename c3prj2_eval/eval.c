@@ -7,7 +7,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 	const card_t * const * cp1 = vp1;
 	const card_t * const * cp2 = vp2;
 	if ((*cp1)->value == (*cp2)->value) {
-		return (*cp1)->suit - (*cp2)->suit;
+		return (*cp2)->suit - (*cp1)->suit;
 		}
 	else {
 		return (*cp2)->value - (*cp1)->value;
@@ -58,29 +58,7 @@ ssize_t  find_secondary_pair(deck_t * hand,
 }
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
-	if (fs == NUM_SUITS) {
-		int n_length = 1;
-		int ref_value = hand->cards[index]->value;
-		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->value == ref_value-1) {
-				ref_value--;
-				n_length++;
-			}
-		}
-		if (n_length >= 5) {return 1;}
-		n_length = 1;
-		ref_value = 6;
-		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->value == ref_value-1) {
-				ref_value--;
-				n_length++;
-			}
-		}
-		if (n_length == 5 && 
-			hand->cards[index]->value == 14)		// TODO check the value
-			{return -1;}
-		return 0;
-	} else {
+	if (fs != NUM_SUITS) {
 		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
@@ -103,6 +81,28 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 		if (n_length == 5 && 
 			hand->cards[index]->value == 14) 		// TODO check the value
 //			hand->cards[index]->suit == fs)
+			{return -1;}
+		return 0;
+	} else {
+		int n_length = 1;
+		int ref_value = hand->cards[index]->value;
+		for (size_t i = index; i < hand->n_cards-1; ++i) {
+			if (hand->cards[i+1]->value == ref_value-1) {
+				ref_value--;
+				n_length++;
+			}
+		}
+		if (n_length >= 5) {return 1;}
+		n_length = 1;
+		ref_value = 6;
+		for (size_t i = index; i < hand->n_cards-1; ++i) {
+			if (hand->cards[i+1]->value == ref_value-1) {
+				ref_value--;
+				n_length++;
+			}
+		}
+		if (n_length == 5 && 
+			hand->cards[index]->value == 14)		// TODO check the value
 			{return -1;}
 		return 0;
 	}
