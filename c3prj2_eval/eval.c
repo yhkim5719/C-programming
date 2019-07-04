@@ -7,7 +7,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 	const card_t * const * cp1 = vp1;
 	const card_t * const * cp2 = vp2;
 	if ((*cp1)->value == (*cp2)->value) {
-		return (*cp2)->suit - (*cp1)->suit;
+		return (*cp1)->suit - (*cp2)->suit;
 		}
 	else {
 		return (*cp2)->value - (*cp1)->value;
@@ -122,7 +122,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 			if ( j < idx || j > idx + n - 1) {
 				ans.cards[n] = hand->cards[j];
 				n++;
-				if (n == 5) {
+				if (n >= 5) {
 					break;
 				}
 			}
@@ -157,7 +157,7 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 	int diff = eval_hand2.ranking - eval_hand1.ranking;
 	if (diff != 0) {
 		return diff;
-	} else if (eval_hand2.ranking != STRAIGHT_FLUSH) {
+	} else {
 		for (int i = 0; i < 5; ++i) {
 			diff = eval_hand1.cards[i]->value - (eval_hand2.cards[i])->value;
 			if (diff != 0) {
