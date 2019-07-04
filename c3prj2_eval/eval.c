@@ -17,7 +17,7 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 suit_t flush_suit(deck_t * hand) {
 	suit_t suit_count[4] = {0};
 	for (int i = 0; i < hand->n_cards; ++i) {
-		suit_count[(hand->cards[i])->suit]++;
+		suit_count[hand->cards[i]->suit]++;
 	}
 	for (int i = 0; i < NUM_SUITS; ++i) {
 		if (suit_count[i] >= 5) {
@@ -59,32 +59,32 @@ ssize_t  find_secondary_pair(deck_t * hand,
 
 int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 	if (fs != NUM_SUITS) {
-		int n_length = 0;
+		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i]->suit != fs || hand->cards[i+1]->suit != fs) {continue;}
+			if (hand->cards[i]->suit != fs ||  hand->cards[i+1]->suit != fs) {continue;}
 			if (hand->cards[i+1]->value == ref_value-1 && hand->cards[i+1]->suit ==fs) {
 				ref_value--;
 				n_length++;
 			}
 		}
-		if (n_length >= 4) {return 1;}
-		n_length = 0;
+		if (n_length >= 5) {return 1;}
+		n_length = 1;
 		ref_value = 5;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
-			if (hand->cards[i+1]->suit != fs || hand->cards[i+1]->suit != fs) {continue;}
+			if (hand->cards[i]->suit != fs || hand->cards[i+1]->suit != fs) {continue;}
 			if (hand->cards[i+1]->value == ref_value && hand->cards[i+1]->suit ==fs) {
 				ref_value--;
 				n_length++;
 			}
 		}
-		if (n_length == 4 
+		if (n_length == 5 
 			&& hand->cards[index]->value == 14 && 		// TODO check the value
 			hand->cards[index]->suit == fs)
 			{return -1;}
 		return 0;
 	} else {
-		int n_length = 0;
+		int n_length = 1;
 		int ref_value = hand->cards[index]->value;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
 			if (hand->cards[i+1]->value == ref_value-1) {
@@ -92,8 +92,8 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 				n_length++;
 			}
 		}
-		if (n_length >= 4) {return 1;}
-		n_length = 0;
+		if (n_length >= 5) {return 1;}
+		n_length = 1;
 		ref_value = 5;
 		for (size_t i = index; i < hand->n_cards-1; ++i) {
 			if (hand->cards[i+1]->value == ref_value) {
@@ -101,7 +101,7 @@ int is_straight_at(deck_t * hand, size_t index, suit_t fs) {
 				n_length++;
 			}
 		}
-		if (n_length == 4 
+		if (n_length == 5 
 			&& hand->cards[index]->value == 14)		// TODO check the value
 			{return -1;}
 		return 0;
