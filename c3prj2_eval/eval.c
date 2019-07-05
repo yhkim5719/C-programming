@@ -48,7 +48,7 @@ size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
 ssize_t  find_secondary_pair(deck_t * hand,
 			     unsigned * match_counts,
 			     size_t match_idx) {
-	for (size_t i = /*0 */ match_idx + 1; i < hand->n_cards; ++i) {
+	for (size_t i = match_idx/* +1 */; i < hand->n_cards; ++i) {
 		if (match_counts[i] > 1 &&
 			hand->cards[i]->value != hand->cards[match_idx]->value) {
 			return i;
