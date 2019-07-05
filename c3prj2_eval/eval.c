@@ -29,16 +29,16 @@ suit_t flush_suit(deck_t * hand) {
 
 unsigned get_largest_element(unsigned * arr, size_t n) {
 	unsigned largest = arr[0];
-	for (size_t i = 1; i < n; ++i) {
-		if (largest < arr[i]) {
-			largest = arr[i];
+	for (size_t i = 0; i < n-1; ++i) {
+		if (largest < arr[i+1]) {
+			largest = arr[i+1];
 		}
 	}
 	return largest;
 }
 
 size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
-	for (size_t i = 0; i < n; ++i) {
+	for (size_t i = 0; i < n-1; ++i) {
 		if (match_counts[i] == n_of_akind) {
 		return i;
 		}
