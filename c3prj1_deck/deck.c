@@ -12,10 +12,11 @@ void print_hand(deck_t * hand){
 }
 
 int deck_contains(deck_t * d, card_t c) {
-	assert(d->n_cards == 0);
-	for (int i = 0; i < d->n_cards; ++i) {
-		if ((*(d->cards[i])).value == c.value && (*(d->cards[i])).suit == c.suit) {
-			return 1;
+	if (d->n_cards != 0) {
+		for (int i = 0; i < d->n_cards; ++i) {
+			if ((*(d->cards[i])).value == c.value && (*(d->cards[i])).suit == c.suit) {
+				return 1;
+			}
 		}
 	}
   	return 0;
