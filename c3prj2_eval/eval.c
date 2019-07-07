@@ -141,7 +141,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 
 
 void sort_hand(deck_t * hand) {
-	qsort(hand->cards, hand->n_cards - 1, sizeof(card_t), card_ptr_comp);
+	qsort(hand->cards, hand->n_cards + 1, sizeof(card_t), card_ptr_comp);
 	return;
 }
 
