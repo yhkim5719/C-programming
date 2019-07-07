@@ -9,9 +9,9 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 	if ((*cp1)->value == (*cp2)->value) {
 		return (*cp2)->suit - (*cp1)->suit;
 		}
-	else {
-		return (*cp2)->value - (*cp1)->value;
-	}
+//	else {
+	return (*cp2)->value - (*cp1)->value;
+//	}
 }
 
 suit_t flush_suit(deck_t * hand) {
@@ -121,12 +121,12 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		for (int i = 0; i < n; ++i) {
 			ans.cards[i] = hand->cards[idx + i];
 		}
-		if (n == 5) {return ans;}
-		for (int j = 0; j < hand->n_cards; ++j) {
-			if ( j < idx || j > idx + n - 1) {
-				ans.cards[n] = hand->cards[j];
+		if (n >= 5) {return ans;}
+		for (int i = 0; i < hand->n_cards; ++i) {
+			if ( i < idx || i > idx + n - 1) {
+				ans.cards[n] = hand->cards[i];
 				n++;
-				if (n == 5) {
+				if (n >= 5) {
 					return ans;
 				}
 			}
@@ -169,12 +169,6 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 				return diff;
 			}
 		}
-//		for (int i = 0; i < 5; ++i) {
-//			diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
-//			if (diff != 0) {
-//				return diff;
-//			}
-//		}
 	}
 	return 0;
 }
