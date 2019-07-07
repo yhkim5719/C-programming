@@ -1,4 +1,4 @@
-Grading at Sun Jul  7 16:07:55 UTC 2019
+Grading at Sun Jul  7 17:44:29 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -11,50 +11,50 @@ Your file matched the expected output
  - Testcase passed
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==168== Memcheck, a memory error detector
-==168== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==168== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==168== Command: ./test-eval inp.2.txt
-==168== Parent PID: 167
-==168== 
-==168== Use of uninitialised value of size 8
-==168==    at 0x400C02: print_hand (deck.c:7)
-==168==    by 0x402912: describe_hand (test-eval.c:74)
-==168==    by 0x402B12: main (test-eval.c:119)
-==168== 
-==168== Invalid read of size 8
-==168==    at 0x400C02: print_hand (deck.c:7)
-==168==    by 0x402912: describe_hand (test-eval.c:74)
-==168==    by 0x402B12: main (test-eval.c:119)
-==168==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==168== 
-==168== 
-==168== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==168==  Access not within mapped region at address 0x0
-==168==    at 0x400C02: print_hand (deck.c:7)
-==168==    by 0x402912: describe_hand (test-eval.c:74)
-==168==    by 0x402B12: main (test-eval.c:119)
-==168==  If you believe this happened as a result of a stack
-==168==  overflow in your program's main thread (unlikely but
-==168==  possible), you can try to increase the size of the
-==168==  main thread stack using the --main-stacksize= flag.
-==168==  The main thread stack size used in this run was 8388608.
-==168== 
-==168== HEAP SUMMARY:
-==168==     in use at exit: 896 bytes in 18 blocks
-==168==   total heap usage: 146 allocs, 128 frees, 11,444 bytes allocated
-==168== 
-==168== LEAK SUMMARY:
-==168==    definitely lost: 0 bytes in 0 blocks
-==168==    indirectly lost: 0 bytes in 0 blocks
-==168==      possibly lost: 0 bytes in 0 blocks
-==168==    still reachable: 896 bytes in 18 blocks
-==168==         suppressed: 0 bytes in 0 blocks
-==168== Rerun with --leak-check=full to see details of leaked memory
-==168== 
-==168== For counts of detected and suppressed errors, rerun with: -v
-==168== Use --track-origins=yes to see where uninitialised values come from
-==168== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==654== Memcheck, a memory error detector
+==654== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==654== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==654== Command: ./test-eval inp.2.txt
+==654== Parent PID: 653
+==654== 
+==654== Use of uninitialised value of size 8
+==654==    at 0x400C02: print_hand (deck.c:7)
+==654==    by 0x402912: describe_hand (test-eval.c:74)
+==654==    by 0x402B12: main (test-eval.c:119)
+==654== 
+==654== Invalid read of size 8
+==654==    at 0x400C02: print_hand (deck.c:7)
+==654==    by 0x402912: describe_hand (test-eval.c:74)
+==654==    by 0x402B12: main (test-eval.c:119)
+==654==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==654== 
+==654== 
+==654== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==654==  Access not within mapped region at address 0x0
+==654==    at 0x400C02: print_hand (deck.c:7)
+==654==    by 0x402912: describe_hand (test-eval.c:74)
+==654==    by 0x402B12: main (test-eval.c:119)
+==654==  If you believe this happened as a result of a stack
+==654==  overflow in your program's main thread (unlikely but
+==654==  possible), you can try to increase the size of the
+==654==  main thread stack using the --main-stacksize= flag.
+==654==  The main thread stack size used in this run was 8388608.
+==654== 
+==654== HEAP SUMMARY:
+==654==     in use at exit: 896 bytes in 18 blocks
+==654==   total heap usage: 146 allocs, 128 frees, 11,444 bytes allocated
+==654== 
+==654== LEAK SUMMARY:
+==654==    definitely lost: 0 bytes in 0 blocks
+==654==    indirectly lost: 0 bytes in 0 blocks
+==654==      possibly lost: 0 bytes in 0 blocks
+==654==    still reachable: 896 bytes in 18 blocks
+==654==         suppressed: 0 bytes in 0 blocks
+==654== Rerun with --leak-check=full to see details of leaked memory
+==654== 
+==654== For counts of detected and suppressed errors, rerun with: -v
+==654== Use --track-origins=yes to see where uninitialised values come from
+==654== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Your file matched the expected output
