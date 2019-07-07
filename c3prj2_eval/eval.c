@@ -9,9 +9,9 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
 	if ((*cp1)->value == (*cp2)->value) {
 		return (*cp2)->suit - (*cp1)->suit;
 		}
-//	else {
-	return (*cp2)->value - (*cp1)->value;
-//	}
+	else {
+		return (*cp2)->value - (*cp1)->value;
+	}
 }
 
 suit_t flush_suit(deck_t * hand) {
@@ -45,9 +45,9 @@ size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
 	}
 	return -1;
 }
-ssize_t  find_secondary_pair(deck_t * hand,
-			     unsigned * match_counts,
-			     size_t match_idx) {
+ssize_t find_secondary_pair(deck_t * hand,
+			    unsigned * match_counts,
+			    size_t match_idx) {
 	for (size_t i = 0; i < hand->n_cards; ++i) {
 		if (match_counts[i] > 1 &&
 			hand->cards[i]->value != hand->cards[match_idx]->value) {
@@ -124,9 +124,9 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		if (n == 5) {return ans;}
 		for (int i = n; i < hand->n_cards; ++i) {
 			if ( i < idx || i > idx + n - 1) {
-				ans.cards[n] = hand->cards[i];
-				n++;
-				if (n >= 5) {
+				ans.cards[n++] = hand->cards[i];
+//				n++;
+				if (n == 5) {
 					return ans;
 				}
 			}
