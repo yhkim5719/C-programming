@@ -38,7 +38,7 @@ unsigned get_largest_element(unsigned * arr, size_t n) {
 }
 
 size_t get_match_index(unsigned * match_counts, size_t n,unsigned n_of_akind){
-	for (size_t i = 0; i < n-1; ++i) {
+	for (size_t i = 0; i < n; ++i) {
 		if (match_counts[i] == n_of_akind) {
 		return i;
 		}
@@ -169,12 +169,12 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 				return diff;
 			}
 		}
-		for (int i = 0; i < 5; ++i) {
-			diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
-			if (diff != 0) {
-				return diff;
-			}
-		}
+//		for (int i = 0; i < 5; ++i) {
+//			diff = eval_hand2.cards[i]->suit - (eval_hand1.cards[i])->suit; 
+//			if (diff != 0) {
+//				return diff;
+//			}
+//		}
 	}
 	return 0;
 }
