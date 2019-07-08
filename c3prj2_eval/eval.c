@@ -124,7 +124,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		if (i < idx || i > idx + n - 1) {
 			ans.cards[n] = hand->cards[i];
 			n++;
-			if (n >=5) {break;}
+			if (n ==5) {break;}
 		}
 	}	
 /*	if (n != 0) {
