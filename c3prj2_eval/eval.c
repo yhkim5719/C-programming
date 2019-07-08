@@ -117,6 +117,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  size_t idx) {
 	hand_eval_t ans;
 	ans.ranking = what;
+	unsigned num_copy = n;
 	if (n == 0 && idx == 0) {
 		for (int i = 0; i < 5; ++i) {
 			ans.cards[i] = hand->cards[i];
@@ -130,9 +131,9 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		if (n >= 5) {break;}
 		if (i < idx) {
 			ans.cards[n] = hand->cards[i];
-		} else if ( idx <= i && i <= idx + n - 1) {
+		} else if ( idx <= i && i <= idx + num_copy - 1) {
 			continue;
-		} else if (i > idx + n - 1) {
+		} else if (i > idx + num_copy - 1) {
 			ans.cards[n] = hand->cards[i];
 		}
 		n++;
