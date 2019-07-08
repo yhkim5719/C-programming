@@ -34,3 +34,4 @@ As Qs Js 0s 9s 0d 9h; Ad Kd Qd Jd 6d 0d 9h
 As Qs Js 0s 9s 9d 9h; Ad Kd Qd Jd 6d 9d 9h
 As Ad Ah Ac Ks Jd 0h; Qs Qd Qh Qc Js Jd 0h
 As Ad Ah Ac Ks Jd Jh; Qs Qd Qh Qc Js Jd Jh
+As As 8h 6s Ks 0d Jh; As As Jh 0c 7c 9d 5h
