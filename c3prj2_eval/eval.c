@@ -117,15 +117,25 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  size_t idx) {
 	hand_eval_t ans;
 	ans.ranking = what;
+	if (n == 0 && idx == 0) {
+		for (int i = 0; i < 5; ++i) {
+			ans.cards[i] = hand->cards[i];
+		}
+	return ans;
+	}
 	for (int i = 0; i < n; ++i) {
 		ans.cards[i] = hand->cards[i + idx];
 	}
 	for (int i = n; i < hand->n_cards; ++i) {
 		if (n >= 5) {break;}
-		if (i < idx || i > idx + n - 1) {
+		if (i < idx) {
 			ans.cards[n] = hand->cards[i];
-			n++;
+		} else if ( idx <= i && i <= idx + n - 1) {
+			continue;
+		} else if (i > idx + n - 1) {
+			ans.cards[n] = hand->cards[i];
 		}
+		n++;
 	}	
 /*	if (n != 0) {
 		for (int i = 0; i < n; ++i) {
