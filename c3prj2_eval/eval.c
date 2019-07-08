@@ -124,8 +124,8 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 		if (n == 5) {return ans;}
 		for (int i = n; i < hand->n_cards; ++i) {
 			if ( i < idx || i > idx + n - 1) {
-				ans.cards[n++] = hand->cards[i];
-//				n++;
+				ans.cards[n] = hand->cards[i];
+				n++;
 				if (n == 5) {
 					return ans;
 				}
@@ -142,7 +142,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 
 void sort_hand(deck_t * hand) {
 	qsort(hand->cards, hand->n_cards, sizeof(card_t), card_ptr_comp);
-//	return;
+	return;
 }
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
