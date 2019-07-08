@@ -117,7 +117,17 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 				  size_t idx) {
 	hand_eval_t ans;
 	ans.ranking = what;
-	if (n != 0) {
+	for (int i = 0; i < n; ++i) {
+		ans.cards[i] = hand->cards[i + idx];
+	}
+	for (int i = n; i < hand->n_cards; ++i) {
+		if (i <= idx || i >= idx + n - 1) {
+			ans.cards[n] = hand->cards[i];
+			n++;
+			if (n >=5) {break;}
+		}
+	}	
+/*	if (n != 0) {
 		for (int i = 0; i < n; ++i) {
 			ans.cards[i] = hand->cards[idx + i];
 		}
@@ -136,6 +146,7 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 			ans.cards[i] = hand->cards[i];
 		}
 	}
+*/
 	return ans;
 }	
 
@@ -146,8 +157,16 @@ void sort_hand(deck_t * hand) {
 }
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
+//	print_hand(hand1);	// TODO
+//	printf("\n");
+//	print_hand(hand2);	// TODO
+//	printf("\n");
 	sort_hand(hand1);
 	sort_hand(hand2);
+//	print_hand(hand1);	// TODO
+//	printf("\n");
+//	print_hand(hand2);	// TODO
+//	printf("\n");
 	hand_eval_t eval_hand1 = evaluate_hand(hand1);
 	hand_eval_t eval_hand2 = evaluate_hand(hand2);
 	int diff = eval_hand2.ranking - eval_hand1.ranking;
