@@ -19,11 +19,12 @@ int count_freq (FILE* input) {
 			idx = i+1;
 		}
 	}
-	printf("max = %d\n", max);
-	printf("idx = %d\n", idx);
+//	printf("max = %d\n", max);
+//	printf("idx = %d\n", idx);
 	return idx;
 	}
 
+/*
 void print_encrypt (FILE* input, int freq) {
 	int c;
 	while ((c = fgetc(input)) != EOF) {
@@ -34,6 +35,7 @@ void print_encrypt (FILE* input, int freq) {
 	}
 	return;
 	}
+*/
 
 int main (int argc, char** argv) {
 	if (argc != 2) {
@@ -46,7 +48,8 @@ int main (int argc, char** argv) {
 		EXIT_FAILURE;
 	}
 	int freq = count_freq (f);
-	print_encrypt (f, freq);
+	printf("%d", freq);
+//	print_encrypt (f, freq);
 		
 	return 0;
 	}
