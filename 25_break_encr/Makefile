@@ -1,2 +1,2 @@
-breaker : breaker.c
-	  gcc -g breaker.c
+make : breaker.c
+	gcc -o breaker -g breaker.c
