@@ -5,6 +5,7 @@ int count_freq (FILE* input) {
 	int count[26] = {0};
 	int c;
 	while ((c = fgetc(input)) != EOF) {
+//	if (c == EOF) {return 9999;}		//TODO 	
 		if (isalpha(c)) {
 			tolower(c);
 			c -='a';
@@ -14,14 +15,14 @@ int count_freq (FILE* input) {
 	int max = count[0];
 	int idx = 0;
 	for (int i = 0; i < 25; i++) {
-		if (max <= count[i+1]) {
+		if (max < count[i+1]) {
 			max = count[i+1];
 			idx = i+1;
 		}
 	}
 //	printf("max = %d\n", max);
 //	printf("idx = %d\n", idx);
-	return idx;
+	return 'e' - 'a' + idx;
 	}
 
 /*
@@ -48,7 +49,7 @@ int main (int argc, char** argv) {
 		EXIT_FAILURE;
 	}
 	int freq = count_freq (f);
-	printf("%d", freq);
+	printf("%d\n", freq);
 //	print_encrypt (f, freq);
 		
 	return 0;
