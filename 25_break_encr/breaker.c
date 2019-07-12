@@ -12,13 +12,16 @@ int count_freq (FILE* input) {
 		}
 	}
 	int max = count[0];
+	int idx = 0;
 	for (int i = 0; i < 25; i++) {
 		if (max <= count[i+1]) {
 			max = count[i+1];
+			idx = i+1;
 		}
 	}
 	printf("max = %d\n", max);
-	return max+1;
+	printf("idx = %d\n", idx);
+	return idx;
 	}
 
 void print_encrypt (FILE* input, int freq) {
