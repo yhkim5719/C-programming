@@ -1,42 +1,47 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int count_freq (FILE* input) {
 	int count[26] = {0};
 	int c;
-	while ((c = fgetc(input)) != EOF) {
-//	if (c == EOF) {return 9999;}		//TODO 	
+	c = fgetc(input);
+	if (c == EOF) {EXIT_FAILURE;}
+	while (c != EOF) {
 		if (isalpha(c)) {
 			tolower(c);
 			c -='a';
 			count[c]++;
 		}
+		c = fgetc(input);
 	}
 	int max = count[0];
 	int idx = 0;
 	for (int i = 0; i < 25; i++) {
+		printf("count[%d] = %d\t", i, count[i]);	//TODO
 		if (max < count[i+1]) {
 			max = count[i+1];
 			idx = i+1;
 		}
 	}
-//	printf("max = %d\n", max);
-//	printf("idx = %d\n", idx);
 	return 'e' - 'a' + idx;
 	}
 
-/*
-void print_encrypt (FILE* input, int freq) {
+
+void decrypt (FILE* input, int key) {
 	int c;
 	while ((c = fgetc(input)) != EOF) {
 		if (isalpha(c)) {
-			c += freq;
+//			tolower(c);
+//			c -= 'a';
+			c += key;
+//			c %= 26;
+//			c += 'a';
 			printf ("%c", c);
 		}
 	}
 	return;
-	}
-*/
+}
 
 int main (int argc, char** argv) {
 	if (argc != 2) {
@@ -45,12 +50,13 @@ int main (int argc, char** argv) {
 	}
 	FILE* f = fopen (argv[1], "r"); 
 	if (f == NULL) {
-		fprintf (stderr, "cannot open file.");
+		perror ("cannot open file.");
+//		fprintf (stderr, "cannot open file.");
 		EXIT_FAILURE;
 	}
-	int freq = count_freq (f);
-	printf("%d\n", freq);
-//	print_encrypt (f, freq);
+	int key = count_freq (f);
+	printf("%d\n", key);
+	decrypt (f, key);
 		
 	return 0;
-	}
+}
