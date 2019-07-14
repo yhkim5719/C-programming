@@ -123,17 +123,17 @@ int count_freq(FILE * f) {
 	}
 	int max = count[0];
 	int idx = 0;
-	for (int i = 0; i < 25; i++) {
+	for (int i = 0; i <= 25; i++) {
 		printf("count[%d] = %d\n", i, count[i]);	//TODO
 		if (max < count[i+1]) {
 			max = count[i+1];
 			idx = i+1;
-			printf("max = %d\n", max);
-			printf("idx = %d\n", idx);
+//			printf("max = %d\n", max);
+//			printf("idx = %d\n", idx);
 		}
 	}
-	printf ("idx = %d\n", 'e' - 'a' + idx);
-	return 'e' - 'a' + idx;
+//	printf ("idx = %d\n", 'e' - 'a' + idx);
+	return idx - 'e' + 'a';
 }
 	
 void decrypt(FILE * f, int key) {    
@@ -142,7 +142,7 @@ void decrypt(FILE * f, int key) {
     if (isalpha(c)) {            
       c = tolower(c);            
       c -= 'a';            
-      c += key;            
+      c -= key;            
       c %= 26;            
       c += 'a';        
     }        
