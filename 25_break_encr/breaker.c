@@ -2,6 +2,111 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+int lower_char (char c) {
+	switch(c) {
+		case 'A':
+			return 'a';
+		case 'a':
+			return 'a';
+		case 'B':
+			return 'b';
+		case 'b':
+			return 'b';
+		case 'C':
+			return 'c';
+		case 'c':
+			return 'c';
+		case 'D':
+			return 'd';
+		case 'd':
+			return 'd';
+		case 'E':
+			return 'e';
+		case 'e':
+			return 'e';
+		case 'F':
+			return 'f';
+		case 'f':
+			return 'f';
+		case 'G':
+			return 'g';
+		case 'g':
+			return 'g';
+		case 'H':
+			return 'h';
+		case 'h':
+			return 'h';
+		case 'I':
+			return 'i';
+		case 'i':
+			return 'i';
+		case 'J':
+			return 'j';
+		case 'j':
+			return 'j';
+		case 'K':
+			return 'k';
+		case 'k':
+			return 'k';
+		case 'L':
+			return 'l';
+		case 'l':
+			return 'l';
+		case 'M':
+			return 'm';
+		case 'm':
+			return 'm';
+		case 'N':
+			return 'n';
+		case 'n':
+			return 'n';
+		case 'O':
+			return 'o';
+		case 'o':
+			return 'o';
+		case 'P':
+			return 'p';
+		case 'p':
+			return 'p';	//TODO
+		case 'Q':
+			return 'q';
+		case 'q':
+			return 'q';
+		case 'R':
+			return 'r';
+		case 'r':
+			return 'r';
+		case 'S':
+			return 's';
+		case 's':
+			return 's';
+		case 'T':
+			return 't';
+		case 't':
+			return 't';
+		case 'U':
+			return 'u';
+		case 'u':
+			return 'u';
+		case 'W':
+			return 'w';
+		case 'w':
+			return 'w';
+		case 'X':
+			return 'x';
+		case 'x':
+			return 'x';
+		case 'Y':
+			return 'y';
+		case 'y':
+			return 'y';
+		case 'Z':
+			return 'z';
+		case 'z':
+			return 'z';
+		}
+}
+
 int count_freq(FILE * f) {
 	int count[26] = {0};
 	int c;
@@ -9,7 +114,8 @@ int count_freq(FILE * f) {
 	if (c == EOF) {EXIT_FAILURE;}
 	while (c != EOF) {
 		if (isalpha(c)) {
-			tolower(c);
+			c = lower_char(c);
+//			tolower(c);
 			c -='a';
 			count[c]++;
 		}
@@ -24,7 +130,7 @@ int count_freq(FILE * f) {
 			idx = i+1;
 		}
 	}
-//	printf ("idx = %d\n", idx);
+	printf ("idx = %d\n", idx);
 	return 'e' - 'a' + idx;
 }
 	
