@@ -145,9 +145,10 @@ void decrypt(FILE * f, int key) {
       c -= 'a';            
       c -= key;            
       c %= 26;            
-      c += 'a';        
-    }        
-    printf("%c", c);    
+      c += 'a';                
+      printf("%c", c);
+    }
+    continue;
   }
 }
 
@@ -167,7 +168,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;  
   }
   int key = count_freq(f);  
-  decrypt(f,key);  
+  decrypt(f, key);  
   if (fclose(f) != 0) {    
     perror("Failed to close the input file!");    
     return EXIT_FAILURE;  
