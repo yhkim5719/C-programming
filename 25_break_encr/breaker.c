@@ -104,11 +104,11 @@ int lower_char (char c) {
 			return 'z';
 		case 'z':
 			return 'z';
-		}
+	}
 }
 
 int count_freq(FILE * f) {
-	int count[28] = {0};
+	int count[27] = {0};
 	int c;
 	c = fgetc(f);
 	if (c == EOF) {EXIT_FAILURE;}
@@ -123,7 +123,7 @@ int count_freq(FILE * f) {
 	}
 	int max = count[0];
 	int idx = 0;
-	for (int i = 0; i < 26; i++) {
+	for (int i = 0; i <= 25; i++) {
 		printf("count[%d] = %d\n", i, count[i]);	//TODO
 		if (max < count[i+1]) {
 			max = count[i+1];
@@ -161,7 +161,7 @@ int main(int argc, char ** argv) {
 //    fprintf(stderr,"Invalid key (%s): must be a non-zero integer\n", argv[1]);    
 //    return EXIT_FAILURE;  
 //  }  
-  FILE * f = fopen(argv[1], "r");  
+  FILE * f = fopen(argv[1], "r+");  
   if (f == NULL) {    
     perror("Could not open file");    
     return EXIT_FAILURE;  
