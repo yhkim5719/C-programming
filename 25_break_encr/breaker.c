@@ -88,6 +88,10 @@ int lower_char (char c) {
 			return 'u';
 		case 'u':
 			return 'u';
+		case 'V':
+			return 'v';
+		case 'v':
+			return 'v';
 		case 'W':
 			return 'w';
 		case 'w':
