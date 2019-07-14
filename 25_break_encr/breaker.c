@@ -112,8 +112,8 @@ int lower_char (char c) {
 }
 
 int count_freq(FILE * f) {
-	int count[26] = {0};
-//	int count[27] = {0};
+//	int count[26] = {0};
+	int count[27] = {0};
 	int c;
 	c = fgetc(f);
 	if (c == EOF) {EXIT_FAILURE;}
@@ -130,12 +130,12 @@ int count_freq(FILE * f) {
 	int max = count[0];
 	int idx = 0;
 	for (int i = 0; i < 26; i++) {
-		printf("count[%d] = %d\n", i, count[i]);	//TODO
+//		printf("count[%d] = %d\n", i, count[i]);	//TODO
 		if (max < count[i+1]) {
 			max = count[i+1];
 			idx = i+1;
-			printf("max = %d\n", max);
-			printf("idx = %d\n", idx);
+//			printf("max = %d\n", max);
+//			printf("idx = %d\n", idx);
 		}
 	}
 	printf (/*"idx = */ "%d\n", idx - 'e' + 'a');
