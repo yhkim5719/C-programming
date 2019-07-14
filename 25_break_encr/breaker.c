@@ -123,16 +123,16 @@ int count_freq(FILE * f) {
 	}
 	int max = count[0];
 	int idx = 0;
-	for (int i = 0; i <= 25; i++) {
-		printf("count[%d] = %d\n", i, count[i]);	//TODO
+	for (int i = 0; i < 26; i++) {
+//		printf("count[%d] = %d\n", i, count[i]);	//TODO
 		if (max < count[i+1]) {
 			max = count[i+1];
 			idx = i+1;
-			printf("max = %d\n", max);
-			printf("idx = %d\n", idx);
+//			printf("max = %d\n", max);
+//			printf("idx = %d\n", idx);
 		}
 	}
-	printf ("idx = %d\n", idx - 'e' + 'a');
+	printf (/*"idx = */ "%d\n", idx - 'e' + 'a');
 	return idx - 'e' + 'a';
 }
 	
