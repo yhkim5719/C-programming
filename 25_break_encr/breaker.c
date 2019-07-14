@@ -108,7 +108,7 @@ int lower_char (char c) {
 }
 
 int count_freq(FILE * f) {
-	int count[27] = {0};
+	int count[28] = {0};
 	int c;
 	c = fgetc(f);
 	if (c == EOF) {EXIT_FAILURE;}
