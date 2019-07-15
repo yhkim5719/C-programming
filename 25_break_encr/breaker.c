@@ -138,9 +138,12 @@ int count_freq(FILE * f) {
 //			printf("idx = %d\n", idx);
 		}
 	}
-	printf (/*"idx = */ "%d\n", idx - 'e' + 'a');
-	if (idx == 0 && count[0] == 0) {EXIT_FAILURE;}
-	return idx + 'e' - 'a';
+	idx += ('e' - 'a' + 26);
+//	idx += 26;
+	idx %= 26;
+	printf (/*"idx = */ "%d\n", idx);
+	if (idx == 0 && count[0] == 0) {return 9999;}
+	return idx;
 }
 	
 void decrypt(FILE * f, int key) {    
@@ -168,7 +171,8 @@ int main(int argc, char ** argv) {
     fprintf(stderr, "Could not open file");    
     return EXIT_FAILURE;  
   }
-  int key = count_freq(f);  
+  int key = count_freq(f);
+  if (key == 9999) {return EXIT_FAILURE;}
   decrypt(f, key);  
   if (fclose(f) != 0) {    
     perror("Failed to close the input file!");    
