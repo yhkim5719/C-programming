@@ -112,11 +112,10 @@ int lower_char (char c) {
 }
 
 int count_freq(FILE * f) {
-//	if (f == NULL) {return 0;}
 	int count[26] = {0};
 	int c;
 	c = fgetc(f);
-//	if (c == EOF) {EXIT_FAILURE;}
+	if (c == EOF) {EXIT_FAILURE;}
 	while (c != EOF) {
 //	while ((fgetc(f)) != EOF) {
 		if (isalpha(c)) {
@@ -130,19 +129,16 @@ int count_freq(FILE * f) {
 	int max = count[0];
 	int idx = 0;
 	for (int i = 1; i < 26; i++) {
-//		printf("count[%d] = %d\n", i, count[i]);	//TODO
 		if (max < count[i]) {
 			max = count[i];
 			idx = i;
-//			printf("max = %d\n", max);
-//			printf("idx = %d\n", idx);
 		}
 	}
 	idx -= ('e' - 'a');
 	idx += 26;
 	idx %= 26;
-	printf (/*"idx = */ "%d\n", idx);
-	if (idx == 0 && count[0] == 0) {return 9999;}
+	printf ("%d\n", idx);
+//	if (idx == 0 && count[0] == 0) {return 9999;}
 	return idx;
 }
 	
@@ -172,7 +168,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;  
   }
   int key = count_freq(f);
-  if (key == 9999) {return EXIT_FAILURE;}
+//  if (key == 9999) {return EXIT_FAILURE;}
   decrypt(f, key);  
   if (fclose(f) != 0) {    
     perror("Failed to close the input file!");    
