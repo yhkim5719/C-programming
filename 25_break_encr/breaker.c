@@ -138,8 +138,8 @@ int count_freq(FILE * f) {
 //			printf("idx = %d\n", idx);
 		}
 	}
-	idx += ('e' - 'a' + 26);
-//	idx += 26;
+	idx -= ('e' - 'a');
+	idx += 26;
 	idx %= 26;
 	printf (/*"idx = */ "%d\n", idx);
 	if (idx == 0 && count[0] == 0) {return 9999;}
