@@ -138,9 +138,9 @@ int count_freq(FILE * f) {
 			printf("idx = %d\n", idx);
 		}
 	}
-	printf (/*"idx = */ "%d\n", idx /*- 'e' + 'a'*/);
+	printf (/*"idx = */ "%d\n", idx - 'e' + 'a');
 	if (idx == 0 && count[0] == 0) {return 0;}
-	return idx /*+ 'e' - 'a'*/;
+	return idx + 'e' - 'a';
 }
 	
 void decrypt(FILE * f, int key) {    
