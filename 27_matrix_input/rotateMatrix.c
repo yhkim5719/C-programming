@@ -33,23 +33,23 @@ int main(int argc, char** argv) {
 				continue;
 			}
 			if (c == EOF && j < 10) {
-				perror("FILE is too short");
+				perror("Line is too short");
 				EXIT_FAILURE;
 			}
 			if (c == EOF && j > 10) {
-				perror("FILE is too long");
+				perror("Line is too long");
 				EXIT_FAILURE;
 			}
 		}
 		i++;
 		j = 0;
 	}
-	if (c == EOF && i < 10) {
-		perror("FILE is too short");
+	if (i < 10) {
+		perror("File is too short");
 		EXIT_FAILURE;
 	}
-	if (c == EOF && i > 10) {
-		perror("FILE is too long");
+	if (i > 10) {
+		perror("File is too long");
 		EXIT_FAILURE;
 	}
 
