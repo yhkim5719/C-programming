@@ -40,6 +40,10 @@ int main(int argc, char** argv) {
 				perror("Line is too long");
 				return EXIT_FAILURE;
 			}
+			if (c == EOF && i >= 10 && j > 10) {
+				perror("File is too long");
+				return EXIT_FAILURE;
+			}
 		}
 		i++;
 		j = 0;
