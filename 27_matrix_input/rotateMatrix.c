@@ -4,12 +4,12 @@
 
 int main(int argc, char** argv) {
 	if (argc != 2) {
-		perror("Usage: rotateMatrix inputFile");
+		perror("Usage: rotateMatrix input");
 		EXIT_FAILURE;
 	}
 	FILE* f = fopen(argv[1], "r");
 	if (f == NULL) {
-		perror("Could not open file");
+		perror("Could not open %s", argv[1]);
 		EXIT_FAILURE;
 	}
 	char matrix[10][10];
