@@ -22,6 +22,10 @@ int main(int argc, char** argv) {
 			c = fgetc(f);
 			++j;
 			if (c == '\n') {
+				if (j != 10) {
+					perror("Line is too short");
+					EXIT_FAILURE;
+				}
 				c = fgetc(f);
 				continue;
 			}
