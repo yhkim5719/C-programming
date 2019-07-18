@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
 	}
 	FILE* f = fopen(argv[1], "r");
 	if (f == NULL) {
-		perror("Could not open %s", argv[1]);
+		perror("Could not open file");
 		EXIT_FAILURE;
 	}
 	char matrix[10][10];
