@@ -32,10 +32,10 @@ int main(int argc, char** argv) {
 		}
 		i++;
 		j = 0;
-		if (c == EOF && i != 10) {
-			perror("FILE is too short");
-			EXIT_FAILURE;
-		}
+	}
+	if (c == EOF && i < 10) {
+		perror("FILE is too short");
+		EXIT_FAILURE;
 	}
 	if (c == EOF && i > 10) {
 		perror("FILE is too long");
