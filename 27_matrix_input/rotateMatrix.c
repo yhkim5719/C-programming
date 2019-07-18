@@ -22,15 +22,22 @@ int main(int argc, char** argv) {
 			c = fgetc(f);
 			++j;
 			if (c == '\n') {
-				if (j != 10) {
+				if (j < 10) {
 					perror("Line is too short");
+					EXIT_FAILURE;
+				} else if (j > 10) {
+					perror("Line is too long");
 					EXIT_FAILURE;
 				}
 				c = fgetc(f);
 				continue;
 			}
-			if (c == EOF && j != 10) {
+			if (c == EOF && j < 10) {
 				perror("FILE is too short");
+				EXIT_FAILURE;
+			}
+			if (c == EOF && j > 10) {
+				perror("FILE is too long");
 				EXIT_FAILURE;
 			}
 		}
