@@ -5,12 +5,12 @@
 int main(int argc, char** argv) {
 	if (argc != 2) {
 		perror("Usage: rotateMatrix input");
-		EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
 	FILE* f = fopen(argv[1], "r");
 	if (f == NULL) {
 		perror("Could not open file");
-		EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
 	char matrix[10][10];
 	int c = fgetc(f);
@@ -24,21 +24,21 @@ int main(int argc, char** argv) {
 			if (c == '\n') {
 				if (j < 10) {
 					perror("Line is too short");
-					EXIT_FAILURE;
+					return EXIT_FAILURE;
 				} else if (j > 10) {
 					perror("Line is too long");
-					EXIT_FAILURE;
+					return EXIT_FAILURE;
 				}
 				c = fgetc(f);
 				continue;
 			}
 			if (c == EOF && j < 10) {
 				perror("Line is too short");
-				EXIT_FAILURE;
+				return EXIT_FAILURE;
 			}
 			if (c == EOF && j > 10) {
 				perror("Line is too long");
-				EXIT_FAILURE;
+				return EXIT_FAILURE;
 			}
 		}
 		i++;
@@ -46,11 +46,11 @@ int main(int argc, char** argv) {
 	}
 	if (i < 10) {
 		perror("File is too short");
-		EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
 	if (i > 10) {
 		perror("File is too long");
-		EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
 
 	for (int i = 0; i < 10; ++i) {
@@ -63,7 +63,7 @@ int main(int argc, char** argv) {
 
 	if(fclose(f) != 0) {
 		perror("Could not close file");
-		EXIT_FAILURE;
+		return EXIT_FAILURE;
 	}
-	EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
