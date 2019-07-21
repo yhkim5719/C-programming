@@ -39,39 +39,48 @@ void sortPrintData (FILE* input) {
 }
 
 int main(int argc, char ** argv) {
-	FILE* input;
-	if (argc == 1) {			//TODO
-		perror("Usage: ./sortLines inputFile");
-		return EXIT_FAILURE;
-	}
-/*	if (argc == 1) {
-		input = fopen("input.txt", "w+");
+	if (argc == 1) {
+		FILE* input;
+		input = fopen("tmp.txt", "w+");
 		if (input == NULL) {
+			perror("Could not open file");
 			return EXIT_FAILURE;
 		}
-		char* str = NULL;
 		printf("Input data: \n");	// Read from std input
-		scanf("%s", str);
-		fwrite(str, sizeof(char), sizeof(str), input);
-			char** data = getLines(input);
-			size_t numLine = countLine(input);
-			sortData(data, numLine);	
+		char* str = NULL;
+		int num = 1000;
+		if (fgets(str, num, stdin) == NULL) {
+			return EXIT_FAILURE;
+		}
+//		else {
+//			fwrite(str, sizeof(char), sizeof(str), input);
+//		}
+		sortPrintData(input);	
+		free(str);
+		if (remove("tmp.txt") != 0) {
+			perror("Error deleting file");
+			return EXIT_FAILURE;
+		}
+		if (fclose(input) != 0) {
+			perror("Could not close file");
+			return EXIT_FAILURE;
+		}
+		
 	}
-*/
-	if (argc > 1) {
+	else if (argc > 1) {
 		for (int i = 1; i < argc; ++i) {
+		FILE* input;
 			input = fopen(argv[i], "r");
 			if (input == NULL) {
 				perror("Could not open file");
 				return EXIT_FAILURE;
 			}
 			sortPrintData(input);	
+			if (fclose(input) != 0) {
+				perror("Could not close file");
+				return EXIT_FAILURE;
 			}
-	}
-	 
-	if (fclose(input) != 0) {
-		perror("Could not close file");
-		return EXIT_FAILURE;
+		}
 	}
   return EXIT_SUCCESS;
 }
