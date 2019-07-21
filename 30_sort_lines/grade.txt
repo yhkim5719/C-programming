@@ -1,32 +1,10 @@
-Grading at Sun Jul 21 17:03:33 UTC 2019
+Grading at Sun Jul 21 21:37:33 UTC 2019
 Attempting to compile sortLines.c
 #################################################
 testcase1:
 testcase1 passed, your program successfully indicated a failure
-  - Valgrind showed memory leaks
-valgrind was not clean
-==621== Memcheck, a memory error detector
-==621== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==621== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==621== 
-==621== Parent PID: 620
-==621== 
-==621== 
-==621== HEAP SUMMARY:
-==621==     in use at exit: 552 bytes in 1 blocks
-==621==   total heap usage: 17 allocs, 16 frees, 11,712 bytes allocated
-==621== 
-==621== LEAK SUMMARY:
-==621==    definitely lost: 0 bytes in 0 blocks
-==621==    indirectly lost: 0 bytes in 0 blocks
-==621==      possibly lost: 0 bytes in 0 blocks
-==621==    still reachable: 552 bytes in 1 blocks
-==621==         suppressed: 0 bytes in 0 blocks
-==621== Reachable blocks (those to which a pointer was found) are not shown.
-==621== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==621== 
-==621== For counts of detected and suppressed errors, rerun with: -v
-==621== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 #################################################
 testcase2:
 Your output is incorrect
@@ -38,29 +16,7 @@ valgrind was clean
 #################################################
 testcase4:
 Your output is correct
-  - Valgrind showed memory leaks
-valgrind was not clean
-==666== Memcheck, a memory error detector
-==666== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==666== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==666== 
-==666== Parent PID: 665
-==666== 
-==666== 
-==666== HEAP SUMMARY:
-==666==     in use at exit: 552 bytes in 1 blocks
-==666==   total heap usage: 29 allocs, 28 frees, 15,240 bytes allocated
-==666== 
-==666== LEAK SUMMARY:
-==666==    definitely lost: 0 bytes in 0 blocks
-==666==    indirectly lost: 0 bytes in 0 blocks
-==666==      possibly lost: 0 bytes in 0 blocks
-==666==    still reachable: 552 bytes in 1 blocks
-==666==         suppressed: 0 bytes in 0 blocks
-==666== Reachable blocks (those to which a pointer was found) are not shown.
-==666== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==666== 
-==666== For counts of detected and suppressed errors, rerun with: -v
-==666== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+  - Valgrind was clean (no errors, no memory leaks)
+valgrind was clean
 
-Overall Grade: D
+Overall Grade: C
