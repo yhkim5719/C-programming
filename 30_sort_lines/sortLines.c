@@ -38,34 +38,53 @@ void sortPrintData (FILE* input) {
 	free(data);
 }
 
+void stdinSortPrintData () {
+	char** data = NULL;
+	
+	char* line = NULL;
+	size_t sz = 0;
+	size_t i = 0;
+	while((getline(&line, &sz, stdin)) >= 0) {
+		data = realloc(data, (i + 1) * sizeof(*data));
+		data[i] = line;
+		i++;
+		if (*line == '\n') {
+			line = NULL;
+			break;
+		}
+		line = NULL;
+	}			// read all lines
+	free(line);
+	sortData(data, i);	// sort & print TODO a func
+	free(data);
+}
 int main(int argc, char ** argv) {
 	if (argc == 1) {
-		FILE* input;
-		input = fopen("tmp.txt", "w+");
-		if (input == NULL) {
-			perror("Could not open file");
-			return EXIT_FAILURE;
-		}
-		printf("Input data: \n");	// Read from std input
-		char* str = NULL;
-		int num = 1000;
-		if (fgets(str, num, stdin) == NULL) {
-			return EXIT_FAILURE;
-		}
+//		FILE* input;
+//		input = fopen("tmp.txt", "w+");
+//		if (input == NULL) {
+//			perror("Could not open file");
+//			return EXIT_FAILURE;
+//		}
+		printf("Input data:\n");	// Read from std input
+//		char* str = NULL;
+//		int num = 1000;
+//		if (fgets(str, num, stdin) == NULL) {
+//			return EXIT_FAILURE;
+//		}
 //		else {
 //			fwrite(str, sizeof(char), sizeof(str), input);
 //		}
-		sortPrintData(input);	
-		free(str);
-		if (remove("tmp.txt") != 0) {
-			perror("Error deleting file");
-			return EXIT_FAILURE;
-		}
-		if (fclose(input) != 0) {
-			perror("Could not close file");
-			return EXIT_FAILURE;
-		}
-		
+		stdinSortPrintData();
+//		free(str);
+//		if (remove("tmp.txt") != 0) {
+//			perror("Error deleting file");
+//			return EXIT_FAILURE;
+//		}
+//		if (fclose(input) != 0) {
+//			perror("Could not close file");
+//			return EXIT_FAILURE;
+//		}
 	}
 	else if (argc > 1) {
 		for (int i = 1; i < argc; ++i) {
