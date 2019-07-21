@@ -16,6 +16,7 @@ void sortData(char ** data, size_t count) {
 	qsort(data, count, sizeof(char *), stringOrder);
 	for (int i = 0; i < count; i++) {
 		printf("%s", data[i]);
+		free(data[i]);
 	}
 }
 
