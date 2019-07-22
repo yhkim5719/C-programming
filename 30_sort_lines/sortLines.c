@@ -20,13 +20,79 @@ void sortData(char ** data, size_t count) {
 	}
 }
 
+/*
+int main(int argc, char ** argv) {
+  
+  if (argc == 0) {
+    fprintf(stderr,"Not enough arguments \n");
+    return EXIT_FAILURE;
+  }
+  else if (argc == 1){
+    //read from stdio
+    char** data = NULL;
+    char* line = NULL;
+    size_t sz = 0;
+    int i = 0; 
+    while(getline(&line, &sz, stdin) >= 0){
+      data = realloc(data, (i + 1) * sizeof(*data));
+      data[i] = line;
+      line = NULL;
+      i++;
+    }
+    free(line);
+    sortData(data, i);
+    for (int j=0; j < i; j++){
+      printf("%s", data[j]);
+      free(data[j]);
+    }
+    free(data);
+  }
+  else {
+    for( int k = 1; k < argc; k++){
+      char** data = NULL;
+      char* line = NULL;
+      size_t sz = 0;
+      int i = 0; 
+      FILE * f = fopen(argv[k], "r");
+      if (f == NULL){
+        perror("Could not open file");
+        return EXIT_FAILURE;
+      }
+      while(getline(&line, &sz, f) >= 0){
+        data = realloc(data,(i + 1) * sizeof(*data));
+        data[i] = line;
+        line = NULL;
+        i++;
+      }
+      free(line);
+      sortData(data, i);
+      for(int j = 0;j < i; j++){
+        printf("%s", data[j]);
+        free(data[j]);
+      }
+      free(data);
+      if (fclose(f) != 0) {
+	perror("Failed to close the input file!");
+	return EXIT_FAILURE;
+      }
+      //read from file 
+    }
+  
+  
+    //WRITE YOUR CODE HERE!
+  
+    return EXIT_SUCCESS;
+  }
+}
+
+*/
 
 void proc (FILE* input) {
 	char** data = NULL;
 	
 	char* line = NULL;
 	size_t sz = 0;
-	size_t i = 0;
+	int i = 0;
 	while((getline(&line, &sz, input)) >= 0) {
 		data = realloc(data, (i + 1) * sizeof(*data));
 		data[i] = line;
@@ -39,23 +105,25 @@ void proc (FILE* input) {
 }
 
 void nonArgProc () {
-	char** data = NULL;
 	
-	char* line = NULL;
 	size_t sz = 0;
-	size_t i = 0;
+	int i = 0;
+	char** data = (char**) malloc(sizeof(*data));
+	char* line = NULL;
 	while((getline(&line, &sz, stdin)) >= 0) {
-		if (*line == '\n') {
-//			data[i] = NULL;
+/*		if (sz == 0) {
 			line = NULL;
 			free(line);
-//			i--;
-			break;
-		}
+			sortData(data, i);
+			free(data);
+			return;
+*///		}
 		data = realloc(data, (i + 1) * sizeof(*data));
 		data[i] = line;
-		line = NULL;
+//		printf("data[%d] = %s", i, data[i]);
+//		printf("line = %s", line);
 		i++;
+		line = NULL;
 	}			// read all lines
 	free(line);
 	sortData(data, i);	// sort & print TODO a func
@@ -64,12 +132,12 @@ void nonArgProc () {
 
 int main(int argc, char ** argv) {
 	if (argc == 1) {
-		printf("Input data:\n");	// Read from std input
+//		printf("Input data:\n");	// Read from std input
 		nonArgProc();
 	}
 	else if (argc > 1) {
 		for (int i = 1; i < argc; ++i) {
-		FILE* input;
+			FILE* input;
 			input = fopen(argv[i], "r");
 			if (input == NULL) {
 				perror("Could not open file");
@@ -84,3 +152,5 @@ int main(int argc, char ** argv) {
 	}
   return EXIT_SUCCESS;
 }
+
+
