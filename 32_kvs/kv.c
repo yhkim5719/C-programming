@@ -23,7 +23,7 @@ kvarray_t * readKVs(const char * fname) {
 	int numPairs = 0;
 
 	kvarray_t* kvarray = malloc(sizeof(kvarray_t));
-	kvarray->pair = NULL; //malloc(numPairs * sizeof(*kvarray->pair));
+	kvarray->pair = NULL; 
 	
 	char* line = NULL;
 	char* tmp = NULL;
@@ -32,25 +32,17 @@ kvarray_t * readKVs(const char * fname) {
 		if (line[0] == '\n') {
 			continue;
 		}
-		numPairs++;
-		kvarray->pair = realloc(kvarray->pair, ( (numPairs) * sizeof (*kvarray->pair)));
-		kvarray->pair[numPairs - 1] = realloc(kvarray->pair[numPairs - 1],  (sizeof(*kvarray->pair[numPairs - 1])));
-		tmp = splitLine(line);
-		kvarray->pair[numPairs - 1]->value = tmp;
-		kvarray->pair[numPairs - 1]->key = line;
 		
-//		kvarray->pair = realloc(kvarray->pair, ((numPairs + 1) * sizeof (*kvarray->pair)));
-//		kvarray->pair[numPairs] = realloc(kvarray->pair[numPairs], (sizeof(*kvarray->pair[numPairs])));
-//		tmp = splitLine(line);
-//		kvarray->pair[numPairs]->value = tmp;
-//		kvarray->pair[numPairs]->key = line;
+		kvarray->pair = realloc(kvarray->pair, ((numPairs + 1) * sizeof (*kvarray->pair)));
+		kvarray->pair[numPairs] = malloc((sizeof(*kvarray->pair[numPairs])));
+		tmp = splitLine(line);
+		kvarray->pair[numPairs]->value = tmp;
+		kvarray->pair[numPairs]->key = line;
 		
 		line = NULL;
-		tmp = NULL;
-//		numPairs++;
+		numPairs++;
 	}
 	free(line);
-//	free(tmp);
 	kvarray->numPairs = numPairs;
 
 	int close = fclose(f);
@@ -60,7 +52,6 @@ kvarray_t * readKVs(const char * fname) {
 
 void freeKVs(kvarray_t * pairs) {
 	for (int i = 0; i < pairs->numPairs; i++) {
-//		free(pairs->pair[i]->value);
 		free(pairs->pair[i]->key);	
 		free(pairs->pair[i]);
 	}
