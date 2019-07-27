@@ -6,7 +6,8 @@
 
 char* splitLine(char* line) {
 	char* value = strchr(line, '=');
-	*value++ = '\0';
+	*value = '\0';
+	value++;
 	
 	value[strlen(value)] = '\0';
 	value[strlen(value)-1] = '\0';
