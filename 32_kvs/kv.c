@@ -28,6 +28,10 @@ kvarray_t * readKVs(const char * fname) {
 	char* line = NULL;
 	size_t sz = 0;
 	while(getline(&line, &sz, f) != -1) {
+		if (line[0] == '\n') {
+			line = NULL;
+			continue;
+		}
 		kvarray->pair = realloc(kvarray->pair, (numPairs + 1) * sizeof (kvpair_t));
 //		kvarray->pair[numPairs].value = realloc(kvarray->pair[numPairs].value, strlen(line) * sizeof(char));
 //		kvarray->pair[numPairs].key = realloc(kvarray->pair[numPairs].key, strlen(line) * sizeof(char));

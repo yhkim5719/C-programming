@@ -1,6 +1,8 @@
-apple=red
-banana=yellow
-orange=orange
+apple=red=red
+
+
+banana=yellow==amb
+orange=orange====
 grapes=purple
 carrot=orange
 eggplant=purple
