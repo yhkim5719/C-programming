@@ -27,17 +27,16 @@ kvarray_t * readKVs(const char * fname) {
 	kvarray->pair = NULL; 
 	
 	char* line = NULL;
-	char* tmp = NULL;
+//	char* tmp = NULL;
 	size_t sz = 0;
 	while(getline(&line, &sz, f) != -1) {
-//		if (line[0] == '\n') {
-//			continue;
-//		}
-		
+		if (line[0] == '\n') {
+			continue;
+		}
 		kvarray->pair = realloc(kvarray->pair, ((numPairs + 1) * sizeof (*kvarray->pair)));
 		kvarray->pair[numPairs] = malloc((sizeof(*kvarray->pair[numPairs])));
-		tmp = splitLine(line);
-		kvarray->pair[numPairs]->value = tmp;
+//		tmp = splitLine(line);
+		kvarray->pair[numPairs]->value = splitLine(line);
 		kvarray->pair[numPairs]->key = line;
 		
 		line = NULL;
@@ -71,7 +70,9 @@ void printKVs(kvarray_t * pairs) {
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
 	for (int i = 0; i < pairs->numPairs; i++) {
-		if (strcmp(key, pairs->pair[i]->key) == 0) {return pairs->pair[i]->key;}
+		if (strcmp(key, pairs->pair[i]->key) == 0) {
+			return pairs->pair[i]->value;
+		}
 	}
 	return NULL;
   //WRITE ME
