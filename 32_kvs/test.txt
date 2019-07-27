@@ -1,6 +1,4 @@
 apple=red=red
-
-
 banana=yellow==amb
 orange=orange====
 grapes=purple

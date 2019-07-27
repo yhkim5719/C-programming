@@ -29,9 +29,9 @@ kvarray_t * readKVs(const char * fname) {
 	char* tmp = NULL;
 	size_t sz = 0;
 	while(getline(&line, &sz, f) != -1) {
-		if (line[0] == '\n') {
-			continue;
-		}
+//		if (line[0] == '\n') {
+//			continue;
+//		}
 		
 		kvarray->pair = realloc(kvarray->pair, ((numPairs + 1) * sizeof (*kvarray->pair)));
 		kvarray->pair[numPairs] = malloc((sizeof(*kvarray->pair[numPairs])));
@@ -63,7 +63,7 @@ void freeKVs(kvarray_t * pairs) {
 void printKVs(kvarray_t * pairs) {
 	for (int i = 0; i < pairs->numPairs; i++) {
 		printf("key : '%s' value = '%s'\n", pairs->pair[i]->key, pairs->pair[i]->value);
-		printf("length of key, value = %zu, %zu\n", strlen(pairs->pair[i]->key), strlen(pairs->pair[i]->value));
+//		printf("length of key, value = %zu, %zu\n", strlen(pairs->pair[i]->key), strlen(pairs->pair[i]->value));
 	}
   //WRITE ME
 }
