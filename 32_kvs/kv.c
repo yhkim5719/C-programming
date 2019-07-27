@@ -19,7 +19,7 @@ char* splitLine(char* line) {
 kvarray_t * readKVs(const char * fname) {
 	FILE* f = fopen(fname, "r");
 	if (f == NULL) {
-		perror("Could not open file");
+//		perror("Could not open file");
 		return NULL;
 	}
 
@@ -30,7 +30,6 @@ kvarray_t * readKVs(const char * fname) {
 	kvarray->pair = NULL; 
 	
 	char* line = NULL;
-//	char* tmp = NULL;
 	size_t sz = 0;
 	while(getline(&line, &sz, f) != -1) {
 		if (line[0] == '\n') {
@@ -48,8 +47,7 @@ kvarray_t * readKVs(const char * fname) {
 	free(line);
 	kvarray->numPairs = numPairs;
 
-	int close = fclose(f);
-	if (close != 0) {return NULL;}
+	if (fclose(f) != 0) {return NULL;}
 	return kvarray;
 }
 
@@ -72,11 +70,12 @@ void printKVs(kvarray_t * pairs) {
 }
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
+	char* tmp = NULL;
 	for (int i = 0; i < pairs->numPairs; i++) {
 		if (strcmp(key, pairs->pair[i]->key) == 0) {
-			return pairs->pair[i]->value;
+			tmp = pairs->pair[i]->value;
 		}
 	}
-	return NULL;
+	return tmp;
   //WRITE ME
 }
