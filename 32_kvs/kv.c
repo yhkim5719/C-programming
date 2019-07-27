@@ -9,17 +9,14 @@ char* splitLine(char* line) {
 	*value = '\0';
 	value++;
 	
-	char* n = strchr(value, '\n');	
-	if (n != NULL) {
-		*n = '\0';
-	}
+	value[strlen(value) - 1] = '\0';	
 	return value;
 }
 
 kvarray_t * readKVs(const char * fname) {
 	FILE* f = fopen(fname, "r");
 	if (f == NULL) {
-//		perror("Could not open file");
+		perror("Could not open file");
 		return NULL;
 	}
 
@@ -37,7 +34,6 @@ kvarray_t * readKVs(const char * fname) {
 		}
 		kvarray->pair = realloc(kvarray->pair, ((numPairs + 1) * sizeof (*kvarray->pair)));
 		kvarray->pair[numPairs] = malloc((sizeof(*kvarray->pair[numPairs])));
-//		tmp = splitLine(line);
 		kvarray->pair[numPairs]->value = splitLine(line);
 		kvarray->pair[numPairs]->key = line;
 		
@@ -64,18 +60,16 @@ void freeKVs(kvarray_t * pairs) {
 void printKVs(kvarray_t * pairs) {
 	for (int i = 0; i < pairs->numPairs; i++) {
 		printf("key = '%s' value = '%s'\n", pairs->pair[i]->key, pairs->pair[i]->value);
-//		printf("length of key, value = %zu, %zu\n", strlen(pairs->pair[i]->key), strlen(pairs->pair[i]->value));
 	}
   //WRITE ME
 }
 
 char * lookupValue(kvarray_t * pairs, const char * key) {
-	char* tmp = NULL;
 	for (int i = 0; i < pairs->numPairs; i++) {
 		if (strcmp(key, pairs->pair[i]->key) == 0) {
-			tmp = pairs->pair[i]->value;
+			return pairs->pair[i]->value;
 		}
 	}
-	return tmp;
+	return NULL;
   //WRITE ME
 }
