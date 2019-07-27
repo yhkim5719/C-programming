@@ -24,7 +24,7 @@ void addCount(counts_t * c, const char * name) {
 	}
 	c->count = realloc(c->count, (c->nCount + 1) * sizeof(*c->count));
 	c->count[c->nCount] = malloc(sizeof(*c->count[c->nCount]));
-	c->count[c->nCount]->name = malloc(strlen(name) * sizeof(char));
+	c->count[c->nCount]->name = malloc((strlen(name) + 1) * sizeof(*c->count[c->nCount]->name));
 	strcpy(c->count[c->nCount]->name, name);
 	c->count[c->nCount]->count = 1;
 	c->nCount++;
