@@ -6,6 +6,7 @@
 #include "outname.h"
 
 counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
+	kvarray_t* myKVs = readKVs(kvPairs);
   //WRITE ME
   return NULL;
 }
@@ -26,7 +27,7 @@ int main(int argc, char ** argv) {
 
     //print the counts from c into the FILE f
 
-    //close f
+	fclose(f);    //close f
 
     //free the memory for outName and c
 
