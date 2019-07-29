@@ -6,23 +6,22 @@
 #include "outname.h"
 
 counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
+	counts_t* c = createCounts();
 	FILE* f = fopen(filename, "r");
 	if (f == NULL) {
 		perror("Invalid file name");
 		return NULL;
 	}
 	
-	counts_t* c = createCounts();
 	char* key = NULL;
 	size_t sz = 0;
 	while (getline(&key, &sz, f) != -1) {
 		key[strlen(key) - 1] = '\0';
 		addCount(c, lookupValue(kvPairs, key));
-		key = NULL;
 	}
 	free(key);
-	
-	fclose(f);
+
+	if (fclose(f) != 0) {return NULL;}
 
 	return c;
 }
@@ -33,7 +32,7 @@ int main(int argc, char ** argv) {
 		return EXIT_FAILURE;	
 	}
 	kvarray_t* kv = readKVs(argv[1]);	//read the key/value pairs from the file named by argv[1] (call the result kv)
-	printKVs(kv);	//TODO test
+//	printKVs(kv);	//TODO test
 	for (int i = 2; i < argc; i++) { 	//count from 2 to argc (call the number you count i)
 		counts_t* c = countFile(argv[i], kv);	//count the values that appear in the file named by argv[i], using kv as the key/value pair
     							//   (call this result c)
@@ -41,7 +40,7 @@ int main(int argc, char ** argv) {
     //compute the output file name from argv[i] (call this outName)
 
 
-		FILE* f = fopen(outName, "w+");    //open the file named by outName (call that f)
+		FILE* f = fopen(outName, "w");    //open the file named by outName (call that f)
 		printCounts(c, f);    //print the counts from c into the FILE f
 //		fclose(f);    //close f
 		free(outName);    //free the memory for outName and c
