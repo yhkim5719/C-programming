@@ -168,16 +168,8 @@ void sort_hand(deck_t * hand) {
 }
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
-//	print_hand(hand1);	// TODO
-//	printf("\n");
-//	print_hand(hand2);	// TODO
-//	printf("\n");
 	sort_hand(hand1);
 	sort_hand(hand2);
-//	print_hand(hand1);	// TODO
-//	printf("\n");
-//	print_hand(hand2);	// TODO
-//	printf("\n");
 	hand_eval_t eval_hand1 = evaluate_hand(hand1);
 	hand_eval_t eval_hand2 = evaluate_hand(hand2);
 	int diff = eval_hand2.ranking - eval_hand1.ranking;
@@ -202,10 +194,10 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 //other functions we have provided can make
 //use of get_match_counts.
 unsigned * get_match_counts(deck_t * hand) {
-	unsigned match_counts[hand->n_cards] = { 1 };
+	unsigned match_counts[hand->n_cards] = {0};
 	sort_hand(hand);
 //	int tmp_idx = 0;
-	unsigned match = 0;
+	unsigned match = 1;
 	for (unsigned i = 0; i < hand->n_cards - 1; i++) {
 		if (hand.cards[i]->value == hand.cards[i + 1]->value) {
 			match++;
