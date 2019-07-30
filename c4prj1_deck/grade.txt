@@ -1,16 +1,24 @@
-Grading at Tue Jul 30 04:26:01 UTC 2019
+Grading at Tue Jul 30 04:28:16 UTC 2019
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_card_to’:
-deck.c:56:29: error: incompatible types when assigning to type ‘card_t * {aka struct card_tag *}’ from type ‘card_t {aka struct card_tag}’
-  deck->cards[deck->n_cards] = c;
-                             ^
-deck.c: In function ‘build_remaining_deck’:
-deck.c:85:26: error: incompatible type for argument 2 of ‘add_card_to’
-    add_card_to(tmp_deck, hands[i]->cards[j]);
-                          ^
-deck.c:53:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
- void add_card_to(deck_t* deck, card_t c) {
-      ^
-Compilation of deck.c failed
+Compiling eval.c -> eval.o
+eval.c: In function ‘get_match_counts’:
+eval.c:205:2: error: variable-sized object may not be initialized
+  unsigned match_counts[hand->n_cards] = { 1 };
+  ^
+eval.c:205:43: error: excess elements in array initializer [-Werror]
+  unsigned match_counts[hand->n_cards] = { 1 };
+                                           ^
+eval.c:205:43: note: (near initialization for ‘match_counts’)
+eval.c:210:11: error: request for member ‘cards’ in something not a structure or union
+   if (hand.cards[i]->value == hand.cards[i + 1]->value) {
+           ^
+eval.c:210:35: error: request for member ‘cards’ in something not a structure or union
+   if (hand.cards[i]->value == hand.cards[i + 1]->value) {
+                                   ^
+eval.c:220:9: error: function returns address of local variable [-Werror=return-local-addr]
+  return match_counts;
+         ^
+cc1: all warnings being treated as errors
+Compilation of eval.c failed
 
 Overall Grade: F
