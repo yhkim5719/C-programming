@@ -53,7 +53,7 @@ void assert_full_deck(deck_t * d) {
 void add_card_to(deck_t* deck, card_t c) {
 	deck->n_cards++;
 	deck->cards = realloc(deck->cards, (deck->n_cards) * sizeof(*deck->cards));
-	deck->cards[deck->n_cards] = c;
+	deck->cards[deck->n_cards] = &c;
 }
 
 card_t* add_empty_card(deck_t* deck) {
@@ -82,7 +82,7 @@ deck_t* build_remaining_deck(deck_t** hands, size_t n_hands) {
 	deck_t* tmp_deck = malloc(sizeof(*tmp_deck));
 	for (size_t i = 0; i < n_hands; i++) {
 		for (int j = 0; j < hands[i]->n_cards; j++) {
-			add_card_to(tmp_deck, hands[i]->cards[j]);
+			add_card_to(tmp_deck, *hands[i]->cards[j]);
 		}
 	}
 	deck_t* remaining_deck = make_deck_exclude(tmp_deck);
