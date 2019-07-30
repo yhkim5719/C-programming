@@ -1,12 +1,513 @@
-Grading at Tue Jul 30 23:54:47 UTC 2019
+Grading at Tue Jul 30 23:56:01 UTC 2019
 Compiling deck.c -> deck.o
-deck.c: In function ‘add_card_to’:
-deck.c:55:10: error: ‘deck’ redeclared as different kind of symbol
-  deck_t* deck = malloc(sizeof(*deck));
-          ^
-deck.c:53:26: note: previous definition of ‘deck’ was here
- void add_card_to(deck_t* deck, card_t c) {
-                          ^
-Compilation of deck.c failed
+Compiling eval.c -> eval.o
+Compiling cards.c -> cards.o
+Linking eval.o, deck.o, cards.o, and our tester
+Testing free_deck(deck_t *)
+- Test passed
+Testing add_card_to(deck_t *, card_t)
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==2021== Memcheck, a memory error detector
+==2021== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2021== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2021== Command: ./tester act
+==2021== Parent PID: 2020
+==2021== 
+==2021== Conditional jump or move depends on uninitialised value(s)
+==2021==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Conditional jump or move depends on uninitialised value(s)
+==2021==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Use of uninitialised value of size 8
+==2021==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Invalid write of size 8
+==2021==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  Address 0x52053f0 is 0 bytes after a block of size 0 alloc'd
+==2021==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Use of uninitialised value of size 8
+==2021==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Invalid write of size 8
+==2021==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  Address 0x52053f0 is 0 bytes after a block of size 0 alloc'd
+==2021==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041F2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Conditional jump or move depends on uninitialised value(s)
+==2021==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Conditional jump or move depends on uninitialised value(s)
+==2021==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Use of uninitialised value of size 8
+==2021==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Invalid write of size 8
+==2021==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  Address 0x52082b0 is 0 bytes after a block of size 0 alloc'd
+==2021==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Use of uninitialised value of size 8
+==2021==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Invalid write of size 8
+==2021==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  Address 0x52082b0 is 0 bytes after a block of size 0 alloc'd
+==2021==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2021==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x4041C8: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021== 
+==2021== Invalid read of size 8
+==2021==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x404229: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2021== 
+==2021== 
+==2021== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2021==  Access not within mapped region at address 0x0
+==2021==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x404229: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2021==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2021==  If you believe this happened as a result of a stack
+==2021==  overflow in your program's main thread (unlikely but
+==2021==  possible), you can try to increase the size of the
+==2021==  main thread stack using the --main-stacksize= flag.
+==2021==  The main thread stack size used in this run was 8388608.
+==2021== 
+==2021== HEAP SUMMARY:
+==2021==     in use at exit: 34,304 bytes in 3,423 blocks
+==2021==   total heap usage: 3,528 allocs, 105 frees, 38,784 bytes allocated
+==2021== 
+==2021== LEAK SUMMARY:
+==2021==    definitely lost: 19,968 bytes in 1,664 blocks
+==2021==    indirectly lost: 0 bytes in 832 blocks
+==2021==      possibly lost: 0 bytes in 0 blocks
+==2021==    still reachable: 14,336 bytes in 927 blocks
+==2021==         suppressed: 0 bytes in 0 blocks
+==2021== Rerun with --leak-check=full to see details of leaked memory
+==2021== 
+==2021== For counts of detected and suppressed errors, rerun with: -v
+==2021== Use --track-origins=yes to see where uninitialised values come from
+==2021== ERROR SUMMARY: 4993 errors from 13 contexts (suppressed: 0 from 0)
+Testing add_empty_card(deck_t *)
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==2025== Memcheck, a memory error detector
+==2025== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2025== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2025== Command: ./tester aec
+==2025== Parent PID: 2024
+==2025== 
+==2025== Conditional jump or move depends on uninitialised value(s)
+==2025==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Conditional jump or move depends on uninitialised value(s)
+==2025==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Use of uninitialised value of size 8
+==2025==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid write of size 8
+==2025==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x520db30 is 0 bytes after a block of size 0 alloc'd
+==2025==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Use of uninitialised value of size 8
+==2025==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid write of size 8
+==2025==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x520db30 is 0 bytes after a block of size 0 alloc'd
+==2025==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C1E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Conditional jump or move depends on uninitialised value(s)
+==2025==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Use of uninitialised value of size 8
+==2025==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid write of size 8
+==2025==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x520de80 is 0 bytes after a block of size 0 alloc'd
+==2025==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Use of uninitialised value of size 8
+==2025==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid write of size 8
+==2025==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x520de80 is 0 bytes after a block of size 0 alloc'd
+==2025==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x40219F: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403C73: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid read of size 8
+==2025==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403E5A: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x520b668 is 0 bytes after a block of size 24 alloc'd
+==2025==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2025==    by 0x403DBC: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025== 
+==2025== Invalid read of size 4
+==2025==    at 0x402B53: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403E5A: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2025== 
+==2025== 
+==2025== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2025==  Access not within mapped region at address 0x0
+==2025==    at 0x402B53: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x403E5A: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2025==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2025==  If you believe this happened as a result of a stack
+==2025==  overflow in your program's main thread (unlikely but
+==2025==  possible), you can try to increase the size of the
+==2025==  main thread stack using the --main-stacksize= flag.
+==2025==  The main thread stack size used in this run was 8388608.
+==2025== 
+==2025== HEAP SUMMARY:
+==2025==     in use at exit: 29,088 bytes in 1,940 blocks
+==2025==   total heap usage: 2,180 allocs, 240 frees, 44,608 bytes allocated
+==2025== 
+==2025== LEAK SUMMARY:
+==2025==    definitely lost: 960 bytes in 90 blocks
+==2025==    indirectly lost: 0 bytes in 30 blocks
+==2025==      possibly lost: 0 bytes in 0 blocks
+==2025==    still reachable: 28,128 bytes in 1,820 blocks
+==2025==         suppressed: 0 bytes in 0 blocks
+==2025== Rerun with --leak-check=full to see details of leaked memory
+==2025== 
+==2025== For counts of detected and suppressed errors, rerun with: -v
+==2025== Use --track-origins=yes to see where uninitialised values come from
+==2025== ERROR SUMMARY: 182 errors from 13 contexts (suppressed: 0 from 0)
+Testing make_deck_exclude(deck_t *)
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==2029== Memcheck, a memory error detector
+==2029== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2029== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2029== Command: ./tester mde
+==2029== Parent PID: 2028
+==2029== 
+==2029== Conditional jump or move depends on uninitialised value(s)
+==2029==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Conditional jump or move depends on uninitialised value(s)
+==2029==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Use of uninitialised value of size 8
+==2029==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Invalid write of size 8
+==2029==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029==  Address 0x52053a0 is 0 bytes after a block of size 0 alloc'd
+==2029==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Use of uninitialised value of size 8
+==2029==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Invalid write of size 8
+==2029==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029==  Address 0x52053a0 is 0 bytes after a block of size 0 alloc'd
+==2029==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2029==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x40220C: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4038DC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Use of uninitialised value of size 8
+==2029==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4039E4: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029== 
+==2029== Invalid read of size 8
+==2029==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4039E4: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2029== 
+==2029== 
+==2029== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2029==  Access not within mapped region at address 0x0
+==2029==    at 0x402B50: check_decks_same (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x4039E4: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2029==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2029==  If you believe this happened as a result of a stack
+==2029==  overflow in your program's main thread (unlikely but
+==2029==  possible), you can try to increase the size of the
+==2029==  main thread stack using the --main-stacksize= flag.
+==2029==  The main thread stack size used in this run was 8388608.
+==2029== 
+==2029== HEAP SUMMARY:
+==2029==     in use at exit: 31,168 bytes in 3,047 blocks
+==2029==   total heap usage: 3,152 allocs, 105 frees, 35,648 bytes allocated
+==2029== 
+==2029== LEAK SUMMARY:
+==2029==    definitely lost: 17,088 bytes in 1,424 blocks
+==2029==    indirectly lost: 0 bytes in 712 blocks
+==2029==      possibly lost: 0 bytes in 0 blocks
+==2029==    still reachable: 14,080 bytes in 911 blocks
+==2029==         suppressed: 0 bytes in 0 blocks
+==2029== Rerun with --leak-check=full to see details of leaked memory
+==2029== 
+==2029== For counts of detected and suppressed errors, rerun with: -v
+==2029== Use --track-origins=yes to see where uninitialised values come from
+==2029== ERROR SUMMARY: 4274 errors from 8 contexts (suppressed: 0 from 0)
+Testing build_remaining_deck(deck_t **, size_t)
+Testing with 1 hand
+timeout: the monitored command dumped core
+Valgrind reported errors:
+==2033== Memcheck, a memory error detector
+==2033== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2033== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2033== Command: ./tester brd
+==2033== Parent PID: 2032
+==2033== 
+==2033== Conditional jump or move depends on uninitialised value(s)
+==2033==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Conditional jump or move depends on uninitialised value(s)
+==2033==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Use of uninitialised value of size 8
+==2033==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Invalid write of size 8
+==2033==    at 0x402136: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033==  Address 0x52053a0 is 0 bytes after a block of size 0 alloc'd
+==2033==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Use of uninitialised value of size 8
+==2033==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Invalid write of size 8
+==2033==    at 0x402153: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033==  Address 0x52053a0 is 0 bytes after a block of size 0 alloc'd
+==2033==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2033==    by 0x40210A: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x402285: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Conditional jump or move depends on uninitialised value(s)
+==2033==    at 0x401EE0: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4021F5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4022C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Conditional jump or move depends on uninitialised value(s)
+==2033==    at 0x401F48: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4021F5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4022C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Use of uninitialised value of size 8
+==2033==    at 0x401EFF: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4021F5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4022C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033== 
+==2033== Invalid read of size 8
+==2033==    at 0x401EFF: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4021F5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4022C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2033== 
+==2033== 
+==2033== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2033==  Access not within mapped region at address 0x0
+==2033==    at 0x401EFF: deck_contains (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4021F5: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x4022C9: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x40353C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2033==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2033==  If you believe this happened as a result of a stack
+==2033==  overflow in your program's main thread (unlikely but
+==2033==  possible), you can try to increase the size of the
+==2033==  main thread stack using the --main-stacksize= flag.
+==2033==  The main thread stack size used in this run was 8388608.
+==2033== 
+==2033== HEAP SUMMARY:
+==2033==     in use at exit: 136 bytes in 13 blocks
+==2033==   total heap usage: 14 allocs, 1 frees, 4,232 bytes allocated
+==2033== 
+==2033== LEAK SUMMARY:
+==2033==    definitely lost: 24 bytes in 2 blocks
+==2033==    indirectly lost: 0 bytes in 1 blocks
+==2033==      possibly lost: 0 bytes in 0 blocks
+==2033==    still reachable: 112 bytes in 10 blocks
+==2033==         suppressed: 0 bytes in 0 blocks
+==2033== Rerun with --leak-check=full to see details of leaked memory
+==2033== 
+==2033== For counts of detected and suppressed errors, rerun with: -v
+==2033== Use --track-origins=yes to see where uninitialised values come from
+==2033== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 0 from 0)
+Testing get_match_count(deck_t *)
+- Test passed
 
 Overall Grade: F
