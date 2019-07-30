@@ -203,9 +203,9 @@ unsigned * get_match_counts(deck_t * hand) {
 			match++;
 		} else {
 			for (int j = i; j > tmp_idx; j--) {
-				match_counts[j] += match;
+				match_counts[j - 1] += match;
 			}
-			tmp_idx = match;
+			tmp_idx = i;
 			match = 1;
 //			tmp_idx++;
 		}
