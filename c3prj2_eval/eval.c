@@ -196,17 +196,18 @@ int compare_hands(deck_t * hand1, deck_t * hand2) {
 unsigned * get_match_counts(deck_t * hand) {
 	unsigned* match_counts = malloc(hand->n_cards * sizeof(unsigned));
 	sort_hand(hand);
-//	int tmp_idx = 0;
+	int tmp_idx = 0;
 	unsigned match = 1;
 	for (unsigned i = 0; i < hand->n_cards - 1; i++) {
 		if (hand->cards[i]->value == hand->cards[i + 1]->value) {
 			match++;
 //			tmp_idx++;
 		} else {
-			for (int j = i; j >= 0; j--) {
+			for (int j = i; j >= tmp_idx; j--) {
 				match_counts[j] += match;
 			}
 			match = 0;
+			tmp_idx++;
 		}
 	}
 	return match_counts;
