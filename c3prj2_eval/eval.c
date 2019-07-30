@@ -198,12 +198,12 @@ unsigned * get_match_counts(deck_t * hand) {
 	sort_hand(hand);
 	int tmp_idx = 0;
 	unsigned match = 1;
-	for (unsigned i = 0; i < hand->n_cards - 1; i++) {
+	for (unsigned i = 0; i < hand->n_cards; i++) {
 		if (hand->cards[i]->value == hand->cards[i + 1]->value) {
 			match++;
 			tmp_idx++;
 		} else {
-			for (int j = i; j >= tmp_idx; j--) {
+			for (int j = i; j > tmp_idx; j--) {
 				match_counts[j] += match;
 			}
 			match = 1;
