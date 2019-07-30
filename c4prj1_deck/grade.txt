@@ -1,0 +1,30 @@
+Grading at Tue Jul 30 04:16:23 UTC 2019
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_card_to’:
+deck.c:56:14: error: ‘n_cards’ undeclared (first use in this function)
+  deck->cards[n_cards] = c;
+              ^
+deck.c:56:14: note: each undeclared identifier is reported only once for each function it appears in
+deck.c: In function ‘add_empty_card’:
+deck.c:61:8: error: request for member ‘value’ in something not a structure or union
+  e_card.value = 0;
+        ^
+deck.c:62:8: error: request for member ‘suit’ in something not a structure or union
+  e_card.suit = 0;
+        ^
+deck.c:63:20: error: incompatible type for argument 2 of ‘add_card_to’
+  add_card_to(deck, e_card);
+                    ^
+deck.c:53:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void add_card_to(deck_t* deck, card_t c) {
+      ^
+deck.c: In function ‘build_remaining_deck’:
+deck.c:85:26: error: incompatible type for argument 2 of ‘add_card_to’
+    add_card_to(tmp_deck, hands[i]->cards[j]);
+                          ^
+deck.c:53:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘card_t * {aka struct card_tag *}’
+ void add_card_to(deck_t* deck, card_t c) {
+      ^
+Compilation of deck.c failed
+
+Overall Grade: F
