@@ -52,10 +52,10 @@ void assert_full_deck(deck_t * d) {
 
 void add_card_to(deck_t* deck, card_t c) {
 	deck->n_cards++;
-	deck = malloc(sizeof(*deck));
+//	deck = malloc(sizeof(*deck));
 	deck->cards = realloc(deck->cards, (deck->n_cards) * sizeof(*deck->cards));
 	deck->cards[deck->n_cards] = malloc(sizeof(card_t));
-	deck->cards[deck->n_cards] = &c;
+	*deck->cards[deck->n_cards] = c;
 }
 
 card_t* add_empty_card(deck_t* deck) {
