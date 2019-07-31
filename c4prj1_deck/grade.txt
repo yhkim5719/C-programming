@@ -1,4 +1,4 @@
-Grading at Wed Jul 31 00:12:13 UTC 2019
+Grading at Wed Jul 31 00:16:20 UTC 2019
 Compiling deck.c -> deck.o
 Compiling eval.c -> eval.o
 Compiling cards.c -> cards.o
@@ -8,253 +8,259 @@ Testing free_deck(deck_t *)
 Testing add_card_to(deck_t *, card_t)
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==2434== Memcheck, a memory error detector
-==2434== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2434== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2434== Command: ./tester act
-==2434== Parent PID: 2433
-==2434== 
-==2434== Invalid read of size 8
-==2434==    at 0x40211C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x4041B2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2434==  Address 0x52053a8 is 0 bytes after a block of size 8 alloc'd
-==2434==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2434==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2434==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x4041B2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2434== 
-==2434== Invalid write of size 8
-==2434==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x4041B2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2434==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2434== 
-==2434== 
-==2434== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2434==  Access not within mapped region at address 0x0
-==2434==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x4041B2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2434==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2434==  If you believe this happened as a result of a stack
-==2434==  overflow in your program's main thread (unlikely but
-==2434==  possible), you can try to increase the size of the
-==2434==  main thread stack using the --main-stacksize= flag.
-==2434==  The main thread stack size used in this run was 8388608.
-==2434== 
-==2434== HEAP SUMMARY:
-==2434==     in use at exit: 904 bytes in 58 blocks
-==2434==   total heap usage: 58 allocs, 0 frees, 904 bytes allocated
-==2434== 
-==2434== LEAK SUMMARY:
-==2434==    definitely lost: 0 bytes in 0 blocks
-==2434==    indirectly lost: 0 bytes in 0 blocks
-==2434==      possibly lost: 0 bytes in 0 blocks
-==2434==    still reachable: 904 bytes in 58 blocks
-==2434==         suppressed: 0 bytes in 0 blocks
-==2434== Rerun with --leak-check=full to see details of leaked memory
-==2434== 
-==2434== For counts of detected and suppressed errors, rerun with: -v
-==2434== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==2570== Memcheck, a memory error detector
+==2570== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2570== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2570== Command: ./tester act
+==2570== Parent PID: 2569
+==2570== 
+==2570== Invalid read of size 8
+==2570==    at 0x402145: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x4041E2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2570==  Address 0x52053a8 is 0 bytes after a block of size 8 alloc'd
+==2570==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2570==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2570==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x4041E2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2570== 
+==2570== Invalid write of size 8
+==2570==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x4041E2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2570==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2570== 
+==2570== 
+==2570== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2570==  Access not within mapped region at address 0x0
+==2570==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x4041E2: check_add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2570==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2570==  If you believe this happened as a result of a stack
+==2570==  overflow in your program's main thread (unlikely but
+==2570==  possible), you can try to increase the size of the
+==2570==  main thread stack using the --main-stacksize= flag.
+==2570==  The main thread stack size used in this run was 8388608.
+==2570== 
+==2570== HEAP SUMMARY:
+==2570==     in use at exit: 912 bytes in 59 blocks
+==2570==   total heap usage: 59 allocs, 0 frees, 912 bytes allocated
+==2570== 
+==2570== LEAK SUMMARY:
+==2570==    definitely lost: 0 bytes in 0 blocks
+==2570==    indirectly lost: 0 bytes in 0 blocks
+==2570==      possibly lost: 0 bytes in 0 blocks
+==2570==    still reachable: 912 bytes in 59 blocks
+==2570==         suppressed: 0 bytes in 0 blocks
+==2570== Rerun with --leak-check=full to see details of leaked memory
+==2570== 
+==2570== For counts of detected and suppressed errors, rerun with: -v
+==2570== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testing add_empty_card(deck_t *)
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==2438== Memcheck, a memory error detector
-==2438== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2438== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2438== Command: ./tester aec
-==2438== Parent PID: 2437
-==2438== 
-==2438== Invalid read of size 8
-==2438==    at 0x40211C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x40216A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x403BDE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2438==  Address 0x520db00 is 0 bytes after a block of size 32 alloc'd
-==2438==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2438==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x40216A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x403BDE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2438== 
-==2438== Invalid write of size 8
-==2438==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x40216A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x403BDE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2438==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2438== 
-==2438== 
-==2438== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2438==  Access not within mapped region at address 0x0
-==2438==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x40216A: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x403BDE: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
-==2438==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2438==  If you believe this happened as a result of a stack
-==2438==  overflow in your program's main thread (unlikely but
-==2438==  possible), you can try to increase the size of the
-==2438==  main thread stack using the --main-stacksize= flag.
-==2438==  The main thread stack size used in this run was 8388608.
-==2438== 
-==2438== HEAP SUMMARY:
-==2438==     in use at exit: 6,944 bytes in 448 blocks
-==2438==   total heap usage: 456 allocs, 8 frees, 7,056 bytes allocated
-==2438== 
-==2438== LEAK SUMMARY:
-==2438==    definitely lost: 0 bytes in 0 blocks
-==2438==    indirectly lost: 0 bytes in 0 blocks
-==2438==      possibly lost: 0 bytes in 0 blocks
-==2438==    still reachable: 6,944 bytes in 448 blocks
-==2438==         suppressed: 0 bytes in 0 blocks
-==2438== Rerun with --leak-check=full to see details of leaked memory
-==2438== 
-==2438== For counts of detected and suppressed errors, rerun with: -v
-==2438== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==2574== Memcheck, a memory error detector
+==2574== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2574== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2574== Command: ./tester aec
+==2574== Parent PID: 2573
+==2574== 
+==2574== Invalid read of size 8
+==2574==    at 0x402145: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x402198: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x403C0E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2574==  Address 0x520db00 is 0 bytes after a block of size 32 alloc'd
+==2574==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2574==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x402198: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x403C0E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2574== 
+==2574== Invalid write of size 8
+==2574==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x402198: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x403C0E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2574==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2574== 
+==2574== 
+==2574== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2574==  Access not within mapped region at address 0x0
+==2574==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x402198: add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x403C0E: check_add_empty_card (in /graderhome/work/c4prj1_deck/tester)
+==2574==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2574==  If you believe this happened as a result of a stack
+==2574==  overflow in your program's main thread (unlikely but
+==2574==  possible), you can try to increase the size of the
+==2574==  main thread stack using the --main-stacksize= flag.
+==2574==  The main thread stack size used in this run was 8388608.
+==2574== 
+==2574== HEAP SUMMARY:
+==2574==     in use at exit: 6,952 bytes in 449 blocks
+==2574==   total heap usage: 457 allocs, 8 frees, 7,064 bytes allocated
+==2574== 
+==2574== LEAK SUMMARY:
+==2574==    definitely lost: 0 bytes in 0 blocks
+==2574==    indirectly lost: 0 bytes in 0 blocks
+==2574==      possibly lost: 0 bytes in 0 blocks
+==2574==    still reachable: 6,952 bytes in 449 blocks
+==2574==         suppressed: 0 bytes in 0 blocks
+==2574== Rerun with --leak-check=full to see details of leaked memory
+==2574== 
+==2574== For counts of detected and suppressed errors, rerun with: -v
+==2574== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testing make_deck_exclude(deck_t *)
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==2442== Memcheck, a memory error detector
-==2442== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2442== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2442== Command: ./tester mde
-==2442== Parent PID: 2441
-==2442== 
-==2442== Conditional jump or move depends on uninitialised value(s)
-==2442==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2442==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x4021D7: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x40389C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2442== 
-==2442== Invalid read of size 8
-==2442==    at 0x40211C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x4021D7: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x40389C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2442==  Address 0x5205358 is 0 bytes after a block of size 8 alloc'd
-==2442==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2442==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2442==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x4021D7: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x40389C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2442== 
-==2442== Invalid write of size 8
-==2442==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x4021D7: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x40389C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2442==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2442== 
-==2442== 
-==2442== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2442==  Access not within mapped region at address 0x0
-==2442==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x4021D7: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x40389C: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
-==2442==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2442==  If you believe this happened as a result of a stack
-==2442==  overflow in your program's main thread (unlikely but
-==2442==  possible), you can try to increase the size of the
-==2442==  main thread stack using the --main-stacksize= flag.
-==2442==  The main thread stack size used in this run was 8388608.
-==2442== 
-==2442== HEAP SUMMARY:
-==2442==     in use at exit: 888 bytes in 57 blocks
-==2442==   total heap usage: 57 allocs, 0 frees, 888 bytes allocated
-==2442== 
-==2442== LEAK SUMMARY:
-==2442==    definitely lost: 0 bytes in 0 blocks
-==2442==    indirectly lost: 0 bytes in 0 blocks
-==2442==      possibly lost: 0 bytes in 0 blocks
-==2442==    still reachable: 888 bytes in 57 blocks
-==2442==         suppressed: 0 bytes in 0 blocks
-==2442== Rerun with --leak-check=full to see details of leaked memory
-==2442== 
-==2442== For counts of detected and suppressed errors, rerun with: -v
-==2442== Use --track-origins=yes to see where uninitialised values come from
-==2442== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==2578== Memcheck, a memory error detector
+==2578== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2578== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2578== Command: ./tester mde
+==2578== Parent PID: 2577
+==2578== 
+==2578== Conditional jump or move depends on uninitialised value(s)
+==2578==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2578==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x402205: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x4038CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2578== 
+==2578== Invalid read of size 8
+==2578==    at 0x402145: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x402205: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x4038CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2578==  Address 0x5205358 is 0 bytes after a block of size 8 alloc'd
+==2578==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2578==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2578==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x402205: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x4038CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2578== 
+==2578== Invalid write of size 8
+==2578==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x402205: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x4038CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2578==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2578== 
+==2578== 
+==2578== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2578==  Access not within mapped region at address 0x0
+==2578==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x402205: make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x4038CC: check_make_deck_exclude (in /graderhome/work/c4prj1_deck/tester)
+==2578==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2578==  If you believe this happened as a result of a stack
+==2578==  overflow in your program's main thread (unlikely but
+==2578==  possible), you can try to increase the size of the
+==2578==  main thread stack using the --main-stacksize= flag.
+==2578==  The main thread stack size used in this run was 8388608.
+==2578== 
+==2578== HEAP SUMMARY:
+==2578==     in use at exit: 896 bytes in 58 blocks
+==2578==   total heap usage: 58 allocs, 0 frees, 896 bytes allocated
+==2578== 
+==2578== LEAK SUMMARY:
+==2578==    definitely lost: 0 bytes in 0 blocks
+==2578==    indirectly lost: 0 bytes in 0 blocks
+==2578==      possibly lost: 0 bytes in 0 blocks
+==2578==    still reachable: 896 bytes in 58 blocks
+==2578==         suppressed: 0 bytes in 0 blocks
+==2578== Rerun with --leak-check=full to see details of leaked memory
+==2578== 
+==2578== For counts of detected and suppressed errors, rerun with: -v
+==2578== Use --track-origins=yes to see where uninitialised values come from
+==2578== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
 Testing build_remaining_deck(deck_t **, size_t)
 Testing with 1 hand
 timeout: the monitored command dumped core
 Valgrind reported errors:
-==2446== Memcheck, a memory error detector
-==2446== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2446== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2446== Command: ./tester brd
-==2446== Parent PID: 2445
-==2446== 
-==2446== Conditional jump or move depends on uninitialised value(s)
-==2446==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2446==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446== 
-==2446== Conditional jump or move depends on uninitialised value(s)
-==2446==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2446==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2446==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446== 
-==2446== Use of uninitialised value of size 8
-==2446==    at 0x40211C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446== 
-==2446== Invalid read of size 8
-==2446==    at 0x40211C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446==  Address 0x5205358 is 0 bytes after a block of size 8 alloc'd
-==2446==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2446==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2446==    by 0x4020FB: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446== 
-==2446== Invalid write of size 8
-==2446==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==2446== 
-==2446== 
-==2446== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==2446==  Access not within mapped region at address 0x0
-==2446==    at 0x402123: add_card_to (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x402250: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x4034FC: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
-==2446==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
-==2446==  If you believe this happened as a result of a stack
-==2446==  overflow in your program's main thread (unlikely but
-==2446==  possible), you can try to increase the size of the
-==2446==  main thread stack using the --main-stacksize= flag.
-==2446==  The main thread stack size used in this run was 8388608.
-==2446== 
-==2446== HEAP SUMMARY:
-==2446==     in use at exit: 104 bytes in 10 blocks
-==2446==   total heap usage: 11 allocs, 1 frees, 4,200 bytes allocated
-==2446== 
-==2446== LEAK SUMMARY:
-==2446==    definitely lost: 0 bytes in 0 blocks
-==2446==    indirectly lost: 0 bytes in 0 blocks
-==2446==      possibly lost: 0 bytes in 0 blocks
-==2446==    still reachable: 104 bytes in 10 blocks
-==2446==         suppressed: 0 bytes in 0 blocks
-==2446== Rerun with --leak-check=full to see details of leaked memory
-==2446== 
-==2446== For counts of detected and suppressed errors, rerun with: -v
-==2446== Use --track-origins=yes to see where uninitialised values come from
-==2446== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+==2582== Memcheck, a memory error detector
+==2582== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2582== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2582== Command: ./tester brd
+==2582== Parent PID: 2581
+==2582== 
+==2582== Conditional jump or move depends on uninitialised value(s)
+==2582==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2582==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582== 
+==2582== Conditional jump or move depends on uninitialised value(s)
+==2582==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2582==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2582==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582== 
+==2582== Use of uninitialised value of size 8
+==2582==    at 0x40212C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582== 
+==2582== Use of uninitialised value of size 8
+==2582==    at 0x402145: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582== 
+==2582== Invalid read of size 8
+==2582==    at 0x402145: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582==  Address 0x5205358 is 0 bytes after a block of size 8 alloc'd
+==2582==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2582==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2582==    by 0x4020FC: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582== 
+==2582== Invalid write of size 8
+==2582==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==2582== 
+==2582== 
+==2582== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==2582==  Access not within mapped region at address 0x0
+==2582==    at 0x40214C: add_card_to (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40227E: build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x40352C: check_build_remaining_deck (in /graderhome/work/c4prj1_deck/tester)
+==2582==    by 0x400AB8: main (in /graderhome/work/c4prj1_deck/tester)
+==2582==  If you believe this happened as a result of a stack
+==2582==  overflow in your program's main thread (unlikely but
+==2582==  possible), you can try to increase the size of the
+==2582==  main thread stack using the --main-stacksize= flag.
+==2582==  The main thread stack size used in this run was 8388608.
+==2582== 
+==2582== HEAP SUMMARY:
+==2582==     in use at exit: 112 bytes in 11 blocks
+==2582==   total heap usage: 12 allocs, 1 frees, 4,208 bytes allocated
+==2582== 
+==2582== LEAK SUMMARY:
+==2582==    definitely lost: 0 bytes in 0 blocks
+==2582==    indirectly lost: 0 bytes in 0 blocks
+==2582==      possibly lost: 0 bytes in 0 blocks
+==2582==    still reachable: 112 bytes in 11 blocks
+==2582==         suppressed: 0 bytes in 0 blocks
+==2582== Rerun with --leak-check=full to see details of leaked memory
+==2582== 
+==2582== For counts of detected and suppressed errors, rerun with: -v
+==2582== Use --track-origins=yes to see where uninitialised values come from
+==2582== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
 Testing get_match_count(deck_t *)
 - Test passed
 
