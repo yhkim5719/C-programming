@@ -19,7 +19,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			add_future_card(fc, atoi(num), add_empty_card(tmp));
 			
 		} else {
-			card_t c = card_from_letters(*str, *(str++));
+			card_t c = card_from_letters(*str, *(str+1));
 			add_card_to(tmp, c);
 			str++;
 		}
