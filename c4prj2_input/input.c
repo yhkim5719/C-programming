@@ -7,13 +7,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->n_cards = 0;
 
 	for (int i = 0; i < strlen(str); i++) {
-		if (str[i] == ' ') {
+		if (str[i] == ' ' || str[i] == '\n') {
 			continue;
 		} else if (str[i] == '?') {
 			i++;
 			char* num = NULL;
 			int j = 0;
-			while (str[i] != ' ' || str[i] != '\0') {
+			while (str[i] != ' ' || str[i] != '\n') {
 				num[j] = str[i];
 				j++;
 				i++;
@@ -47,9 +47,9 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	size_t sz = 0;
 	while (getline(&hand, &sz, f) >= 0) {
 		input = realloc(input, (n_hand + 1) * sizeof(*input));
-		input[n_hand] = malloc(sizeof(deck_t));
+//		input[n_hand] = malloc(sizeof(deck_t));
 		input[n_hand] = hand_from_string(hand, fc);
-		hand = NULL;
+//		hand = NULL;
 		n_hand++;
 	}
 	*n_hands = n_hand;
