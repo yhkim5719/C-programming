@@ -1,4 +1,4 @@
-Grading at Fri Aug  2 23:19:59 UTC 2019
+Grading at Fri Aug  2 23:27:11 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -8,213 +8,237 @@ Testing with input file with
  o 1 hand
  o No unknown/future cards
 Valgrind reported errors:
-==2341== Memcheck, a memory error detector
-==2341== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2341== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2341== Command: ./tester hands.txt draw.txt
-==2341== Parent PID: 2340
-==2341== 
-==2341== Conditional jump or move depends on uninitialised value(s)
-==2341==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2341==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x401C8B: main (test-input.c:69)
-==2341== 
-==2341== Conditional jump or move depends on uninitialised value(s)
-==2341==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2341==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2341==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x401C8B: main (test-input.c:69)
-==2341== 
-==2341== Use of uninitialised value of size 8
-==2341==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x401C8B: main (test-input.c:69)
-==2341== 
-==2341== Use of uninitialised value of size 8
-==2341==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2341==    by 0x401C8B: main (test-input.c:69)
-==2341== 
-==2341== 
-==2341== HEAP SUMMARY:
-==2341==     in use at exit: 712 bytes in 6 blocks
-==2341==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
-==2341== 
-==2341== LEAK SUMMARY:
-==2341==    definitely lost: 0 bytes in 0 blocks
-==2341==    indirectly lost: 0 bytes in 0 blocks
-==2341==      possibly lost: 0 bytes in 0 blocks
-==2341==    still reachable: 712 bytes in 6 blocks
-==2341==         suppressed: 0 bytes in 0 blocks
-==2341== Rerun with --leak-check=full to see details of leaked memory
-==2341== 
-==2341== For counts of detected and suppressed errors, rerun with: -v
-==2341== Use --track-origins=yes to see where uninitialised values come from
-==2341== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==2826== Memcheck, a memory error detector
+==2826== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2826== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2826== Command: ./tester hands.txt draw.txt
+==2826== Parent PID: 2825
+==2826== 
+==2826== Conditional jump or move depends on uninitialised value(s)
+==2826==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2826==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x401CAC: main (test-input.c:69)
+==2826== 
+==2826== Conditional jump or move depends on uninitialised value(s)
+==2826==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2826==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2826==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x401CAC: main (test-input.c:69)
+==2826== 
+==2826== Use of uninitialised value of size 8
+==2826==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x401CAC: main (test-input.c:69)
+==2826== 
+==2826== Use of uninitialised value of size 8
+==2826==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x401CAC: main (test-input.c:69)
+==2826== 
+==2826== Use of uninitialised value of size 8
+==2826==    at 0x401350: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2826==    by 0x401CAC: main (test-input.c:69)
+==2826== 
+==2826== 
+==2826== HEAP SUMMARY:
+==2826==     in use at exit: 712 bytes in 6 blocks
+==2826==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
+==2826== 
+==2826== LEAK SUMMARY:
+==2826==    definitely lost: 0 bytes in 0 blocks
+==2826==    indirectly lost: 0 bytes in 0 blocks
+==2826==      possibly lost: 0 bytes in 0 blocks
+==2826==    still reachable: 712 bytes in 6 blocks
+==2826==         suppressed: 0 bytes in 0 blocks
+==2826== Rerun with --leak-check=full to see details of leaked memory
+==2826== 
+==2826== For counts of detected and suppressed errors, rerun with: -v
+==2826== Use --track-origins=yes to see where uninitialised values come from
+==2826== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o No unknown/future cards
 Valgrind reported errors:
-==2346== Memcheck, a memory error detector
-==2346== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2346== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2346== Command: ./tester hands.txt draw.txt
-==2346== Parent PID: 2345
-==2346== 
-==2346== Conditional jump or move depends on uninitialised value(s)
-==2346==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2346==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x401C8B: main (test-input.c:69)
-==2346== 
-==2346== Conditional jump or move depends on uninitialised value(s)
-==2346==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2346==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2346==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x401C8B: main (test-input.c:69)
-==2346== 
-==2346== Use of uninitialised value of size 8
-==2346==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x401C8B: main (test-input.c:69)
-==2346== 
-==2346== Use of uninitialised value of size 8
-==2346==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2346==    by 0x401C8B: main (test-input.c:69)
-==2346== 
-==2346== 
-==2346== HEAP SUMMARY:
-==2346==     in use at exit: 712 bytes in 6 blocks
-==2346==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
-==2346== 
-==2346== LEAK SUMMARY:
-==2346==    definitely lost: 0 bytes in 0 blocks
-==2346==    indirectly lost: 0 bytes in 0 blocks
-==2346==      possibly lost: 0 bytes in 0 blocks
-==2346==    still reachable: 712 bytes in 6 blocks
-==2346==         suppressed: 0 bytes in 0 blocks
-==2346== Rerun with --leak-check=full to see details of leaked memory
-==2346== 
-==2346== For counts of detected and suppressed errors, rerun with: -v
-==2346== Use --track-origins=yes to see where uninitialised values come from
-==2346== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==2831== Memcheck, a memory error detector
+==2831== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2831== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2831== Command: ./tester hands.txt draw.txt
+==2831== Parent PID: 2830
+==2831== 
+==2831== Conditional jump or move depends on uninitialised value(s)
+==2831==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2831==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x401CAC: main (test-input.c:69)
+==2831== 
+==2831== Conditional jump or move depends on uninitialised value(s)
+==2831==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2831==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2831==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x401CAC: main (test-input.c:69)
+==2831== 
+==2831== Use of uninitialised value of size 8
+==2831==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x401CAC: main (test-input.c:69)
+==2831== 
+==2831== Use of uninitialised value of size 8
+==2831==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x401CAC: main (test-input.c:69)
+==2831== 
+==2831== Use of uninitialised value of size 8
+==2831==    at 0x401350: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2831==    by 0x401CAC: main (test-input.c:69)
+==2831== 
+==2831== 
+==2831== HEAP SUMMARY:
+==2831==     in use at exit: 712 bytes in 6 blocks
+==2831==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
+==2831== 
+==2831== LEAK SUMMARY:
+==2831==    definitely lost: 0 bytes in 0 blocks
+==2831==    indirectly lost: 0 bytes in 0 blocks
+==2831==      possibly lost: 0 bytes in 0 blocks
+==2831==    still reachable: 712 bytes in 6 blocks
+==2831==         suppressed: 0 bytes in 0 blocks
+==2831== Rerun with --leak-check=full to see details of leaked memory
+==2831== 
+==2831== For counts of detected and suppressed errors, rerun with: -v
+==2831== Use --track-origins=yes to see where uninitialised values come from
+==2831== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
 Valgrind reported errors:
-==2352== Memcheck, a memory error detector
-==2352== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2352== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2352== Command: ./tester h.txt d.txt
-==2352== Parent PID: 2351
-==2352== 
-==2352== Conditional jump or move depends on uninitialised value(s)
-==2352==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2352==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x401C8B: main (test-input.c:69)
-==2352== 
-==2352== Conditional jump or move depends on uninitialised value(s)
-==2352==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2352==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2352==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x401C8B: main (test-input.c:69)
-==2352== 
-==2352== Use of uninitialised value of size 8
-==2352==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x401C8B: main (test-input.c:69)
-==2352== 
-==2352== Use of uninitialised value of size 8
-==2352==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2352==    by 0x401C8B: main (test-input.c:69)
-==2352== 
-==2352== 
-==2352== HEAP SUMMARY:
-==2352==     in use at exit: 712 bytes in 6 blocks
-==2352==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
-==2352== 
-==2352== LEAK SUMMARY:
-==2352==    definitely lost: 0 bytes in 0 blocks
-==2352==    indirectly lost: 0 bytes in 0 blocks
-==2352==      possibly lost: 0 bytes in 0 blocks
-==2352==    still reachable: 712 bytes in 6 blocks
-==2352==         suppressed: 0 bytes in 0 blocks
-==2352== Rerun with --leak-check=full to see details of leaked memory
-==2352== 
-==2352== For counts of detected and suppressed errors, rerun with: -v
-==2352== Use --track-origins=yes to see where uninitialised values come from
-==2352== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==2837== Memcheck, a memory error detector
+==2837== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2837== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2837== Command: ./tester h.txt d.txt
+==2837== Parent PID: 2836
+==2837== 
+==2837== Conditional jump or move depends on uninitialised value(s)
+==2837==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2837==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x401CAC: main (test-input.c:69)
+==2837== 
+==2837== Conditional jump or move depends on uninitialised value(s)
+==2837==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2837==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2837==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x401CAC: main (test-input.c:69)
+==2837== 
+==2837== Use of uninitialised value of size 8
+==2837==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x401CAC: main (test-input.c:69)
+==2837== 
+==2837== Use of uninitialised value of size 8
+==2837==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x401CAC: main (test-input.c:69)
+==2837== 
+==2837== Use of uninitialised value of size 8
+==2837==    at 0x401350: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2837==    by 0x401CAC: main (test-input.c:69)
+==2837== 
+==2837== 
+==2837== HEAP SUMMARY:
+==2837==     in use at exit: 712 bytes in 6 blocks
+==2837==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
+==2837== 
+==2837== LEAK SUMMARY:
+==2837==    definitely lost: 0 bytes in 0 blocks
+==2837==    indirectly lost: 0 bytes in 0 blocks
+==2837==      possibly lost: 0 bytes in 0 blocks
+==2837==    still reachable: 712 bytes in 6 blocks
+==2837==         suppressed: 0 bytes in 0 blocks
+==2837== Rerun with --leak-check=full to see details of leaked memory
+==2837== 
+==2837== For counts of detected and suppressed errors, rerun with: -v
+==2837== Use --track-origins=yes to see where uninitialised values come from
+==2837== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
 Valgrind reported errors:
-==2358== Memcheck, a memory error detector
-==2358== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==2358== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==2358== Command: ./tester i1 i2
-==2358== Parent PID: 2357
-==2358== 
-==2358== Conditional jump or move depends on uninitialised value(s)
-==2358==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2358==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x401C8B: main (test-input.c:69)
-==2358== 
-==2358== Conditional jump or move depends on uninitialised value(s)
-==2358==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2358==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==2358==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x401C8B: main (test-input.c:69)
-==2358== 
-==2358== Use of uninitialised value of size 8
-==2358==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x401C8B: main (test-input.c:69)
-==2358== 
-==2358== Use of uninitialised value of size 8
-==2358==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
-==2358==    by 0x401C8B: main (test-input.c:69)
-==2358== 
-==2358== 
-==2358== HEAP SUMMARY:
-==2358==     in use at exit: 712 bytes in 6 blocks
-==2358==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
-==2358== 
-==2358== LEAK SUMMARY:
-==2358==    definitely lost: 0 bytes in 0 blocks
-==2358==    indirectly lost: 0 bytes in 0 blocks
-==2358==      possibly lost: 0 bytes in 0 blocks
-==2358==    still reachable: 712 bytes in 6 blocks
-==2358==         suppressed: 0 bytes in 0 blocks
-==2358== Rerun with --leak-check=full to see details of leaked memory
-==2358== 
-==2358== For counts of detected and suppressed errors, rerun with: -v
-==2358== Use --track-origins=yes to see where uninitialised values come from
-==2358== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)
+==2843== Memcheck, a memory error detector
+==2843== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==2843== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==2843== Command: ./tester i1 i2
+==2843== Parent PID: 2842
+==2843== 
+==2843== Conditional jump or move depends on uninitialised value(s)
+==2843==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2843==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x401CAC: main (test-input.c:69)
+==2843== 
+==2843== Conditional jump or move depends on uninitialised value(s)
+==2843==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2843==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2843==    by 0x4012E1: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x401CAC: main (test-input.c:69)
+==2843== 
+==2843== Use of uninitialised value of size 8
+==2843==    at 0x401311: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x401CAC: main (test-input.c:69)
+==2843== 
+==2843== Use of uninitialised value of size 8
+==2843==    at 0x40132E: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x401CAC: main (test-input.c:69)
+==2843== 
+==2843== Use of uninitialised value of size 8
+==2843==    at 0x401350: add_card_to (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400C4B: hand_from_string (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x400D4B: read_input (in /graderhome/work/c4prj2_input/tester)
+==2843==    by 0x401CAC: main (test-input.c:69)
+==2843== 
+==2843== 
+==2843== HEAP SUMMARY:
+==2843==     in use at exit: 712 bytes in 6 blocks
+==2843==   total heap usage: 8 allocs, 2 frees, 8,904 bytes allocated
+==2843== 
+==2843== LEAK SUMMARY:
+==2843==    definitely lost: 0 bytes in 0 blocks
+==2843==    indirectly lost: 0 bytes in 0 blocks
+==2843==      possibly lost: 0 bytes in 0 blocks
+==2843==    still reachable: 712 bytes in 6 blocks
+==2843==         suppressed: 0 bytes in 0 blocks
+==2843== Rerun with --leak-check=full to see details of leaked memory
+==2843== 
+==2843== For counts of detected and suppressed errors, rerun with: -v
+==2843== Use --track-origins=yes to see where uninitialised values come from
+==2843== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
