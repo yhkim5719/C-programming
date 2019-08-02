@@ -2,7 +2,9 @@
 #include "input.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
-	deck_t* tmp = malloc(sizeof(deck_t));
+	deck_t* tmp = malloc(sizeof(*tmp));
+	tmp->cards = NULL;
+	tmp->n_cards = 0;
 
 	for (int i = 0; i < strlen(str); i++) {
 		if (str[i] == ' ') {
