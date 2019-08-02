@@ -1,21 +1,14 @@
-Grading at Fri Aug  2 21:46:17 UTC 2019
+Grading at Fri Aug  2 21:47:52 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
 input.c: In function ‘hand_from_string’:
-input.c:22:21: error: implicit declaration of function ‘card_from_letter’ [-Werror=implicit-function-declaration]
-    add_card_to(tmp, card_from_letter(*str, *str++));
-                     ^
-input.c:22:21: error: incompatible type for argument 2 of ‘add_card_to’
-In file included from input.h:4:0,
-                 from input.c:2:
-deck.h:17:6: note: expected ‘card_t {aka struct card_tag}’ but argument is of type ‘int’
- void add_card_to(deck_t * deck, card_t c);
-      ^
-input.c: In function ‘read_input’:
-input.c:44:3: error: value computed is not used [-Werror=unused-value]
-   *n_hands++;
-   ^
+input.c:22:49: error: operation on ‘str’ may be undefined [-Werror=sequence-point]
+    add_card_to(tmp, card_from_letters(*str, *str++));
+                                                 ^
+input.c:14:8: error: ‘num’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+     num[i] = *str;
+        ^
 cc1: all warnings being treated as errors
 Compilation of input.c failed
 
