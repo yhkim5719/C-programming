@@ -1,6 +1,31 @@
+#include <string.h>
 #include "input.h"
 
-deck_t * hand_from_string(const char * str, future_cards_t * fc);
+deck_t * hand_from_string(const char * str, future_cards_t * fc) {
+	deck_t* tmp = NULL;
+
+	while (*str != '\0') {
+		if (*str == ' ') {
+			str++;
+		} else if (*str == '?') {
+			char* num;
+			int i = 0;
+			while (*str != ' ' || *str != '\0') {
+				num[i] = *str;
+				i++;
+				str++;
+			}
+			num[i] = '\0';
+			add_future_card(fc, atoi(num), add_empty_card(tmp));
+			
+		} else {
+			add_card_to(tmp, card_from_letter(*str, *str++));
+			str++;
+		}
+	}
+
+	return tmp;
+}
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	if (f == NULL) {
@@ -8,8 +33,18 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 		return NULL;
 	}
 	deck_t** input = NULL;
-	char* hand = NULL;
 
+	char* hand = NULL;
+	size_t sz = 0;
+	while (getline(&hand, &sz, f) >= 0) {
+		input = realloc(input, (*n_hands + 1) * sizeof(deck_t*));
+		input[*n_hands] = malloc(sizeof(deck_t));
+		input[*n_hands] = hand_from_string(hand, fc);
+		hand = NULL;
+		*n_hands++;
+	}
+	free(hand);
+	
 	return input;
 }
 
