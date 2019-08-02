@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "future.h"
 
-void add_future_card (future_card_t* fc, size_t index, card_t* ptr) {
+void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 	if (index > fc->n_decks - 1) {
 		fc = realloc(fc, fc->n_decks * sizeof(deck_t));
 	}
