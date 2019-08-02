@@ -10,6 +10,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		if (str[i] == ' ') {
 			continue;
 		} else if (str[i] == '?') {
+			i++;
 			char* num = NULL;
 			int j = 0;
 			while (str[i] != ' ' || str[i] != '\0') {
@@ -23,6 +24,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		} else {
 			card_t c = card_from_letters(str[i], str[i+1]);
 			add_card_to(tmp, c);
+			i++;
 		}
 	}
 	if (tmp->n_cards < 5) {
