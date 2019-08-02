@@ -19,7 +19,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			add_future_card(fc, atoi(num), add_empty_card(tmp));
 			
 		} else {
-			add_card_to(tmp, card_from_letter(*str, *str++));
+			add_card_to(tmp, card_from_letters(*str, *str++));
 			str++;
 		}
 	}
@@ -41,7 +41,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 		input[*n_hands] = malloc(sizeof(deck_t));
 		input[*n_hands] = hand_from_string(hand, fc);
 		hand = NULL;
-		*n_hands++;
+		(*n_hands)++;
 	}
 	free(hand);
 	
