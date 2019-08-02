@@ -4,25 +4,23 @@
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(deck_t));
 
-	while (*str != '\0') {
-		if (*str == ' ') {
-			str++;
-		} else if (*str == '?') {
+	for (int i = 0; i < strlen(str); i++) {
+		if (str[i] == ' ') {
+			continue;
+		} else if (str[i] == '?') {
 			char* num = NULL;
-			int i = 0;
-			while (*str != ' ' || *str != '\0') {
-				num[i] = *str;
+			int j = 0;
+			while (str[i] != ' ' || str[i] != '\0') {
+				num[j] = str[i];
+				j++;
 				i++;
-				str++;
 			}
-			num[i] = '\0';
+			num[j] = '\0';
 			add_future_card(fc, atoi(num), add_empty_card(tmp));
 			
 		} else {
-			card_t c = card_from_letters(*str, *(str+1));
+			card_t c = card_from_letters(str[i], str[i+1]);
 			add_card_to(tmp, c);
-			str++;
-			str++;
 		}
 	}
 	if (tmp->n_cards < 5) {
