@@ -4,8 +4,8 @@
 
 void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 	if (index >= fc->n_decks) {
-		fc = realloc(fc, (fc->n_decks + 1) * sizeof(deck_t));
 		while (index >= fc->n_decks) {
+		fc = realloc(fc, (fc->n_decks + 1) * sizeof(deck_t));
 			fc->decks[fc->n_decks].cards = NULL;
 			fc->decks[fc->n_decks].n_cards = 0;
 			fc->n_decks++;
