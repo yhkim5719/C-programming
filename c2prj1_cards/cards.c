@@ -133,13 +133,13 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.value = 14;
   }
   if (suit_let == 's') {
-      temp.suit = 0;
-  } else if (suit_let == 'h') {
       temp.suit = 1;
-  } else if (suit_let == 'd') {
+  } else if (suit_let == 'h') {
       temp.suit = 2;
-  } else if (suit_let == 'c') {
+  } else if (suit_let == 'd') {
       temp.suit = 3;
+  } else if (suit_let == 'c') {
+      temp.suit = 4;
   }
   return temp;
 }
