@@ -7,8 +7,8 @@
 void assert_card_valid(card_t c) {
   assert((2 <= c.value) &&
 	 (c.value <= VALUE_ACE) &&
-	 (0 <= c.suit) &&
-	 (c.suit < 4)
+	 (1 <= c.suit) &&
+	 (c.suit < 5)
 	 );
 }
 
@@ -59,19 +59,24 @@ char value_letter(card_t c) {
     return 'Q';
   } else if (c.value == 13) {
     return 'K';
-  } else
+  } else if (c.value == 14) {
     return 'A';
+  } else {
+    return '?';
+  }
 }
 
 char suit_letter(card_t c) {
-  if (c.suit == 0) {
+  if (c.suit == 1) {
    return 's';
-  } else if (c.suit == 1) {
-    return 'h';
   } else if (c.suit == 2) {
+    return 'h';
+  } else if (c.suit == 3) {
     return 'd';
-  } else  {
+  } else if (c.suit == 4) {
     return 'c';
+  } else {
+    return '?';
   }
 }
 
