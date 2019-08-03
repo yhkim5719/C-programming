@@ -13,12 +13,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			i++;
 			char num[strlen(str)];
 			int j = 0;
-			while (str[i] != ' ' || str[i] != '\n') {
-				if (str[i] == '\0') {
-					num[j] = str[i];
-			//		add_future_card(fc, atoi(num), add_empty_card(tmp));
-					break;
-				}
+			while (str[i] != ' ' || str[i] != '\n' || str[i] != '\0') {
+//				if (str[i] == '\0') {
+//					num[j] = str[i];
+//					break;
+//				}
 				num[j] = str[i];
 				j++;
 				i++;
