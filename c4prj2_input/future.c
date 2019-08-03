@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "future.h"
 
 void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 	if (index >= fc->n_decks) {
-		while (index >= fc->n_decks) {
 		fc->decks = realloc(fc->decks, (index + 1) * sizeof(*fc->decks));
+		while (index >= fc->n_decks) {
 			fc->decks[fc->n_decks].cards = NULL;
 			fc->decks[fc->n_decks].n_cards = 0;
 			fc->n_decks++;
