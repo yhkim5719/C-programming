@@ -43,7 +43,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 		perror("Invalid file");
 		return NULL;
 	}
-	deck_t** input = malloc(sizeof(*input));
+	deck_t** input = NULL; // malloc(sizeof(*input));
 	size_t n_hand = 0;
 
 	char* line = NULL;
