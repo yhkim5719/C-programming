@@ -12,7 +12,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     		if(isspace(str[i])) { 
 			continue;
 		} else {
-      			if(std[i] == '?') {
+      			if(str[i] == '?') {
         			i++;
         			char num[3];
         			int j = 0;
@@ -24,7 +24,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         			num[j] = '\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
       			} else {
-        		card_t c = card_from_letters(str[i], str[i + 1]);
+        		card_t c = card_from_letters(str[i], str[i++]);
 //			assert_card_valid(c);
         		add_card_to(tmp, c);
         		i++;
