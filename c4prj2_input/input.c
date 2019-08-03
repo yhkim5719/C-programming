@@ -20,11 +20,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
           				i++;
 					j++;
 				}
-        			num[j] = '\0';
+        			num[j + 1] = '\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
-      			} else if ( ('2' <= str[i] && str[i] <= '9') || 
-				    str[i] == '0' || str[i] == 'A' ||
-				    str[i] == 'K' || str[i] == 'Q' || str[i] == 'J') {
+      			} else {
         		card_t c = card_from_letters(str[i], str[i + 1]);
 //			assert_card_valid(c);
         		add_card_to(tmp, c);
