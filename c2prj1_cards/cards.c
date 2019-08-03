@@ -140,7 +140,7 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.suit = 3;
   } else if (suit_let == 'c') {
       temp.suit = 4;
-  } else { 
+  } 
   return temp;
 }
 
