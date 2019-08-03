@@ -5,14 +5,15 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
+
 	for(int i = 0; i < strlen(str); i++) {
-    		if((str[i] == '\n')||(str[i] == ' ')){continue;}
+    		if(str[i] == '\n' || str[i] == ' '){continue;}
     		else {
       			if(str[i] == '?') {
         			i++;
         			char num[strlen(str)];
         			int j = 0;
-        			while(str[i] != '\n' && str[i] != ' ' && str[i] != '\0') {
+        			while(str[i] != '\n' && str[i] != ' ') {
           				num[j]=str[i];
           				i++;
 					j++;
