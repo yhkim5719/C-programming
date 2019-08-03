@@ -23,7 +23,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
       			} else {
         		card_t c = card_from_letters(str[i], str[i+1]);
-//			assert_card_valid(c);
         		add_card_to(tmp, c);
         		i++;
 			}
@@ -54,7 +53,7 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 		input[n_hand] = tmp; 
 		n_hand++;
 	}
-	size_t n = n_hand;
+//	size_t n = n_hand;
 //	while (n > 0) {
 //		print_hand(input[n_hand - n]);
 //		printf("\n\n");
