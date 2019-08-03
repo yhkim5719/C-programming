@@ -7,14 +7,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->n_cards = 0;
 
 	for (int i = 0; i < strlen(str); i++) {
-//		if (str[i] == '\0') {break;}
 		if (str[i] == ' ' || str[i] == '\n') {
 			continue;
 		} else if (str[i] == '?') {
 			i++;
 			char* num = NULL;
 			int j = 0;
-			while (str[i] != ' ' || str[i] != '\n' || str[i] != '\0') {
+			while (str[i] != ' ' || str[i] != '\n') {
 				if (str[i] == '\0') {
 					num[j] = str[i];
 					break;
