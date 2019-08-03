@@ -7,7 +7,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->n_cards = 0;
 
 	for (int i = 0; i < strlen(str); i++) {
-		if (str[i] == '\0') {break;}
+//		if (str[i] == '\0') {break;}
 		if (str[i] == ' ' || str[i] == '\n') {
 			continue;
 		} else if (str[i] == '?') {
@@ -25,7 +25,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			}
 			num[j] = '\0';
 			add_future_card(fc, atoi(num), add_empty_card(tmp));
-			if(str[i] == '\0') {break;}
+//			if(str[i] == '\0') {break;}
 		} else {
 			card_t c = card_from_letters(str[i], str[i+1]);
 			add_card_to(tmp, c);
