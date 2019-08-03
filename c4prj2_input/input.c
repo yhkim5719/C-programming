@@ -12,9 +12,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     		if(isspace(str[i])) { 
 			continue;
 		} else {
-      			if(str[i] == '?') {
+      			if(std[i] == '?') {
         			i++;
-        			char num[4];
+        			char num[3];
         			int j = 0;
         			while(!isspace(str[i])) {
           				num[j] = str[i];
@@ -40,7 +40,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	if (f == NULL) {
-//		perror("Invalid file");
+		perror("Invalid file");
 		return NULL;
 	}
 	deck_t** input = malloc(sizeof(*input));
