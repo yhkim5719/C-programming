@@ -8,23 +8,24 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
-    		if(str[i] == '\n' || str[i] == ' ' || str[i] == '\0'){
+    		if(str[i] == '\n' || str[i] == ' ') { // || str[i] == '\0'){
 			continue;
 		} else {
       			if(str[i] == '?') {
         			i++;
         			char num[strlen(str)];
         			int j = 0;
-        			while(!(str[i] == '\n' || str[i] == ' ' || str[i] == '\0')) {
+        			while(!(str[i] == '\n' || str[i] == ' ')) { // || str[i] == '\0')) {
           				num[j] = str[i];
           				i++;
 					j++;
 				}
         			num[j]='\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
+				num = NULL;
       			} else {
         		card_t c = card_from_letters(str[i], str[i + 1]);
-			assert_card_valid(c);
+//			assert_card_valid(c);
         		add_card_to(tmp, c);
         		i++;
 			}
