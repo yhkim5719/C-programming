@@ -5,53 +5,29 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
-for(int i=0;i<strlen(str);i++){
-    if((str[i] == '\n')||(str[i] == ' '))continue;
-    else{
-      if(str[i] == '?'){
-        i++;
-        char num[strlen(str)];
-        int n=0;
-        while(!((str[i] == '\n')||(str[i] == ' '))) {
-          num[n]=str[i];
-          i++;n++;}
-        num[n]='\0';
-        add_future_card(fc,atoi(num),add_empty_card(tmp)) ;
 
-      }
-      else{
-        card_t x = card_from_letters(str[i],str[i+1]);
-        add_card_to(tmp,x);
-        i++;}
-    }
-  }
-/*
-	for (int i = 0; i < strlen(str); i++) {
-		if (str[i] == ' ' || str[i] == '\n') {
-			continue;
-		} else if (str[i] == '?') {
-			i++;
-			char* num = NULL;
-			int j = 0;
-			while (str[i] != ' ' || str[i] != '\n') {
-				if (str[i] == '\0') {
-					num[j] = str[i];
-					break;
+	for(int i = 0; i < strlen(str); i++) {
+    		if((str[i] == '\n')||(str[i] == ' ')){continue;}
+    		else {
+      			if(str[i] == '?') {
+        			i++;
+        			char* num = NULL; //[strlen(str)];
+        			int j = 0;
+        			while(!((str[i] == '\n')||(str[i] == ' '))) {
+          				num[j]=str[i];
+          				i++;
+					j++;
 				}
-				num[j] = str[i];
-				j++;
-				i++;
+        			num[j]='\0';
+        			add_future_card(fc,atoi(num),add_empty_card(tmp)) ;
+      			} else {
+        		card_t x = card_from_letters(str[i],str[i+1]);
+        		add_card_to(tmp,x);
+        		i++;
 			}
-			num[j] = '\0';
-			add_future_card(fc, atoi(num), add_empty_card(tmp));
-//			if(str[i] == '\0') {break;}
-		} else {
-			card_t c = card_from_letters(str[i], str[i+1]);
-			add_card_to(tmp, c);
-			i++;
-		}
-	}
-*/
+    		}
+  	}
+
 	if (tmp->n_cards < 5) {
 		perror("short number of card");
 		return NULL;
@@ -71,10 +47,10 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	char* hand = NULL;
 	size_t sz = 0;
 	while (getline(&hand, &sz, f) >= 0) {
-		if(hand[0] == '\n') {continue;}
+//		if(hand[0] == '\n') {continue;}
 		input = realloc(input, (n_hand + 1) * sizeof(*input));
 		deck_t* tmp = hand_from_string(hand, fc); // 
-//		if (tmp == NULL) {continue;}
+		if (tmp == NULL) {continue;}
 		input[n_hand] = tmp; 
 //		hand = NULL;
 		n_hand++;
