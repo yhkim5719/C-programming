@@ -13,9 +13,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		} else {
       			if(str[i] == '?') {
         			i++;
-        			char num[2];
+        			char num[4];
         			int j = 0;
-        			while(str[i] != '\n' && str[i] != ' ' && str[i] != '\0') {
+        			while(str[i] != '\n' && str[i] != ' ' ) { //&& str[i] != '\0') {
           				num[j] = str[i];
           				i++;
 					j++;
@@ -23,9 +23,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         			num[j] = '\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
       			} else {
-//        		card_t c = card_from_letters(str[i], str[i + 1]);
+        		card_t c = card_from_letters(str[i], str[i + 1]);
 //			assert_card_valid(c);
-        		add_card_to(tmp, card_from_letters(str[i], str[i + 1]));
+        		add_card_to(tmp, c);
         		i++;
 			}
     		}
@@ -38,25 +38,25 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 }
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
-//	if (f == NULL) {
+	if (f == NULL) {
 //		perror("Invalid file");
-//		return NULL;
-//	}
-	deck_t** input = NULL;
+		return NULL;
+	}
+	deck_t** input = malloc(sizeof(*input));
 	size_t n_hand = 0;
 
-	char* hand = NULL;
+	char* line = NULL;
 	size_t sz = 0;
-	while (getline(&hand, &sz, f) >= 0) {
+	while (getline(&line, &sz, f) >= 0) {
 //		if(hand[0] == '\n') {continue;}
 		input = realloc(input, (n_hand + 1) * sizeof(*input));
-		deck_t* tmp = hand_from_string(hand, fc); // 
+		deck_t* tmp = hand_from_string(line, fc); // 
 		if (tmp == NULL) {continue;}
 		input[n_hand] = tmp; 
 		n_hand++;
 	}
 	*n_hands = n_hand;
-	free(hand);
+	free(line);
 	
 	return input;
 }
