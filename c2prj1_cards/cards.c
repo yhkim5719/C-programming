@@ -140,7 +140,7 @@ card_t card_from_letters(char value_let, char suit_let) {
       temp.suit = 3;
   } else if (suit_let == 'c') {
       temp.suit = 4;
-  }
+  } else { 
   return temp;
 }
 
@@ -149,13 +149,13 @@ card_t card_from_num(unsigned c) {
   assert ((0 <= c) && (c < 52));
   temp.value = 2 + c % 13;
   if (c/13 == 3) {
-    temp.suit = 3;
+    temp.suit = 4;
   } else if (c/13 == 2) {
-    temp.suit = 2;
+    temp.suit = 3;
   } else if (c/13 == 1) {
-    temp.suit = 1;
+    temp.suit = 2;
   } else if (c/13 == 0) {
-    temp.suit = 0;
+    temp.suit = 1;
   }
   return temp;
 }
