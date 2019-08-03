@@ -1,4 +1,4 @@
-Grading at Sat Aug  3 01:33:37 UTC 2019
+Grading at Sat Aug  3 01:34:45 UTC 2019
 Compiling cards.c -> cards.o
 Compiling deck.c -> deck.o
 Compiling input.c -> input.o
@@ -17,434 +17,64 @@ Test case passed
 Testing with input file with 
  o Many hands
  o 1 unknown/future cards per hand
-Valgrind reported errors:
-==11470== Memcheck, a memory error detector
-==11470== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==11470== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==11470== Command: ./tester h.txt d.txt
-==11470== Parent PID: 11469
-==11470== 
-==11470== Invalid write of size 8
-==11470==    at 0x400F17: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205990 is 0 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid write of size 8
-==11470==    at 0x400F34: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205998 is 8 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x400F83: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205998 is 8 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x400FA5: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205990 is 0 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid write of size 8
-==11470==    at 0x400FB3: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205990 is 0 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x400FC8: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205990 is 0 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x400FDD: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205998 is 8 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x401001: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205998 is 8 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid write of size 8
-==11470==    at 0x401009: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470==  Address 0x5205998 is 8 bytes after a block of size 0 alloc'd
-==11470==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Conditional jump or move depends on uninitialised value(s)
-==11470==    at 0x40106F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401E66: main (test-input.c:81)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x401068: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401E66: main (test-input.c:81)
-==11470==  Address 0x5206d68 is 8 bytes after a block of size 48 alloc'd
-==11470==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x40111B: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401E66: main (test-input.c:81)
-==11470==  Address 0x5206d68 is 8 bytes after a block of size 48 alloc'd
-==11470==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x401093: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401E66: main (test-input.c:81)
-==11470==  Address 0x5206d60 is 0 bytes after a block of size 48 alloc'd
-==11470==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x4010D1: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401E66: main (test-input.c:81)
-==11470==  Address 0x5206d60 is 0 bytes after a block of size 48 alloc'd
-==11470==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== Conditional jump or move depends on uninitialised value(s)
-==11470==    at 0x4C2EDA1: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x401F4E: main (test-input.c:94)
-==11470== 
-==11470== Invalid read of size 8
-==11470==    at 0x401F44: main (test-input.c:94)
-==11470==  Address 0x5206d60 is 0 bytes after a block of size 48 alloc'd
-==11470==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11470==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11470==    by 0x401D8C: main (test-input.c:69)
-==11470== 
-==11470== 
-==11470== HEAP SUMMARY:
-==11470==     in use at exit: 56 bytes in 7 blocks
-==11470==   total heap usage: 123 allocs, 116 frees, 15,648 bytes allocated
-==11470== 
-==11470== LEAK SUMMARY:
-==11470==    definitely lost: 32 bytes in 4 blocks
-==11470==    indirectly lost: 24 bytes in 3 blocks
-==11470==      possibly lost: 0 bytes in 0 blocks
-==11470==    still reachable: 0 bytes in 0 blocks
-==11470==         suppressed: 0 bytes in 0 blocks
-==11470== Rerun with --leak-check=full to see details of leaked memory
-==11470== 
-==11470== For counts of detected and suppressed errors, rerun with: -v
-==11470== Use --track-origins=yes to see where uninitialised values come from
-==11470== ERROR SUMMARY: 72 errors from 16 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_7_did_not_match
+Line_8_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_15_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_20_did_not_match
+Your file did not match the expected ouput
+Test case failed
 Testing with input file with 
  o Many hands
  o Many unknown/future cards per hand
-Valgrind reported errors:
-==11476== Memcheck, a memory error detector
-==11476== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==11476== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==11476== Command: ./tester i1 i2
-==11476== Parent PID: 11475
-==11476== 
-==11476== Invalid write of size 8
-==11476==    at 0x400F17: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205740 is 0 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid write of size 8
-==11476==    at 0x400F34: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205748 is 8 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x400F83: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205748 is 8 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x400FA5: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205740 is 0 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid write of size 8
-==11476==    at 0x400FB3: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205740 is 0 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x400FC8: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205740 is 0 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x400FDD: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205748 is 8 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x401001: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205748 is 8 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid write of size 8
-==11476==    at 0x401009: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476==  Address 0x5205748 is 8 bytes after a block of size 0 alloc'd
-==11476==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x4C2FD0C: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400FB2: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x4C2DB3C: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x4C2FDEF: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400FB2: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Use of uninitialised value of size 8
-==11476==    at 0x400FEC: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x4C2FD15: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400FB2: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x40106F: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x401122: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x401068: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476==  Address 0x5208c28 is 8 bytes after a block of size 176 alloc'd
-==11476==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x40111B: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476==  Address 0x5208c28 is 8 bytes after a block of size 176 alloc'd
-==11476==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x401093: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476==  Address 0x5208c20 is 0 bytes after a block of size 176 alloc'd
-==11476==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x4010D1: future_cards_from_deck (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401E66: main (test-input.c:81)
-==11476==  Address 0x5208c20 is 0 bytes after a block of size 176 alloc'd
-==11476==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== Conditional jump or move depends on uninitialised value(s)
-==11476==    at 0x4C2EDA1: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x401F4E: main (test-input.c:94)
-==11476== 
-==11476== Invalid read of size 8
-==11476==    at 0x401F44: main (test-input.c:94)
-==11476==  Address 0x5208c20 is 0 bytes after a block of size 176 alloc'd
-==11476==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==11476==    by 0x400EF4: add_future_card (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400CC6: hand_from_string (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x400E33: read_input (in /graderhome/work/c4prj2_input/tester)
-==11476==    by 0x401D8C: main (test-input.c:69)
-==11476== 
-==11476== 
-==11476== HEAP SUMMARY:
-==11476==     in use at exit: 328 bytes in 40 blocks
-==11476==   total heap usage: 329 allocs, 289 frees, 21,800 bytes allocated
-==11476== 
-==11476== LEAK SUMMARY:
-==11476==    definitely lost: 232 bytes in 28 blocks
-==11476==    indirectly lost: 96 bytes in 12 blocks
-==11476==      possibly lost: 0 bytes in 0 blocks
-==11476==    still reachable: 0 bytes in 0 blocks
-==11476==         suppressed: 0 bytes in 0 blocks
-==11476== Rerun with --leak-check=full to see details of leaked memory
-==11476== 
-==11476== For counts of detected and suppressed errors, rerun with: -v
-==11476== Use --track-origins=yes to see where uninitialised values come from
-==11476== ERROR SUMMARY: 405 errors from 21 contexts (suppressed: 0 from 0)
+Line_2_did_not_match
+Line_3_did_not_match
+Line_4_did_not_match
+Line_5_did_not_match
+Line_6_did_not_match
+Line_7_did_not_match
+Line_9_did_not_match
+Line_10_did_not_match
+Line_11_did_not_match
+Line_12_did_not_match
+Line_13_did_not_match
+Line_14_did_not_match
+Line_16_did_not_match
+Line_17_did_not_match
+Line_18_did_not_match
+Line_19_did_not_match
+Line_20_did_not_match
+Line_21_did_not_match
+Line_23_did_not_match
+Line_24_did_not_match
+Line_25_did_not_match
+Line_26_did_not_match
+Line_27_did_not_match
+Line_28_did_not_match
+Line_30_did_not_match
+Line_31_did_not_match
+Line_32_did_not_match
+Line_33_did_not_match
+Line_34_did_not_match
+Line_35_did_not_match
+Line_37_did_not_match
+Line_38_did_not_match
+Line_39_did_not_match
+Line_40_did_not_match
+Line_41_did_not_match
+Line_42_did_not_match
+Your file did not match the expected ouput
+Test case failed
 
 Overall Grade: C
