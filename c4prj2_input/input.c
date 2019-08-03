@@ -12,12 +12,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		} else {
       			if(str[i] == '?') {
         			i++;
-        			char num[strlen(str)];
+        			char num[3];
         			int j = 0;
         			while(!isspace(str[i])) {
-          				num[j] = str[i];
-          				i++;
-					j++;
+          				num[j++] = str[i++];
+          			//	i++;
+				//	j++;
 				}
         			num[j] = '\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
