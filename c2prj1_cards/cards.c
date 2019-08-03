@@ -61,9 +61,9 @@ char value_letter(card_t c) {
     return 'K';
   } else if (c.value == 14) {
     return 'A';
-  } else {
-    return '?';
-  }
+  } //else {
+   // return '?';
+ // }
 }
 
 char suit_letter(card_t c) {
@@ -73,10 +73,10 @@ char suit_letter(card_t c) {
     return 'h';
   } else if (c.suit == 2) {
     return 'd';
-  } else if (c.suit == 3) {
+  } else {// if (c.suit == 3) {
     return 'c';
-  }
-    return '!';  
+ // }
+   // return '!';  
 }
 
 void print_card(card_t c) {
