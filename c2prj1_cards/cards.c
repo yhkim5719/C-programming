@@ -75,9 +75,7 @@ char suit_letter(card_t c) {
     return 'd';
   } else if (c.suit == 3) {
     return 'c';
-  } else {
-    return '?';
-  }
+  } 
 }
 
 void print_card(card_t c) {
