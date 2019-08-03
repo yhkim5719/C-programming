@@ -5,7 +5,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
-
 	for(int i = 0; i < strlen(str); i++) {
     		if((str[i] == '\n')||(str[i] == ' ')){continue;}
     		else {
@@ -27,12 +26,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			}
     		}
   	}
-
 	if (tmp->n_cards < 5) {
 		perror("short number of card");
 		return NULL;
 	}
-
 	return tmp;
 }
 
@@ -52,7 +49,6 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 		deck_t* tmp = hand_from_string(hand, fc); // 
 		if (tmp == NULL) {continue;}
 		input[n_hand] = tmp; 
-//		hand = NULL;
 		n_hand++;
 	}
 	*n_hands = n_hand;
