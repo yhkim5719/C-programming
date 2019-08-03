@@ -7,8 +7,8 @@
 void assert_card_valid(card_t c) {
   assert((2 <= c.value) &&
 	 (c.value <= VALUE_ACE) &&
-	 (1 <= c.suit) &&
-	 (c.suit < 5)
+	 (0 <= c.suit) &&
+	 (c.suit < 4)
 	 );
 }
 
@@ -67,13 +67,13 @@ char value_letter(card_t c) {
 }
 
 char suit_letter(card_t c) {
-  if (c.suit == 1) {
+  if (c.suit == 0) {
    return 's';
-  } else if (c.suit == 2) {
+  } else if (c.suit == 1) {
     return 'h';
-  } else if (c.suit == 3) {
+  } else if (c.suit == 2) {
     return 'd';
-  } else if (c.suit == 4) {
+  } else if (c.suit == 3) {
     return 'c';
   } else {
     return '?';
@@ -133,13 +133,13 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.value = 14;
   }
   if (suit_let == 's') {
-      temp.suit = 1;
+      temp.suit = 0;
   } else if (suit_let == 'h') {
-      temp.suit = 2;
+      temp.suit = 1;
   } else if (suit_let == 'd') {
-      temp.suit = 3;
+      temp.suit = 2;
   } else if (suit_let == 'c') {
-      temp.suit = 4;
+      temp.suit = 3;
   } 
   return temp;
 }
@@ -149,13 +149,13 @@ card_t card_from_num(unsigned c) {
   assert ((0 <= c) && (c < 52));
   temp.value = 2 + c % 13;
   if (c/13 == 3) {
-    temp.suit = 4;
-  } else if (c/13 == 2) {
     temp.suit = 3;
-  } else if (c/13 == 1) {
+  } else if (c/13 == 2) {
     temp.suit = 2;
-  } else if (c/13 == 0) {
+  } else if (c/13 == 1) {
     temp.suit = 1;
+  } else if (c/13 == 0) {
+    temp.suit = 0;
   }
   return temp;
 }
