@@ -1,7 +1,5 @@
 #include <string.h>
-#include <assert.h>
-#include <stdio.h>
-#include <ctype.h>
+
 #include "input.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
@@ -14,7 +12,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		} else {
       			if(str[i] == '?') {
         			i++;
-        			char num[3];
+        			char num[2];
         			int j = 0;
         			while(!isspace(str[i])) {
           				num[j] = str[i];
