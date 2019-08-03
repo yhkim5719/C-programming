@@ -18,10 +18,6 @@ int main (int argc, char** argv) {
 	FILE* f = fopen(argv[1], "r");
 	size_t sz = 0;
 	deck_t** input = read_input(f, &sz, fc);
-	for (int i = 0; i < sz; i++) {
-		print_hand(input[i]);
-		printf("\n\n");
-	}
 	
 	deck_t* r_deck = build_remaining_deck(input, sz);
 	future_cards_from_deck (r_deck, fc);
@@ -40,6 +36,11 @@ int main (int argc, char** argv) {
 		printf("\n");
 		}
 	}
+	for (int i = 0; i < sz; i++) {
+		print_hand(input[i]);
+		printf("\n\n");
+	}
+	
 	fclose(f);
 
 	return 0;
