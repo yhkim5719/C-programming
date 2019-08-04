@@ -11,9 +11,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			continue;
 		} else {
       			if(str[i] == '?') {
-        			i++;
-        			char num[2];
+        			char num[5];
         			int j = 0;
+        		//	i++;
         			while(isdigit(str[i])) {
           				num[j++] = str[i++];
 				}
