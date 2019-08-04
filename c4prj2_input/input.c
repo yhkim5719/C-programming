@@ -6,13 +6,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
-	for(int i = 0; i <= strlen(str); i++) {
+	for(int i = 0; i < strlen(str); i++) {
     		if(isspace(str[i])) { 
 			continue;
 		} else {
       			if(str[i] == '?') {
         			char num[5];
         			int j = 0;
+				num[j++] = ' ';
         			i++;
         			while(isdigit(str[i])) {
           				num[j++] = str[i++];
@@ -20,9 +21,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         			num[j] = '\0';
         			add_future_card(fc, atoi(num), add_empty_card(tmp));
       			} else {
-        		card_t c = card_from_letters(str[i], str[i+1]);
-        		add_card_to(tmp, c);
-        		i++;
+        			card_t c = card_from_letters(str[i], str[i+1]);
+        			add_card_to(tmp, c);
+        			i++;
 			}
     		}
   	}
