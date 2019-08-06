@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "future.h"
+#include "input.h"
 
 void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 	if (index >= fc->n_decks) {
