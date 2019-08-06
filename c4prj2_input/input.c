@@ -1,6 +1,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "input.h"
+#include "future.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
