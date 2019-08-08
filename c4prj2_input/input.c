@@ -16,8 +16,6 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         		} else {
 				continue;
 			}
-//		if(str[i] == ' ' || str[i] == '\n') {
-//			continue;
 		} else if(str[i] == '?' && isdigit(str[i+1])) {
         		char num[5];
         		int j = 0;
@@ -29,13 +27,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         		add_future_card(fc, atoi(num), add_empty_card(tmp));
       		} else {
 			continue;
-//        		card_t c = card_from_letters(str[i], str[i+1]);
-//       		add_card_to(tmp, c);
-//        		i++;
     		}
   	}
 	if (tmp->n_cards < 5) {
-//		perror("short number of card");
+		perror("short number of card");
 		return NULL;
 	}
 	return tmp;
@@ -43,7 +38,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 
 deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	if (f == NULL) {
-//		perror("Invalid file");
+		perror("Invalid file");
 		return NULL;
 	}
 	deck_t** input = NULL; // malloc(sizeof(*input));
