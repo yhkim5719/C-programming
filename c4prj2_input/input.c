@@ -8,9 +8,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
-//		if(!(isdigit(str[i]) && str[i] == 'A' && str[i] == 'K' && str[i] == 'Q' && str[i] == 'J')) { 
-		if(str[i] == ' ' || str[i] == '\n') {
-			continue;
+		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) { 
+        		card_t c = card_from_letters(str[i], str[i+1]);
+        		add_card_to(tmp, c);
+        		i++;
+//		if(str[i] == ' ' || str[i] == '\n') {
+//			continue;
 		} else if(str[i] == '?') {
         		char num[5];
         		int j = 0;
@@ -21,9 +24,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         		num[j] = '\0';
         		add_future_card(fc, atoi(num), add_empty_card(tmp));
       		} else {
-        		card_t c = card_from_letters(str[i], str[i+1]);
-        		add_card_to(tmp, c);
-        		i++;
+			continue;
+//        		card_t c = card_from_letters(str[i], str[i+1]);
+//       		add_card_to(tmp, c);
+//        		i++;
     		}
   	}
 	if (tmp->n_cards < 5) {
