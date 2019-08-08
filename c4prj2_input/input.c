@@ -8,10 +8,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
-		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) { 
-        		card_t c = card_from_letters(str[i], str[i+1]);
-        		add_card_to(tmp, c);
-        		i++;
+		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) {
+			i++;
+			if(str[i] == 's' || str[i] == 'd' || str[i] == 'h' || str[i] == 'c') { 
+	        		card_t c = card_from_letters(str[i-1], str[i]);
+        			add_card_to(tmp, c);
+        		} else {
+				continue;
+			}
 //		if(str[i] == ' ' || str[i] == '\n') {
 //			continue;
 		} else if(str[i] == '?') {
