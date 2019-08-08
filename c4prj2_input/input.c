@@ -8,7 +8,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
-		if(isspace(str[i])) { 
+		if(!(isdigit(str[i]) && str[i] == 'A' && str[i] == 'K' && str[i] == 'Q' && str[i] == 'J') || str[i] == '1' ) { 
 			continue;
 		} else if(str[i] == '?') {
         		char num[2];
