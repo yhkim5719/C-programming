@@ -19,7 +19,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
           			num[j++] = str[i++];
 			}
         		num[j] = '\0';
-        		add_future_card(fc, strtoul(num, NULL, 0), add_empty_card(tmp));
+			size_t idx = strtoul(num, NULL, 0);
+        		add_future_card(fc, idx, add_empty_card(tmp));
 		} else {
 			card_t c = card_from_letters(str[i], str[i + 1]);
 			add_card_to(tmp, c);
