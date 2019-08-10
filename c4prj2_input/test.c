@@ -27,11 +27,12 @@ int main (int argc, char** argv) {
 
 	for (int i = 0; i < fc->n_decks; i++) {
 		for (int j = 0; j < fc->decks[i].n_cards; j++) {
-		printf("fc->decks[%d].n_card[%zu] \n", i, fc->decks[i].n_cards);
+		printf("fc->decks[%d].n_card[%zu] : ", i, fc->decks[i].n_cards);
 		print_card(*fc->decks[i].cards[j]);	
 		printf("\n");
 		}
 	}
+		printf("\n");
 	for (int i = 0; i < sz; i++) {
 		print_hand(input[i]);
 		printf("\n");

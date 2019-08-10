@@ -24,7 +24,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
           			num[j++] = str[i++];
 			}
         		num[j] = '\0';
-        		add_future_card(fc, atoi(num), add_empty_card(tmp));
+        		add_future_card(fc, strtoul(num), add_empty_card(tmp));
       		} else {
 			continue;
     		}
