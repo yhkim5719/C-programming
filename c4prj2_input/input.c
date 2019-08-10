@@ -8,15 +8,10 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
-		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) {
-			i++;
-			if(str[i] == 's' || str[i] == 'd' || str[i] == 'h' || str[i] == 'c') { 
-	        		card_t c = card_from_letters(str[i-1], str[i]);
-        			add_card_to(tmp, c);
-        		} else {
-				continue;
-			}
-		} else if(str[i] == '?' && isdigit(str[i+1])) {
+		if(isspace(str[i])) {
+			continue;
+		}
+		if(str[i] == '?' && isdigit(str[i+1])) {
         		char num[5];
         		int j = 0;
         		i++;
@@ -25,9 +20,11 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 			}
         		num[j] = '\0';
         		add_future_card(fc, strtoul(num, NULL, 0), add_empty_card(tmp));
-      		} else {
-			continue;
-    		}
+		} else {
+			card_t c = card_from_letters(str[i], str[i + 1]);
+			add_card_to(tmp, c);
+			i++;
+		}
   	}
 	if (tmp->n_cards < 5) {
 		perror("short number of card");
@@ -59,3 +56,27 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	
 	return input;
 }
+
+
+/*		// hand_from_string part
+		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) {
+			i++;
+			if(str[i] == 's' || str[i] == 'd' || str[i] == 'h' || str[i] == 'c') { 
+	        		card_t c = card_from_letters(str[i-1], str[i]);
+        			add_card_to(tmp, c);
+        		} else {
+				continue;
+			}
+		} else if(str[i] == '?' && isdigit(str[i+1])) {
+        		char num[5];
+        		int j = 0;
+        		i++;
+        		while(isdigit(str[i])) {
+          			num[j++] = str[i++];
+			}
+        		num[j] = '\0';
+        		add_future_card(fc, strtoul(num, NULL, 0), add_empty_card(tmp));
+      		} else {
+			continue;
+    		}
+*/
