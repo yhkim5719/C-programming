@@ -5,9 +5,9 @@
 void print_hand(deck_t * hand){
 	for (int i = 0; i < hand->n_cards; ++i) {
 		print_card(*(hand->cards[i]));
-		if (i != hand->n_cards) {
+//		if (i != hand->n_cards) {
 			printf(" ");
-		}
+//		}
 	}
 }
 
