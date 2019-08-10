@@ -62,7 +62,7 @@ void add_card_to(deck_t* deck, card_t c) {
 card_t* add_empty_card(deck_t* deck) {
 	card_t* e_card = malloc(sizeof(*e_card));
 	e_card->value = 0;
-	e_card->suit = 0;
+	e_card->suit = 99;
 	add_card_to(deck, *e_card);
 
 	return e_card;
