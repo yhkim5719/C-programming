@@ -1,4 +1,4 @@
-
+/*
 #include<string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,8 +39,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
   }
 }
+*/
 
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -57,15 +57,8 @@ void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 			fc->decks[fc->n_decks].n_cards = 0;
 			fc->n_decks++;
 		}
-    fc->decks[index].cards=realloc(fc->decks[index].cards,(fc->decks[index].n_cards+1)*sizeof(*(fc->decks[index].cards)));
-    fc->decks[index].cards[fc->decks[index].n_cards]=ptr;
-    fc->decks[index].n_cards ++;
-//		add_card_to(&fc->decks[index], *ptr);	
 	}
-    fc->decks[index].cards=realloc(fc->decks[index].cards,(fc->decks[index].n_cards+1)*sizeof(*(fc->decks[index].cards)));
-    fc->decks[index].cards[fc->decks[index].n_cards]=ptr;
-    fc->decks[index].n_cards ++;
-//	add_card_to(&fc->decks[index], *ptr);	
+	add_card_to(&fc->decks[index], *ptr);	
 }
 
 void future_cards_from_deck (deck_t* deck, future_cards_t* fc) {
@@ -81,4 +74,4 @@ void future_cards_from_deck (deck_t* deck, future_cards_t* fc) {
 		}
 	}
 }
-*/
+
