@@ -7,7 +7,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(deck_t));
 	tmp->cards = NULL;
 	tmp->n_cards = 0;
-	for(int i = 0; i < strlen(str) - 1; i++) {
+	for(int i = 0; i < strlen(str) + 1; i++) {
 		if(isspace(str[i])) {
 			continue;
 		}
