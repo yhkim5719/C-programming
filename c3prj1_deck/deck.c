@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -164,9 +164,8 @@ void free_deck(deck_t * deck) {
   
 }
 
-*/
 
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -273,3 +272,4 @@ void free_deck(deck_t* deck) {
 	free(deck->cards);
 	free(deck);
 }
+*/
