@@ -1,9 +1,9 @@
-Grading at Mon Aug 12 05:12:26 UTC 2019
+Grading at Mon Aug 12 05:13:22 UTC 2019
 Compiling deck.c
 deck.c: In function ‘add_card_to’:
-deck.c:68:29: error: invalid type argument of unary ‘*’ (have ‘card_t {aka struct card_tag}’)
-  card_t tmp = malloc(sizeof(*tmp));
-                             ^
+deck.c:68:30: error: expected expression before ‘card_t’
+  card_t tmp = malloc(sizeof(*card_t));
+                              ^
 deck.c:75:7: error: incompatible type for argument 1 of ‘free’
   free(tmp);
        ^
