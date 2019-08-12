@@ -4,14 +4,14 @@
 #include "future.h"
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
-	deck_t* tmp = malloc(sizeof(*tmp));
-//	tmp->cards = NULL;
-//	tmp->n_cards = 0;
+	deck_t* tmp = malloc(sizeof(deck_t));
+	tmp->cards = NULL;
+	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
 		if(isspace(str[i])) {
 			continue;
 		}
-		if(str[i] == '?' && isdigit(str[i+1])) {
+		if(str[i] == '?' && isdigit(str[i + 1])) {
         		char num[5];
         		int j = 0;
         		i++;
