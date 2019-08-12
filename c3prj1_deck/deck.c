@@ -65,12 +65,11 @@ void assert_full_deck(deck_t * d) {
 }
 
 void add_card_to(deck_t* deck, card_t c) {
-	card_t tmp = malloc(sizeof(*card_t));
-	tmp.value = c.value;
-	tmp.suit = c.suit;
+	card_t* tmp = malloc(sizeof(card_t));
+	tmp->value = c.value;
+	tmp->suit = c.suit;
 	deck->cards = realloc(deck->cards, (deck->n_cards + 1) * sizeof(*deck->cards));
-	deck->cards[deck->n_cards]->value = tmp.value;
-	deck->cards[deck->n_cards]->suit = tmp.suit;
+	deck->cards[deck->n_cards] = tmp;
 	deck->n_cards++;
 	free(tmp);
 }
