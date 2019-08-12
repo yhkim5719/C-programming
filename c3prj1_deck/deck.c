@@ -12,7 +12,14 @@ void print_hand(deck_t * hand){
 }
 
 int deck_contains(deck_t * d, card_t c) {
-	if (d->n_cards != 0) {
+	card_t ** card =d -> cards ;
+	for (size_t i=0 ;i< d -> n_cards ;i++){
+		if (com(**(card+i),c)) return 1;
+	}
+  	return 0;
+}
+
+/*	if (d->n_cards != 0) {
 		for (int i = 0; i < d->n_cards; ++i) {
 			if (d->cards[i]->value == c.value && d->cards[i]->suit == c.suit) {
 				return 1;
@@ -21,6 +28,7 @@ int deck_contains(deck_t * d, card_t c) {
 	}
   	return 0;
 }
+*/
 
 void shuffle(deck_t * d){
 	for (int i = 0; i < d->n_cards; ++i) {
