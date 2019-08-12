@@ -102,7 +102,7 @@ card_t card_from_letters(char value_let, char suit_let) {
 	   (suit_let != 'h') &&
 	   (suit_let != 'd') &&
 	   (suit_let != 'c'))) {
-    printf("You input wrong number.\n");
+    printf("You input wrong number.");
     exit(EXIT_FAILURE);
   } else
  if (value_let == '2') {
