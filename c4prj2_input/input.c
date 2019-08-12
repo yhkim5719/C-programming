@@ -1,3 +1,4 @@
+/*
 #include<string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -50,7 +51,8 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc){
   *n_hands=n_hand;
   return arr;
 }
-/*
+*/
+
 #include <string.h>
 #include <ctype.h>
 #include "input.h"
@@ -113,7 +115,6 @@ deck_t ** read_input(FILE * f, size_t * n_hands, future_cards_t * fc) {
 	return input;
 }
 
-*/
 /*		// hand_from_string part
 		if( ('2' <= str[i] && str[i] <= '9') || (str[i] == '0' || str[i] == 'A' || str[i] == 'K' || str[i] == 'Q' || str[i] == 'J')) {
 			i++;
