@@ -5,8 +5,8 @@
 
 deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	deck_t* tmp = malloc(sizeof(*tmp));
-	tmp->cards = NULL;
-	tmp->n_cards = 0;
+//	tmp->cards = NULL;
+//	tmp->n_cards = 0;
 	for(int i = 0; i < strlen(str); i++) {
 		if(isspace(str[i])) {
 			continue;
@@ -30,7 +30,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		}
   	}
 	if (tmp->n_cards < 5) {
-		perror("short number of card");
+		perror("short cards input");
 		return NULL;
 	}
 	return tmp;
