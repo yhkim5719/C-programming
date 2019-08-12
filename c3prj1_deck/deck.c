@@ -35,7 +35,7 @@ void shuffle(deck_t * d){
 }
 
 void assert_full_deck(deck_t * d) {
-	assert(d->n_cards == 52);
+	if(d->n_cards == 52) {return;}
 	card_t tmp;
 	for (int i = 0; i < 4; ++i) {
 		tmp.suit = i;
@@ -51,14 +51,14 @@ void assert_full_deck(deck_t * d) {
 }
 
 void add_card_to(deck_t* deck, card_t c) {
-	deck = realloc(deck, (deck->n_cards + 1) * sizeof(*deck));
+	deck->cards = realloc(deck->cards, (deck->n_cards + 1) * sizeof(*deck->cards));
 	deck->cards[deck->n_cards]->value = c.value;
 	deck->cards[deck->n_cards]->suit = c.suit;
 	deck->n_cards++;
 }
 
 card_t* add_empty_card(deck_t* deck) {
-	card_t* e_card = malloc(sizeof(*e_card));
+	card_t* e_card = malloc(sizeof(card_t));
 	e_card->value = 0;
 	e_card->suit = 0;
 	add_card_to(deck, *e_card);
