@@ -14,7 +14,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		if(str[i] == '?' && isdigit(str[i + 1])) {
         		char num[3];
         		int j = 0;
-//			i++;
+			i++;
         		while(isdigit(str[i])) {
           			num[j] = str[i];
 				j++;
@@ -26,7 +26,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 		} else {
 			card_t c = card_from_letters(str[i], str[i + 1]);
 			add_card_to(tmp, c);
-			i++;
+//			i++;
 		}
   	}
 	if (tmp->n_cards < 5) {
