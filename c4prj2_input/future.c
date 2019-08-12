@@ -1,4 +1,4 @@
-
+/*
 #include<string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,8 +39,8 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
     }
   }
 }
+*/
 
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,8 +49,9 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
 
 void add_future_card (future_cards_t* fc, size_t index, card_t* ptr) {
 	if (index >= fc->n_decks) {
-		fc->decks = realloc(fc->decks, (index + 1) * sizeof(*fc->decks));
+		fc->decks = realloc(fc->decks, (fc->n_decks + 1) * sizeof(*fc->decks));
 		while (index >= fc->n_decks) {
+//			fc->decks = realloc(fc->decks, (fc->n_decks + 1) * sizeof(*fc->decks));
 			fc->decks[fc->n_decks].cards = NULL;
 			fc->decks[fc->n_decks].n_cards = 0;
 			fc->n_decks++;
@@ -72,4 +73,4 @@ void future_cards_from_deck (deck_t* deck, future_cards_t* fc) {
 		}
 	}
 }
-*/
+
