@@ -88,7 +88,7 @@ deck_t* make_deck_exclude(deck_t* excluded_cards) {
 	tmp_deck->cards = NULL;
 	tmp_deck->n_cards = 0;
 	card_t tmp;
-	for (int i = 0; i < 52; i++) {
+	for (unsigned i = 0; i < 52; i++) {
 		tmp = card_from_num(i);
 		if (deck_contains(excluded_cards, tmp) == 0) {
 			add_card_to(tmp_deck, tmp);
