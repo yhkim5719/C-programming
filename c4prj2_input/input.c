@@ -16,7 +16,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
         		int j = 0;
         		i++;
         		while(isdigit(str[i])) {
-          			num[j++] = str[i++];
+          			num[j] = str[i];
+				j++;
+				i++;
 			}
         		num[j] = '\0';
 			size_t idx = strtoul(num, NULL, 0);
